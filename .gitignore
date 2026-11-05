@@ -8,3 +8,6 @@ dentista-ulcera/audio/segs/
 dentista-ulcera/audio/tts-lines/
 dentista-ulcera/audio/*16k.wav
 dentista-ulcera/audio/mix-pre.wav
+classificacio-ulcera/renders/
+classificacio-ulcera/.hyperframes/
+classificacio-ulcera/assets/mix-filter.txt
