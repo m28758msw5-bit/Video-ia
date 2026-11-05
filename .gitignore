@@ -2,3 +2,9 @@
 renders/
 dentista-ulcera/audio/original16k.wav
 node_modules/
+dentista-ulcera/audio/tts-model/
+dentista-ulcera/.venv/
+dentista-ulcera/audio/segs/
+dentista-ulcera/audio/tts-lines/
+dentista-ulcera/audio/*16k.wav
+dentista-ulcera/audio/mix-pre.wav
