@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ca" data-composition-variables='[{"id":"captions","type":"boolean","label":"Subtítols","default":true}]'>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/vendor/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #EAF2F8; }
+      #glowBottom { position: absolute; left: 0; right: 0; bottom: 0; height: 520px; pointer-events: none;
+        background: radial-gradient(70% 90% at 50% 100%, rgba(20,184,166,.28), rgba(37,99,235,.10) 55%, rgba(234,242,248,0) 100%); z-index: 2; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="57.857" data-width="1080" data-height="1920" data-fps="30">
+      <div id="world" data-composition-id="world" data-composition-src="compositions/world.html"
+        data-start="0" data-duration="57.857" data-track-index="1" data-track-kind="graphics"
+        data-width="1080" data-height="1920" style="z-index:1"></div>
+      <div id="glowBottom"></div>
+      <div id="captions" class="clip" data-composition-id="captions" data-composition-src="compositions/captions.html"
+        data-start="0" data-duration="57.857" data-track-index="2" data-track-kind="captions"
+        data-width="1080" data-height="1920" style="z-index:3"></div>
+      <audio id="voice" class="clip" src="assets/voz.wav" data-start="0" data-duration="57.857" data-track-index="3" data-volume="1"></audio>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      const vars = (window.__hyperframes && window.__hyperframes.getVariables && window.__hyperframes.getVariables()) || {};
+      if (vars.captions === false) tl.set("#captions", { opacity: 0 }, 0);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
