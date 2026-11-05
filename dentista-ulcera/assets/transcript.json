@@ -1,0 +1,830 @@
+[
+  {
+    "text": "Una",
+    "start": 0.16,
+    "end": 0.22,
+    "id": "w0"
+  },
+  {
+    "text": "ferida",
+    "start": 0.22,
+    "end": 0.66,
+    "id": "w1"
+  },
+  {
+    "text": "a",
+    "start": 0.66,
+    "end": 0.73,
+    "id": "w2"
+  },
+  {
+    "text": "la",
+    "start": 0.73,
+    "end": 0.87,
+    "id": "w3"
+  },
+  {
+    "text": "llengua",
+    "start": 0.87,
+    "end": 1.37,
+    "id": "w4"
+  },
+  {
+    "text": "que",
+    "start": 1.37,
+    "end": 1.59,
+    "id": "w5"
+  },
+  {
+    "text": "no",
+    "start": 1.59,
+    "end": 1.73,
+    "id": "w6"
+  },
+  {
+    "text": "es",
+    "start": 1.73,
+    "end": 1.85,
+    "id": "w7"
+  },
+  {
+    "text": "cura.",
+    "start": 1.93,
+    "end": 2.26,
+    "id": "w8"
+  },
+  {
+    "text": "Doncs",
+    "start": 2.26,
+    "end": 2.72,
+    "id": "w9"
+  },
+  {
+    "text": "1.",
+    "start": 2.72,
+    "end": 3.04,
+    "id": "w10"
+  },
+  {
+    "text": "Pas",
+    "start": 3.04,
+    "end": 3.27,
+    "id": "w11"
+  },
+  {
+    "text": "1.",
+    "start": 3.27,
+    "end": 3.74,
+    "id": "w12"
+  },
+  {
+    "text": "L'anènesi.",
+    "start": 3.74,
+    "end": 4.77,
+    "id": "w13"
+  },
+  {
+    "text": "Quan",
+    "start": 4.77,
+    "end": 4.995,
+    "id": "w14"
+  },
+  {
+    "text": "va",
+    "start": 4.995,
+    "end": 5.22,
+    "id": "w15"
+  },
+  {
+    "text": "sortir?",
+    "start": 5.22,
+    "end": 5.77,
+    "id": "w16"
+  },
+  {
+    "text": "Et",
+    "start": 5.77,
+    "end": 5.9,
+    "id": "w17"
+  },
+  {
+    "text": "fa",
+    "start": 5.9,
+    "end": 6.03,
+    "id": "w18"
+  },
+  {
+    "text": "mal?",
+    "start": 6.03,
+    "end": 6.46,
+    "id": "w19"
+  },
+  {
+    "text": "N'havies",
+    "start": 6.46,
+    "end": 6.9,
+    "id": "w20"
+  },
+  {
+    "text": "tingut",
+    "start": 6.99,
+    "end": 7.27,
+    "id": "w21"
+  },
+  {
+    "text": "abans?",
+    "start": 7.48,
+    "end": 7.89,
+    "id": "w22"
+  },
+  {
+    "text": "Prens",
+    "start": 8.02,
+    "end": 8.19,
+    "id": "w23"
+  },
+  {
+    "text": "medicació?",
+    "start": 8.19,
+    "end": 8.88,
+    "id": "w24"
+  },
+  {
+    "text": "Malalties?",
+    "start": 8.88,
+    "end": 9.56,
+    "id": "w25"
+  },
+  {
+    "text": "Al·lèrgies?",
+    "start": 9.56,
+    "end": 10.23,
+    "id": "w26"
+  },
+  {
+    "text": "Tot",
+    "start": 10.23,
+    "end": 10.473,
+    "id": "w27"
+  },
+  {
+    "text": "va",
+    "start": 10.473,
+    "end": 10.717,
+    "id": "w28"
+  },
+  {
+    "text": "a",
+    "start": 10.717,
+    "end": 10.96,
+    "id": "w29"
+  },
+  {
+    "text": "la",
+    "start": 10.96,
+    "end": 11,
+    "id": "w30"
+  },
+  {
+    "text": "història",
+    "start": 11,
+    "end": 11.62,
+    "id": "w31"
+  },
+  {
+    "text": "clínica.",
+    "start": 11.62,
+    "end": 12.44,
+    "id": "w32"
+  },
+  {
+    "text": "Pas",
+    "start": 12.44,
+    "end": 12.82,
+    "id": "w33"
+  },
+  {
+    "text": "2.",
+    "start": 12.82,
+    "end": 13.01,
+    "id": "w34"
+  },
+  {
+    "text": "L'exploració.",
+    "start": 13.01,
+    "end": 14,
+    "id": "w35"
+  },
+  {
+    "text": "Llum",
+    "start": 14,
+    "end": 14.96,
+    "id": "w36"
+  },
+  {
+    "text": "encès.",
+    "start": 14.96,
+    "end": 15.1,
+    "id": "w37"
+  },
+  {
+    "text": "Obre",
+    "start": 15.12,
+    "end": 15.46,
+    "id": "w38"
+  },
+  {
+    "text": "la",
+    "start": 15.48,
+    "end": 15.65,
+    "id": "w39"
+  },
+  {
+    "text": "boca",
+    "start": 15.65,
+    "end": 16.02,
+    "id": "w40"
+  },
+  {
+    "text": "i",
+    "start": 16.02,
+    "end": 16.11,
+    "id": "w41"
+  },
+  {
+    "text": "mirada",
+    "start": 16.11,
+    "end": 16.67,
+    "id": "w42"
+  },
+  {
+    "text": "general.",
+    "start": 16.67,
+    "end": 17.66,
+    "id": "w43"
+  },
+  {
+    "text": "Amb",
+    "start": 17.66,
+    "end": 17.93,
+    "id": "w44"
+  },
+  {
+    "text": "el",
+    "start": 17.93,
+    "end": 18.2,
+    "id": "w45"
+  },
+  {
+    "text": "mirall,",
+    "start": 18.2,
+    "end": 18.53,
+    "id": "w46"
+  },
+  {
+    "text": "la",
+    "start": 18.53,
+    "end": 18.67,
+    "id": "w47"
+  },
+  {
+    "text": "llengua",
+    "start": 18.67,
+    "end": 19.14,
+    "id": "w48"
+  },
+  {
+    "text": "per",
+    "start": 19.14,
+    "end": 19.34,
+    "id": "w49"
+  },
+  {
+    "text": "dalt,",
+    "start": 19.34,
+    "end": 19.74,
+    "id": "w50"
+  },
+  {
+    "text": "pels",
+    "start": 19.74,
+    "end": 19.98,
+    "id": "w51"
+  },
+  {
+    "text": "costats",
+    "start": 20,
+    "end": 20.48,
+    "id": "w52"
+  },
+  {
+    "text": "i",
+    "start": 20.54,
+    "end": 20.55,
+    "id": "w53"
+  },
+  {
+    "text": "per",
+    "start": 20.55,
+    "end": 20.75,
+    "id": "w54"
+  },
+  {
+    "text": "sota.",
+    "start": 20.75,
+    "end": 21.07,
+    "id": "w55"
+  },
+  {
+    "text": "Treu-la",
+    "start": 21.72,
+    "end": 21.88,
+    "id": "w56"
+  },
+  {
+    "text": "i",
+    "start": 21.88,
+    "end": 21.95,
+    "id": "w57"
+  },
+  {
+    "text": "mou-la",
+    "start": 21.95,
+    "end": 22.39,
+    "id": "w58"
+  },
+  {
+    "text": "a",
+    "start": 22.39,
+    "end": 22.46,
+    "id": "w59"
+  },
+  {
+    "text": "banda",
+    "start": 22.46,
+    "end": 22.85,
+    "id": "w60"
+  },
+  {
+    "text": "i",
+    "start": 22.85,
+    "end": 22.92,
+    "id": "w61"
+  },
+  {
+    "text": "banda.",
+    "start": 22.92,
+    "end": 23.66,
+    "id": "w62"
+  },
+  {
+    "text": "Aquí",
+    "start": 23.66,
+    "end": 24.24,
+    "id": "w63"
+  },
+  {
+    "text": "està.",
+    "start": 24.24,
+    "end": 24.57,
+    "id": "w64"
+  },
+  {
+    "text": "Una",
+    "start": 24.57,
+    "end": 24.79,
+    "id": "w65"
+  },
+  {
+    "text": "úlcera",
+    "start": 24.79,
+    "end": 25.19,
+    "id": "w66"
+  },
+  {
+    "text": "al",
+    "start": 25.19,
+    "end": 25.32,
+    "id": "w67"
+  },
+  {
+    "text": "lateral",
+    "start": 25.33,
+    "end": 25.81,
+    "id": "w68"
+  },
+  {
+    "text": "de",
+    "start": 25.81,
+    "end": 25.93,
+    "id": "w69"
+  },
+  {
+    "text": "la",
+    "start": 26.01,
+    "end": 26.09,
+    "id": "w70"
+  },
+  {
+    "text": "llengua.",
+    "start": 26.09,
+    "end": 26.82,
+    "id": "w71"
+  },
+  {
+    "text": "Mida,",
+    "start": 26.94,
+    "end": 27.31,
+    "id": "w72"
+  },
+  {
+    "text": "forma,",
+    "start": 27.36,
+    "end": 27.96,
+    "id": "w73"
+  },
+  {
+    "text": "color",
+    "start": 27.96,
+    "end": 28.36,
+    "id": "w74"
+  },
+  {
+    "text": "i",
+    "start": 28.44,
+    "end": 28.5,
+    "id": "w75"
+  },
+  {
+    "text": "localització.",
+    "start": 28.5,
+    "end": 29.88,
+    "id": "w76"
+  },
+  {
+    "text": "Una",
+    "start": 29.88,
+    "end": 30.32,
+    "id": "w77"
+  },
+  {
+    "text": "gasa",
+    "start": 30.32,
+    "end": 30.39,
+    "id": "w78"
+  },
+  {
+    "text": "subjecta",
+    "start": 30.42,
+    "end": 30.97,
+    "id": "w79"
+  },
+  {
+    "text": "a",
+    "start": 30.97,
+    "end": 31.04,
+    "id": "w80"
+  },
+  {
+    "text": "la",
+    "start": 31.04,
+    "end": 31.18,
+    "id": "w81"
+  },
+  {
+    "text": "llengua.",
+    "start": 31.18,
+    "end": 31.94,
+    "id": "w82"
+  },
+  {
+    "text": "Ara,",
+    "start": 32.26,
+    "end": 32.39,
+    "id": "w83"
+  },
+  {
+    "text": "les",
+    "start": 32.42,
+    "end": 32.64,
+    "id": "w84"
+  },
+  {
+    "text": "tens",
+    "start": 32.68,
+    "end": 33.02,
+    "id": "w85"
+  },
+  {
+    "text": "properes",
+    "start": 33.02,
+    "end": 33.68,
+    "id": "w86"
+  },
+  {
+    "text": "amb",
+    "start": 33.76,
+    "end": 34.02,
+    "id": "w87"
+  },
+  {
+    "text": "mirall",
+    "start": 34.02,
+    "end": 34.47,
+    "id": "w88"
+  },
+  {
+    "text": "i",
+    "start": 34.47,
+    "end": 34.74,
+    "id": "w89"
+  },
+  {
+    "text": "sonda.",
+    "start": 34.74,
+    "end": 35.29,
+    "id": "w90"
+  },
+  {
+    "text": "Una",
+    "start": 35.29,
+    "end": 35.82,
+    "id": "w91"
+  },
+  {
+    "text": "té",
+    "start": 35.82,
+    "end": 35.84,
+    "id": "w92"
+  },
+  {
+    "text": "la",
+    "start": 35.98,
+    "end": 36,
+    "id": "w93"
+  },
+  {
+    "text": "vora",
+    "start": 36,
+    "end": 36.31,
+    "id": "w94"
+  },
+  {
+    "text": "afilada",
+    "start": 36.31,
+    "end": 36.88,
+    "id": "w95"
+  },
+  {
+    "text": "i",
+    "start": 36.88,
+    "end": 36.96,
+    "id": "w96"
+  },
+  {
+    "text": "de",
+    "start": 36.96,
+    "end": 37.12,
+    "id": "w97"
+  },
+  {
+    "text": "volar.",
+    "start": 37.12,
+    "end": 37.76,
+    "id": "w98"
+  },
+  {
+    "text": "I",
+    "start": 37.76,
+    "end": 38.08,
+    "id": "w99"
+  },
+  {
+    "text": "freja",
+    "start": 38.08,
+    "end": 38.2,
+    "id": "w100"
+  },
+  {
+    "text": "just",
+    "start": 38.24,
+    "end": 38.46,
+    "id": "w101"
+  },
+  {
+    "text": "on",
+    "start": 38.5,
+    "end": 38.62,
+    "id": "w102"
+  },
+  {
+    "text": "hi",
+    "start": 38.62,
+    "end": 38.75,
+    "id": "w103"
+  },
+  {
+    "text": "ha",
+    "start": 38.76,
+    "end": 38.9,
+    "id": "w104"
+  },
+  {
+    "text": "l'úlcera.",
+    "start": 38.9,
+    "end": 39.67,
+    "id": "w105"
+  },
+  {
+    "text": "Pas",
+    "start": 39.67,
+    "end": 40.2,
+    "id": "w106"
+  },
+  {
+    "text": "3.",
+    "start": 40.2,
+    "end": 40.58,
+    "id": "w107"
+  },
+  {
+    "text": "El",
+    "start": 40.58,
+    "end": 40.78,
+    "id": "w108"
+  },
+  {
+    "text": "diagnòstic.",
+    "start": 40.78,
+    "end": 42.1,
+    "id": "w109"
+  },
+  {
+    "text": "Despostes",
+    "start": 42.38,
+    "end": 42.75,
+    "id": "w110"
+  },
+  {
+    "text": "més",
+    "start": 42.8,
+    "end": 43.01,
+    "id": "w111"
+  },
+  {
+    "text": "exploració.",
+    "start": 43.01,
+    "end": 44.02,
+    "id": "w112"
+  },
+  {
+    "text": "Úlcera",
+    "start": 44.36,
+    "end": 44.46,
+    "id": "w113"
+  },
+  {
+    "text": "traumàtica",
+    "start": 44.52,
+    "end": 45.09,
+    "id": "w114"
+  },
+  {
+    "text": "lingual.",
+    "start": 45.09,
+    "end": 45.78,
+    "id": "w115"
+  },
+  {
+    "text": "Per",
+    "start": 45.78,
+    "end": 46.24,
+    "id": "w116"
+  },
+  {
+    "text": "frejament",
+    "start": 46.24,
+    "end": 46.62,
+    "id": "w117"
+  },
+  {
+    "text": "de",
+    "start": 46.66,
+    "end": 46.78,
+    "id": "w118"
+  },
+  {
+    "text": "petit",
+    "start": 46.78,
+    "end": 47.13,
+    "id": "w119"
+  },
+  {
+    "text": "amb",
+    "start": 47.13,
+    "end": 47.34,
+    "id": "w120"
+  },
+  {
+    "text": "una",
+    "start": 47.34,
+    "end": 47.55,
+    "id": "w121"
+  },
+  {
+    "text": "adena",
+    "start": 47.55,
+    "end": 47.9,
+    "id": "w122"
+  },
+  {
+    "text": "afilada.",
+    "start": 47.9,
+    "end": 48.45,
+    "id": "w123"
+  },
+  {
+    "text": "Però",
+    "start": 48.45,
+    "end": 49.18,
+    "id": "w124"
+  },
+  {
+    "text": "també",
+    "start": 49.18,
+    "end": 49.25,
+    "id": "w125"
+  },
+  {
+    "text": "descarta",
+    "start": 49.25,
+    "end": 49.79,
+    "id": "w126"
+  },
+  {
+    "text": "infeccions",
+    "start": 49.79,
+    "end": 50.44,
+    "id": "w127"
+  },
+  {
+    "text": "i",
+    "start": 50.44,
+    "end": 50.52,
+    "id": "w128"
+  },
+  {
+    "text": "altres",
+    "start": 50.52,
+    "end": 50.86,
+    "id": "w129"
+  },
+  {
+    "text": "malalties.",
+    "start": 50.95,
+    "end": 51.84,
+    "id": "w130"
+  },
+  {
+    "text": "I",
+    "start": 51.84,
+    "end": 52.12,
+    "id": "w131"
+  },
+  {
+    "text": "li",
+    "start": 52.12,
+    "end": 52.4,
+    "id": "w132"
+  },
+  {
+    "text": "explica",
+    "start": 52.4,
+    "end": 52.64,
+    "id": "w133"
+  },
+  {
+    "text": "els",
+    "start": 52.64,
+    "end": 52.88,
+    "id": "w134"
+  },
+  {
+    "text": "resultats",
+    "start": 52.88,
+    "end": 53.58,
+    "id": "w135"
+  },
+  {
+    "text": "al",
+    "start": 53.61,
+    "end": 53.74,
+    "id": "w136"
+  },
+  {
+    "text": "pacient.",
+    "start": 53.82,
+    "end": 54.53,
+    "id": "w137"
+  }
+]

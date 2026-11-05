@@ -1,128 +1,68 @@
 [
   {
-    "text": "Amb",
-    "start": 0.92,
-    "end": 0.92,
+    "text": "úlcera",
+    "start": 0,
+    "end": 0.36,
     "id": "w0"
   },
   {
-    "text": "el",
-    "start": 0.92,
-    "end": 0.92,
+    "text": "traumàtica",
+    "start": 0.43,
+    "end": 0.99,
     "id": "w1"
   },
   {
-    "text": "mirall,",
-    "start": 0.92,
-    "end": 1.58,
+    "text": "lingual,",
+    "start": 0.99,
+    "end": 1.48,
     "id": "w2"
   },
   {
-    "text": "la",
-    "start": 1.58,
-    "end": 1.82,
+    "text": "per",
+    "start": 1.48,
+    "end": 1.88,
     "id": "w3"
   },
   {
-    "text": "llengua",
-    "start": 1.82,
-    "end": 2.42,
+    "text": "frejament",
+    "start": 1.88,
+    "end": 2.48,
     "id": "w4"
   },
   {
-    "text": "per",
-    "start": 2.42,
-    "end": 2.56,
+    "text": "de",
+    "start": 2.48,
+    "end": 2.6,
     "id": "w5"
   },
   {
-    "text": "dalt,",
-    "start": 2.63,
-    "end": 2.9,
+    "text": "petit",
+    "start": 2.61,
+    "end": 2.92,
     "id": "w6"
   },
   {
-    "text": "pels",
-    "start": 2.9,
-    "end": 3.18,
+    "text": "amb",
+    "start": 3.01,
+    "end": 3.24,
     "id": "w7"
   },
   {
-    "text": "costats",
-    "start": 3.18,
-    "end": 3.68,
+    "text": "una",
+    "start": 3.41,
+    "end": 3.6,
     "id": "w8"
   },
   {
-    "text": "i",
-    "start": 3.68,
-    "end": 3.75,
+    "text": "adena",
+    "start": 3.6,
+    "end": 3.82,
     "id": "w9"
   },
   {
-    "text": "per",
-    "start": 3.75,
-    "end": 3.96,
+    "text": "afilada.",
+    "start": 3.82,
+    "end": 4.3,
     "id": "w10"
-  },
-  {
-    "text": "sota.",
-    "start": 3.96,
-    "end": 4.5,
-    "id": "w11"
-  },
-  {
-    "text": "Aquí",
-    "start": 4.5,
-    "end": 5.2,
-    "id": "w12"
-  },
-  {
-    "text": "està,",
-    "start": 5.2,
-    "end": 5.32,
-    "id": "w13"
-  },
-  {
-    "text": "una",
-    "start": 5.32,
-    "end": 5.37,
-    "id": "w14"
-  },
-  {
-    "text": "úlcera",
-    "start": 5.57,
-    "end": 6.06,
-    "id": "w15"
-  },
-  {
-    "text": "al",
-    "start": 6.1,
-    "end": 6.22,
-    "id": "w16"
-  },
-  {
-    "text": "lateral",
-    "start": 6.22,
-    "end": 6.78,
-    "id": "w17"
-  },
-  {
-    "text": "de",
-    "start": 6.83,
-    "end": 6.85,
-    "id": "w18"
-  },
-  {
-    "text": "la",
-    "start": 7.08,
-    "end": 7.12,
-    "id": "w19"
-  },
-  {
-    "text": "llengua.",
-    "start": 7.12,
-    "end": 8,
-    "id": "w20"
   }
 ]

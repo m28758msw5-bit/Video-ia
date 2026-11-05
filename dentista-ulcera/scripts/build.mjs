@@ -41,7 +41,9 @@ const voicePath = path.join(ROOT, "assets/voz.wav");
 const voiceDur = fs.existsSync(voicePath)
   ? parseFloat(execSync(`ffprobe -v error -show_entries format=duration -of csv=p=0 "${voicePath}"`).toString())
   : words.at(-1).end + 0.6;
-const DUR = +(UNTIL ?? voiceDur).toFixed(3);
+// Durada pactada: 56 s (la veu dura una mica menys; el pla final s'aguanta fins al final).
+const TARGET = 56;
+const DUR = +(UNTIL ?? Math.max(voiceDur, TARGET)).toFixed(3);
 
 // ───────────────────────── utilitats ─────────────────────────
 const icon = (name, size, color = "currentColor", extra = "") => {
@@ -573,12 +575,12 @@ const CSS = `
 #lens svg{display:block}
 #pain{position:absolute;left:0;top:0;opacity:0}
 #qmark{position:absolute;left:0;top:0;font-weight:900;font-size:150px;line-height:1;color:${C.red};opacity:0;text-shadow:0 8px 0 rgba(225,29,72,.18)}
-#qBubble{position:absolute;left:0;top:0;width:470px;min-height:118px;background:#fff;border-radius:30px;box-shadow:0 14px 34px rgba(15,23,42,.16);opacity:0;padding:20px 24px 34px 98px}
+#qBubble{position:absolute;left:0;top:0;width:500px;min-height:118px;background:#fff;border-radius:30px;box-shadow:0 14px 34px rgba(15,23,42,.16);opacity:0;padding:20px 24px 34px 98px}
 #qBubble:after{content:"";position:absolute;right:70px;bottom:-26px;border:16px solid transparent;border-top:18px solid #fff;border-right-width:4px}
 .qIconBox{position:absolute;left:18px;top:20px;width:66px;height:66px;border-radius:20px;background:${C.blue}}
 .qIcon{position:absolute;inset:0;display:grid;place-items:center;opacity:0}
 .qTextBox{position:relative;height:80px}
-.qText{position:absolute;left:0;top:0;right:0;font-weight:700;font-size:34px;line-height:1.15;opacity:0}
+.qText{position:absolute;left:0;top:0;right:0;font-weight:700;font-size:36px;line-height:1.15;opacity:0}
 .dots{position:absolute;left:98px;bottom:14px;display:flex;gap:8px}
 .dots i{display:block;width:14px;height:14px;border-radius:50%;background:#E2E8F0}
 #aBubble{position:absolute;left:0;top:0;width:290px;height:74px;background:${C.orange};border-radius:26px;color:#fff;opacity:0;box-shadow:0 12px 26px rgba(242,140,40,.3)}
@@ -628,7 +630,7 @@ const CSS = `
 const T = []; // instruccions GSAP (cadenes)
 const at = (t) => r2(Math.max(0, t));
 const add = (s) => T.push(s);
-const to = (sel, vars, t) => add(`tl.to(${JSON.stringify(sel)}, ${JSON.stringify(vars)}, ${at(t)});`);
+const to = (sel, vars, t) => { const o = { sel, vars, t }; T.push(o); return o; };
 const fromTo = (sel, a, b, t) => add(`tl.fromTo(${JSON.stringify(sel)}, ${JSON.stringify(a)}, ${JSON.stringify(b)}, ${at(t)});`);
 const set = (sel, vars, t) => add(`tl.set(${JSON.stringify(sel)}, ${JSON.stringify(vars)}, ${at(t)});`);
 
@@ -636,16 +638,27 @@ const SFX = []; // { file, t, vol }
 const sfx = (file, t, vol = 0.5) => SFX.push({ file, t: Math.max(0, +t.toFixed(3)), vol });
 
 // Càmera: centre (x, y) del món a la pantalla, escala s.
+// Si un moviment comença abans que acabi l'anterior, l'anterior s'escurça
+// (mai dos moviments de càmera alhora: no hi ha estrebades).
 let camState = { x: 0, y: 0, s: 1 };
+let lastCam = null;
 function cam(t, x, y, s, dur = 0.9, ease = "power2.inOut", opts = {}) {
-  to("#zoom", { scale: s, duration: dur, ease }, t);
-  to("#pan", { x: -x, y: -y, duration: dur, ease }, t);
-  to("#bgpan", { x: -x * 0.82, y: -y * 0.82, duration: dur, ease }, t);
+  if (lastCam && t < lastCam.t + lastCam.dur) {
+    const d = Math.max(0.2, t - lastCam.t);
+    lastCam.tw.forEach((o) => (o.vars.duration = r2(d)));
+    if (t - lastCam.t < 0.2) t = lastCam.t + 0.2;
+  }
+  const tw = [
+    to("#zoom", { scale: s, duration: dur, ease }, t),
+    to("#pan", { x: -x, y: -y, duration: dur, ease }, t),
+    to("#bgpan", { x: -x * 0.82, y: -y * 0.82, duration: dur, ease }, t),
+  ];
+  lastCam = { t, dur, tw };
   const far = Math.hypot(x - camState.x, y - camState.y) * Math.max(s, camState.s) > 700 || Math.abs(Math.log(s / camState.s)) > 0.9;
   if ((far || opts.blur) && opts.blur !== false) {
     to("#zoom", { filter: "blur(3.5px)", duration: dur * 0.45, ease: "power2.in" }, t);
     to("#zoom", { filter: "blur(0px)", duration: dur * 0.55, ease: "power2.out" }, t + dur * 0.45);
-    if (opts.whoosh !== false) sfx(pick("whoosh"), t + dur * 0.15, 0.32);
+    if (opts.whoosh !== false) sfx(pick("whoosh"), t + dur * 0.5, 0.3);
   }
   camState = { x, y, s };
 }
@@ -737,10 +750,11 @@ set("#dArmBF", { rotation: 4 }, 0);
 // ═════════ ESCENA 1 · ANAMNESI ═════════
 {
   // Revelació de la consulta.
-  const tReveal = E("surt") + 0.05;
+  const tReveal = P("d'on") + 0.1;
   cam(tReveal - 0.1, 330, -200, 0.8, 0.85);
   to("#lens", { scale: 0.05, x: 140, y: 150, opacity: 0, duration: 0.5, ease: "power3.in" }, tReveal);
-  to(["#qmark", "#pain"], { opacity: 0, scale: 0.4, duration: 0.3, ease: "power2.in" }, tReveal);
+  to("#pain", { opacity: 0, scale: 0.4, duration: 0.3, ease: "power2.in" }, Math.max(tReveal, P("ferida") + 0.6));
+  to("#qmark", { opacity: 0, scale: 0.4, duration: 0.25, ease: "power2.in" }, Math.max(P("pas", 1), P("d'on") + 0.55));
   to("#pArmU", { rotation: -14, duration: 0.6, ease: "power2.inOut" }, tReveal);
   to("#pArmF", { rotation: 6, duration: 0.6, ease: "power2.inOut" }, tReveal);
   to("#pBrow", { attr: { d: "M2 -50 Q12 -56 22 -50" }, duration: 0.3 }, tReveal + 0.3);
@@ -1121,7 +1135,7 @@ const worldFile = `<template>
   </div>
   <script>
     const tl = gsap.timeline({ paused: true });
-    ${T.join("\n    ")}
+    ${T.map((o) => (typeof o === "string" ? o : `tl.to(${JSON.stringify(o.sel)}, ${JSON.stringify(o.vars)}, ${at(o.t)});`)).join("\n    ")}
     window.__timelines["world"] = tl;
   </script>
 </template>
@@ -1131,7 +1145,7 @@ fs.writeFileSync(path.join(ROOT, "compositions/world.html"), worldFile);
 fs.writeFileSync(path.join(ROOT, "compositions/captions.html"), buildCaptions());
 
 // Pista d'efectes (es mesclen amb ffmpeg a scripts/mix.mjs).
-fs.writeFileSync(path.join(ROOT, "assets/sfx-cues.json"), JSON.stringify(SFX.filter((s) => s.t < DUR).sort((a, b) => a.t - b.t), null, 1));
+if (!UNTIL) fs.writeFileSync(path.join(ROOT, "assets/sfx-cues.json"), JSON.stringify(SFX.filter((s) => s.t < DUR).sort((a, b) => a.t - b.t), null, 1));
 
 const hasMix = fs.existsSync(path.join(ROOT, "assets/mix.wav"));
 const audioSrc = hasMix ? "assets/mix.wav" : "assets/voz.wav";
