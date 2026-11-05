@@ -1,6 +1,19 @@
 # Cómo rehacer «La ferida que no es cura»
 
-Vídeo vertical 1080×1920 a 30 fps, animado en 2D con HyperFrames (HTML + GSAP). La voz es sintética en catalán (Piper, voz `upc_ona`). Todo se genera a partir de `guion.txt`: si cambias una frase, repite los pasos 2 a 6 y el vídeo se rehace solo.
+**Versión actual: horizontal 1920×1080 (YouTube), 30 fps, sin voz y sin subtítulos, ritmo lento (81 s).**
+Animación 2D con HyperFrames (HTML + GSAP). Aunque no se oye, la voz sintética en catalán (Piper, `upc_ona`) sigue marcando el ritmo: cada animación cae en el momento de su palabra. Todo sale de `guion.txt`: si cambias una frase, repite los pasos 2 a 6 y el vídeo se rehace solo.
+
+### Opciones del generador
+
+| Opción | Efecto |
+| --- | --- |
+| *(ninguna)* | Horizontal, sin voz, sin subtítulos, ritmo lento (×1,35). **Es la versión entregada.** |
+| `--captions` | Añade los subtítulos palabra a palabra (abajo). |
+| `--voice` | Mantiene la voz (y el ritmo original). Usa `node scripts/mix.mjs --voice`. |
+| `--vertical` | Formato 1080×1920 (Shorts, Reels, TikTok). |
+| `--until 8.5` | Solo hasta ese segundo (pruebas). |
+
+Ritmo sin voz: `SLOW` (separación entre momentos) y `DSLOW` (velocidad de cada animación) al principio de `scripts/build.mjs`.
 
 ## Requisitos (una sola vez)
 
@@ -48,11 +61,18 @@ node scripts/align.mjs assets/transcript.json
 
 # 5. Genera la animación y la mezcla de sonido
 node scripts/build.mjs     # escribe index.html, compositions/*.html y assets/sfx-cues.json
-node scripts/mix.mjs       # voz + efectos + música → assets/mix.wav a −14 LUFS
-node scripts/build.mjs     # vuelve a escribir index.html apuntando a mix.wav
+node scripts/mix.mjs       # música + efectos → assets/mix-sense-veu.wav a −14 LUFS
+node scripts/build.mjs     # vuelve a escribir index.html apuntando a la mezcla
 
 # 6. Comprueba y renderiza
 npx hyperframes check
+npx hyperframes render -o renders/video-FINAL-horitzontal.mp4
+```
+
+Versión vertical con voz y subtítulos (la primera entrega):
+
+```bash
+node scripts/build.mjs --vertical --voice --captions && node scripts/mix.mjs --voice && node scripts/build.mjs --vertical --voice --captions
 npx hyperframes render -o renders/video-FINAL.mp4
 npx hyperframes render -o renders/video-SIN-SUBTITULOS.mp4 --variables '{"captions":false}'
 ```
@@ -82,14 +102,14 @@ npx hyperframes snapshot --at 0.7,4.9,13.2,17.1,23.1,27.5,31.6,40.8,44.9,56.1,58
 | `scripts/tts.py` | Voz sintética en catalán, frase a frase, con pausas fijas. |
 | `scripts/align.mjs` | Une el guion con la transcripción de Whisper (tiempos reales, ortografía del guion). |
 | `scripts/build.mjs` | El generador: dibuja el mundo 2D, los personajes y la cámara, y pega cada animación a su palabra con `P("palabra", n)`. |
-| `scripts/mix.mjs` | Coloca cada efecto en su momento (el pico, un fotograma después de la imagen), añade la música baja y normaliza a −14 LUFS. |
+| `scripts/mix.mjs` | Coloca cada efecto en su momento (el pico, un fotograma después de la imagen), añade la música y normaliza a −14 LUFS. Sin voz, la música es el hilo sonoro; con `--voice`, va muy baja. |
 | `scripts/clean_audio.mjs` | Limpia una grabación propia: quita silencios largos (máx. 0,25 s) y tramos marcados. Solo si vuelves a usar tu voz. |
 | `assets/sfx/`, `assets/music/` | Efectos y música gratuitos de Mixkit (licencia Mixkit). |
 | `assets/icons/` | Iconos Phosphor (bold). |
 
 ### Cambiar cosas del generador (`scripts/build.mjs`)
 
-- **Duración mínima**: `const TARGET = 56`. El vídeo dura lo que dure la voz, y nunca menos de 56 s.
+- **Duración**: sin voz, la de la voz × `SLOW` + 0,8 s. Con `--voice`, la de la voz y nunca menos de `TARGET` (56 s).
 - **Respuestas del paciente y ficha clínica**: las listas `questions`, `history` y `measures`.
 - **Colores**: el objeto `C`.
 - **Palabras resaltadas en los subtítulos**: el objeto `KEY` (azul, rojo y verde).

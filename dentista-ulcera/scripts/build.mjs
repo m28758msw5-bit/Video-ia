@@ -14,9 +14,25 @@ import { execSync } from "node:child_process";
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..");
 const args = process.argv.slice(2);
 const UNTIL = args.includes("--until") ? parseFloat(args[args.indexOf("--until") + 1]) : null;
+// Format: horitzontal (YouTube, per defecte) o vertical (--vertical).
+const VERTICAL = args.includes("--vertical");
+const W = VERTICAL ? 1080 : 1920, H = VERTICAL ? 1920 : 1080;
+// Punt de la pantalla on la càmera centra el que explica, i factor d'escala de tots els enquadraments.
+const CAPTIONS = args.includes("--captions");
+const CAMX = VERTICAL ? 540 : 960, CAMY = VERTICAL ? 990 : CAPTIONS ? 470 : 540, ZS = VERTICAL ? 1 : CAPTIONS ? 0.8 : 0.95;
+// Sense veu (per defecte): el text en pantalla fa de narració. Amb --voice es manté la veu.
+const VOICE = args.includes("--voice");
+// Subtítols només si es demanen (--captions).
+// Ritme: sense veu, tot el calendari s'estira (SLOW) i les animacions s'alenteixen (DSLOW).
+const SLOW = VOICE ? 1 : 1.35;
+const DSLOW = VOICE ? 1 : 1.2;
 
 // ───────────────────────── temps de la veu ─────────────────────────
-const words = JSON.parse(fs.readFileSync(path.join(ROOT, "assets/words.json"), "utf8"));
+const words = JSON.parse(fs.readFileSync(path.join(ROOT, "assets/words.json"), "utf8")).map((w) => ({
+  ...w,
+  start: w.start * SLOW,
+  end: w.end * SLOW,
+}));
 const norm = (w) =>
   w.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/l·l/g, "ll").replace(/[^a-z0-9]/g, "");
 
@@ -43,7 +59,7 @@ const voiceDur = fs.existsSync(voicePath)
   : words.at(-1).end + 0.6;
 // Durada pactada: 56 s (la veu dura una mica menys; el pla final s'aguanta fins al final).
 const TARGET = 56;
-const DUR = +(UNTIL ?? Math.max(voiceDur, TARGET)).toFixed(3);
+const DUR = +(UNTIL ?? (VOICE ? Math.max(voiceDur, TARGET) : voiceDur * SLOW + 0.8)).toFixed(3);
 
 // ───────────────────────── utilitats ─────────────────────────
 const icon = (name, size, color = "currentColor", extra = "") => {
@@ -565,7 +581,7 @@ ${tag("tag3", 3, "DIAGNÒSTIC", TAG.c)}
 
 const CSS = `
 #root{position:absolute;inset:0;overflow:hidden;background:${C.wall};font-family:Inter,sans-serif;color:${C.ink}}
-#cam{position:absolute;left:540px;top:990px;width:0;height:0}
+#cam{position:absolute;left:${CAMX}px;top:${CAMY}px;width:0;height:0}
 #zoom,#pan,#bgpan{position:absolute;left:0;top:0;width:0;height:0;transform-origin:0 0}
 .layer{position:absolute;overflow:visible}
 .anchor,.tagWrap{position:absolute;width:0;height:0}
@@ -631,7 +647,8 @@ const T = []; // instruccions GSAP (cadenes)
 const at = (t) => r2(Math.max(0, t));
 const add = (s) => T.push(s);
 const to = (sel, vars, t) => { const o = { sel, vars, t }; T.push(o); return o; };
-const fromTo = (sel, a, b, t) => add(`tl.fromTo(${JSON.stringify(sel)}, ${JSON.stringify(a)}, ${JSON.stringify(b)}, ${at(t)});`);
+const slowV = (v) => (v && typeof v.duration === "number" ? { ...v, duration: r2(v.duration * DSLOW * 1000) / 1000 } : v);
+const fromTo = (sel, a, b, t) => { const o = { sel, from: a, vars: b, t }; T.push(o); return o; };
 const set = (sel, vars, t) => add(`tl.set(${JSON.stringify(sel)}, ${JSON.stringify(vars)}, ${at(t)});`);
 
 const SFX = []; // { file, t, vol }
@@ -643,13 +660,13 @@ const sfx = (file, t, vol = 0.5) => SFX.push({ file, t: Math.max(0, +t.toFixed(3
 let camState = { x: 0, y: 0, s: 1 };
 let lastCam = null;
 function cam(t, x, y, s, dur = 0.9, ease = "power2.inOut", opts = {}) {
-  if (lastCam && t < lastCam.t + lastCam.dur) {
-    const d = Math.max(0.2, t - lastCam.t);
+  if (lastCam && t < lastCam.t + lastCam.dur * DSLOW) {
+    const d = Math.max(0.2, t - lastCam.t) / DSLOW;
     lastCam.tw.forEach((o) => (o.vars.duration = r2(d)));
     if (t - lastCam.t < 0.2) t = lastCam.t + 0.2;
   }
   const tw = [
-    to("#zoom", { scale: s, duration: dur, ease }, t),
+    to("#zoom", { scale: r2(s * ZS * 1000) / 1000, duration: dur, ease }, t),
     to("#pan", { x: -x, y: -y, duration: dur, ease }, t),
     to("#bgpan", { x: -x * 0.82, y: -y * 0.82, duration: dur, ease }, t),
   ];
@@ -724,7 +741,7 @@ set("#dArmBF", { rotation: 4 }, 0);
 {
   const t0 = 0;
   // Arrencada amb cop de zoom sobre la cara.
-  set("#zoom", { scale: 4.2 }, 0);
+  set("#zoom", { scale: 4.2 * ZS }, 0);
   set("#pan", { x: -(HEAD.x - 30), y: -(HEAD.y - 70) }, 0);
   set("#bgpan", { x: -(HEAD.x - 30) * 0.82, y: -(HEAD.y - 70) * 0.82 }, 0);
   camState = { x: HEAD.x - 30, y: HEAD.y - 70, s: 4.2 };
@@ -1032,6 +1049,39 @@ const plateCam = (t, lx, ly, f = 1, dur = 0.7, ease = "power2.inOut", opts = {})
   to("#pBrow", { attr: { d: "M2 -54 Q12 -60 22 -54" }, duration: 0.3 }, tPa);
 }
 
+// Escriu la línia de temps: aplica el ritme (DSLOW) i, si dues animacions mouen
+// la mateixa propietat del mateix element, escurça la primera perquè acabi
+// quan comença la segona (així mai no es barallen ni fan salts).
+function serialize() {
+  const META = new Set(["duration", "ease", "repeat", "yoyo", "repeatDelay", "svgOrigin", "transformOrigin", "stagger"]);
+  // Les animacions repetides (respirar, teclejar, fregar) ja estan calculades sobre el seu tram: no s'alenteixen.
+  const tw = T.filter((o) => typeof o !== "string").map((o) => ({ ...o, vars: o.vars.repeat ? { ...o.vars } : slowV(o.vars) }));
+  const keyOf = (o) => JSON.stringify(o.sel);
+  const props = (o) => Object.keys(o.vars).filter((k) => !META.has(k));
+  const byT = [...tw].sort((a, b) => a.t - b.t);
+  byT.forEach((a, i) => {
+    if (a.vars.repeat) return;
+    const pa = props(a);
+    for (let j = i + 1; j < byT.length; j++) {
+      const b = byT[j];
+      if (b.t >= a.t + a.vars.duration) break;
+      if (keyOf(b) !== keyOf(a) || b.t <= a.t) continue;
+      if (props(b).some((k) => pa.includes(k))) {
+        a.vars.duration = Math.max(0.04, r2((b.t - a.t) * 1000) / 1000);
+        break;
+      }
+    }
+  });
+  const str = new Map(tw.map((o) => [o, o]));
+  return T.map((o, i) => {
+    if (typeof o === "string") return o;
+    const v = tw[T.slice(0, i).filter((x) => typeof x !== "string").length];
+    return v.from
+      ? `tl.fromTo(${JSON.stringify(v.sel)}, ${JSON.stringify(v.from)}, ${JSON.stringify(v.vars)}, ${at(v.t)});`
+      : `tl.to(${JSON.stringify(v.sel)}, ${JSON.stringify(v.vars)}, ${at(v.t)});`;
+  }).join("\n    ");
+}
+
 // ───────────────────────── subtítols ─────────────────────────
 const KEY = {
   red: ["ferida", "úlcera", "afilada", "irregular", "frega", "fregament", "mal", "traumàtica"],
@@ -1100,7 +1150,7 @@ function buildCaptions() {
   return `<template>
   <style>
     #root{position:absolute;inset:0;pointer-events:none}
-    .cg{position:absolute;left:60px;right:60px;top:250px;text-align:center;opacity:0;visibility:hidden;font-family:Inter,sans-serif;font-weight:900;font-size:66px;line-height:1.25;color:#0F172A;letter-spacing:-0.01em}
+    .cg{position:absolute;left:${VERTICAL ? 60 : 160}px;right:${VERTICAL ? 60 : 160}px;${VERTICAL ? "top:250px" : "bottom:70px"};text-align:center;opacity:0;visibility:hidden;font-family:Inter,sans-serif;font-weight:900;font-size:${VERTICAL ? 66 : 60}px;line-height:1.25;color:#0F172A;letter-spacing:-0.01em}
     .w{display:inline-block;padding:2px 10px;border-radius:14px;position:relative;
        text-shadow:0 0 18px rgba(255,255,255,.95),0 0 6px rgba(255,255,255,.95);
        background:rgba(255,255,255,calc(.82 - var(--hl,0)*.82));}
@@ -1108,7 +1158,7 @@ function buildCaptions() {
     .k-red{background:color-mix(in srgb,#E11D48 calc(var(--hl,0)*100%),rgba(255,255,255,.82));color:color-mix(in srgb,#fff calc(var(--hl,0)*100%),#0F172A);text-shadow:none}
     .k-green{background:color-mix(in srgb,#16A34A calc(var(--hl,0)*100%),rgba(255,255,255,.82));color:color-mix(in srgb,#fff calc(var(--hl,0)*100%),#0F172A);text-shadow:none}
   </style>
-  <div id="root" data-composition-id="captions" data-width="1080" data-height="1920">
+  <div id="root" data-composition-id="captions" data-width="${W}" data-height="${H}">
     ${html}
   </div>
   <script>
@@ -1123,7 +1173,7 @@ function buildCaptions() {
 // ───────────────────────── escriure fitxers ─────────────────────────
 const worldFile = `<template>
   <style>${CSS}</style>
-  <div id="root" data-composition-id="world" data-width="1080" data-height="1920">
+  <div id="root" data-composition-id="world" data-width="${W}" data-height="${H}">
     <div id="cam"><div id="zoom">
       <div id="bgpan">${backWall()}</div>
       <div id="pan">
@@ -1135,7 +1185,7 @@ const worldFile = `<template>
   </div>
   <script>
     const tl = gsap.timeline({ paused: true });
-    ${T.map((o) => (typeof o === "string" ? o : `tl.to(${JSON.stringify(o.sel)}, ${JSON.stringify(o.vars)}, ${at(o.t)});`)).join("\n    ")}
+    ${serialize()}
     window.__timelines["world"] = tl;
   </script>
 </template>
@@ -1147,31 +1197,33 @@ fs.writeFileSync(path.join(ROOT, "compositions/captions.html"), buildCaptions())
 // Pista d'efectes (es mesclen amb ffmpeg a scripts/mix.mjs).
 if (!UNTIL) fs.writeFileSync(path.join(ROOT, "assets/sfx-cues.json"), JSON.stringify(SFX.filter((s) => s.t < DUR).sort((a, b) => a.t - b.t), null, 1));
 
-const hasMix = fs.existsSync(path.join(ROOT, "assets/mix.wav"));
-const audioSrc = hasMix ? "assets/mix.wav" : "assets/voz.wav";
+const mixFile = VOICE ? "assets/mix.wav" : "assets/mix-sense-veu.wav";
+const hasMix = fs.existsSync(path.join(ROOT, mixFile));
+const audioSrc = hasMix ? mixFile : VOICE ? "assets/voz.wav" : null;
 const index = `<!doctype html>
 <html lang="ca" data-composition-variables='[{"id":"captions","type":"boolean","label":"Subtítols","default":true}]'>
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=1080, height=1920" />
+    <meta name="viewport" content="width=${W}, height=${H}" />
     <script src="assets/vendor/gsap.min.js"></script>
     <style>
       * { margin: 0; padding: 0; box-sizing: border-box; }
-      html, body { width: 1080px; height: 1920px; overflow: hidden; background: ${C.wall}; }
-      #glowBottom { position: absolute; left: 0; right: 0; bottom: 0; height: 520px; pointer-events: none;
+      html, body { width: ${W}px; height: ${H}px; overflow: hidden; background: ${C.wall}; }
+      #glowBottom { position: absolute; left: 0; right: 0; bottom: 0; height: ${VERTICAL ? 520 : 380}px; pointer-events: none;
         background: radial-gradient(70% 90% at 50% 100%, rgba(20,184,166,.28), rgba(37,99,235,.10) 55%, rgba(234,242,248,0) 100%); z-index: 2; }
     </style>
   </head>
   <body>
-    <div id="root" data-composition-id="main" data-start="0" data-duration="${DUR}" data-width="1080" data-height="1920" data-fps="30">
+    <div id="root" data-composition-id="main" data-start="0" data-duration="${DUR}" data-width="${W}" data-height="${H}" data-fps="30">
       <div id="world" data-composition-id="world" data-composition-src="compositions/world.html"
         data-start="0" data-duration="${DUR}" data-track-index="1" data-track-kind="graphics"
-        data-width="1080" data-height="1920" style="z-index:1"></div>
+        data-width="${W}" data-height="${H}" style="z-index:1"></div>
       <div id="glowBottom"></div>
-      <div id="captions" class="clip" data-composition-id="captions" data-composition-src="compositions/captions.html"
+      ${CAPTIONS ? "" : "<!-- sense subtítols (node scripts/build.mjs --captions per afegir-los) -->"}
+      ${CAPTIONS ? `<div id="captions" class="clip" data-composition-id="captions" data-composition-src="compositions/captions.html"
         data-start="0" data-duration="${DUR}" data-track-index="2" data-track-kind="captions"
-        data-width="1080" data-height="1920" style="z-index:3"></div>
-      <audio id="voice" class="clip" src="${audioSrc}" data-start="0" data-duration="${DUR}" data-track-index="3" data-volume="1"></audio>
+        data-width="${W}" data-height="${H}" style="z-index:3"></div>` : ""}
+      ${audioSrc ? `<audio id="soundtrack" class="clip" src="${audioSrc}" data-start="0" data-duration="${DUR}" data-track-index="3" data-volume="1"></audio>` : ""}
     </div>
     <script>
       const tl = gsap.timeline({ paused: true });
