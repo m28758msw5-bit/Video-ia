@@ -1,12 +1,12 @@
-// Generador del vídeo «Biòpsia i estudi histològic» (continuació; 1920×1080, sense veu ni música).
-// Fons fosc, lletra blanca fina i detalls en turquesa / blau elèctric.
-// Escriu index.html, compositions/world.html i assets/sfx-cues.json.
+// Generador del vídeo «Biòpsia i estudi histològic» (v2: realista, dinàmic, paraules clau).
+// 1920×1080, fons clar, il·lustració mèdica amb volum i fotografies histològiques reals
+// (assets/micro, vegeu CREDITS.md). Sense veu, sense música, sense subtítols.
 //
 //   node scripts/build.mjs             vídeo sencer
 //   node scripts/build.mjs --until 20  només fins al segon 20
 //
-// El calendari surt del text: cada frase es manté el temps de llegir-la
-// (1,4 s + 0,3 s per paraula) i cada escena es construeix sobre l'inici de les seves frases.
+// Els moments són a la taula B (segons). Les paraules clau, a la llista KW.
+// (La versió anterior, fosca i de línies, és a scripts/build-v1-neo.mjs.)
 
 import fs from "node:fs";
 import path from "node:path";
@@ -22,346 +22,368 @@ function rng(seed) {
 }
 
 const C = {
-  bg: "#060A13", bg2: "#0B1222", grid: "#14203A",
-  ink: "#F1F5F9", dim: "#94A3B8",
-  teal: "#2DD4BF", blue: "#3B82F6", cyan: "#22D3EE", violet: "#8B5CF6",
-  pink: "#F472B6", red: "#FB7185", blood: "#F43F5E", lymph: "#34D399",
+  bg: "#F3F6FA", ink: "#0F172A", ink2: "#475569", blue: "#2563EB", teal: "#0D9488",
+  green: "#16A34A", amber: "#F59E0B", red: "#E11D48",
 };
 
-// ───────────────────────── text (només les frases indicades) ─────────────────────────
-// scene: on és la càmera mentre es llegeix. acc: paraules en turquesa.
-const PHRASES = [
-  { id: "f1", scene: 1, acc: [], t: "Normalment, l’exploració oral és suficient per fer el diagnòstic, però…" },
-  { id: "f2", scene: 1, acc: [], t: "Si no es cura quan eliminem la causa, cal estudiar-la per descartar altres problemes." },
-  { id: "f3", scene: 2, acc: ["biòpsia"], t: "En aquest cas, es podria fer una biòpsia." },
-  { id: "f4", scene: 2, acc: [], t: "Consisteix a extreure una petita mostra del teixit de la lesió per analitzar-la." },
-  { id: "f5", scene: 3, acc: ["estudi", "histològic"], t: "Aquesta mostra s’envia per fer un estudi histològic." },
-  { id: "f6", scene: 4, acc: [], t: "Permet observar com són les cèl·lules i com estan organitzades dins del teixit." },
-  { id: "f7", scene: 5, acc: [], t: "D’aquesta manera, es poden detectar possibles alteracions cel·lulars, com les que podrien indicar una lesió potencialment maligna." },
-  { id: "f8", scene: 5, acc: [], t: "Quan observem les cèl·lules al microscopi, podem comparar les cèl·lules normals amb les que presenten alteracions." },
-  { id: "f9", scene: 6, acc: [], t: "En condicions normals, les cèl·lules es divideixen de manera controlada i mantenen una organització determinada dins del teixit." },
-  { id: "f10", scene: 7, acc: ["neoplàsia"], t: "En canvi, quan aquest control es perd, les cèl·lules poden començar a multiplicar-se de manera anormal i formar una neoplàsia, és a dir, un creixement nou i anormal de teixit." },
-  { id: "f11", scene: 8, acc: [], t: "Les neoplàsies poden ser de dos tipus." },
-  { id: "f12", scene: 8, acc: ["benignes"], t: "Les benignes creixen de manera més limitada i no envaeixen altres teixits." },
-  { id: "f13", scene: 9, acc: ["malignes", "càncer"], t: "En canvi, les malignes, que són les que coneixem com a càncer, poden envair els teixits del voltant i, en alguns casos, estendre’s a altres parts del cos a través de la sang o del sistema limfàtic." },
-  { id: "f14", scene: 10, acc: ["biòpsia"], t: "Per això, la biòpsia és important: permet estudiar les cèl·lules i l’organització del teixit per detectar possibles alteracions i determinar si hi ha signes d’una neoplàsia." },
-  { id: "f15", scene: 11, acc: [], t: "Així, si una lesió de la boca no cicatritza després d’eliminar-ne la causa, es pot valorar si cal fer aquest estudi per descartar problemes més importants." },
+// ───────────────────────── calendari ─────────────────────────
+const B = {
+  s1: 0,      // exploració
+  s2: 3.8,    // però…
+  s3: 7.6,    // causa eliminada → no es cura
+  s4: 14.2,   // biòpsia
+  s5: 20.2,   // mostra al flascó
+  s6: 26.2,   // laboratori
+  s7: 32.2,   // camp microscòpic
+  s8: 38.2,   // normal vs alterades
+  s9: 44.2,   // divisió controlada
+  s10: 48.4,  // neoplàsia
+  s11: 53.4,  // benigna / maligna
+  s12: 58.6,  // descartar
+  end: 63.5,
+};
+const DUR = +(UNTIL ?? B.end).toFixed(3);
+
+// Paraules clau: t = entrada, d = durada, pos = on surten.
+const KW = [
+  { t: B.s1 + 0.4, d: 1.7, text: "EXPLORACIÓ", pos: "tl" },
+  { t: B.s1 + 2.1, d: 1.6, text: "DIAGNÒSTIC", pos: "tl", tone: "green", check: true },
+  { t: B.s2 + 0.4, d: 3.0, text: "PERÒ…", pos: "tl", tone: "amber", big: true },
+  { t: B.s3 + 0.4, d: 2.9, text: "CAUSA ELIMINADA", pos: "tl" },
+  { t: B.s3 + 3.6, d: 2.8, text: "NO ES CURA", pos: "tl", tone: "red" },
+  { t: B.s4 + 0.5, d: 5.2, text: "BIÒPSIA", pos: "tl", big: true },
+  { t: B.s5 + 0.6, d: 5.0, text: "MOSTRA DE TEIXIT", pos: "tl" },
+  { t: B.s6 + 0.5, d: 5.2, text: "ESTUDI HISTOLÒGIC", pos: "tl" },
+  { t: B.s7 + 0.9, d: 2.4, text: "CÈL·LULES", pos: "tl" },
+  { t: B.s7 + 3.3, d: 2.4, text: "ORGANITZACIÓ", pos: "tl" },
+  { t: B.s8 + 0.5, d: 5.2, text: "NORMAL", pos: "left", tone: "green" },
+  { t: B.s8 + 1.6, d: 4.1, text: "ALTERADES", pos: "right", tone: "red" },
+  { t: B.s9 + 0.4, d: 3.6, text: "DIVISIÓ CONTROLADA", pos: "tl", tone: "green" },
+  { t: B.s10 + 0.5, d: 4.4, text: "NEOPLÀSIA", pos: "tl", tone: "red", big: true },
+  { t: B.s11 + 0.4, d: 4.8, text: "BENIGNA", pos: "left", tone: "teal" },
+  { t: B.s11 + 1.9, d: 3.3, text: "MALIGNA", pos: "right", tone: "red" },
+  { t: B.s12 + 0.6, d: 4.3, text: "DESCARTAR", pos: "tl", big: true },
 ];
-const words = (s) => s.split(/\s+/).length;
-const READ = (p) => 1.4 + 0.3 * words(p.t);
-const GAP = 0.45, TRAVEL = 1.4;
-let clock = 0.6;
-let prevScene = 1;
-for (const p of PHRASES) {
-  if (p.scene !== prevScene) clock += TRAVEL; // la càmera viatja abans de la frase
-  p.start = r2(clock);
-  p.end = r2(clock + READ(p));
-  clock = p.end + GAP;
-  prevScene = p.scene;
-}
-const PH = Object.fromEntries(PHRASES.map((p) => [p.id, p]));
-const END = r2(PHRASES.at(-1).end + 1.6);
-const DUR = +(UNTIL ?? END).toFixed(3);
 
 // ───────────────────────── posicions al món ─────────────────────────
-// Cada escena és un pla de 1920×1080 centrat a (x, y). El text va a baix, en pantalla.
-const SC = {
-  1: { x: 0, y: 0 },        // llengua: exploració i causa
-  2: { x: 2600, y: 0 },     // biòpsia
-  3: { x: 5200, y: 0 },     // laboratori: microscopi
-  4: { x: 7800, y: 0 },     // camp microscòpic (teixit organitzat)
-  5: { x: 10400, y: 0 },    // comparació normal / alterat
-  6: { x: 10400, y: 0 },    // divisió controlada (mateix pla, zoom)
-  7: { x: 13000, y: 0 },    // neoplàsia
-  8: { x: 15600, y: 0 },    // benigna
-  9: { x: 15600, y: 0 },    // maligna (mateix pla)
-  10: { x: 18200, y: 0 },   // la biòpsia permet detectar
-  11: { x: 20800, y: 0 },   // cicle final
+const P = {
+  mouth: { x: 0, y: 0 },
+  punch: { x: 3000, y: 0 },
+  lab: { x: 6000, y: 0 },
+  micro: { x: 9000, y: 0 },
+  cells: { x: 14600, y: 0 },
+  types: { x: 17600, y: 0 },
+  end: { x: 20600, y: 0 },
 };
-const VY = -90; // centre vertical de les il·lustracions (deixa lloc al text de baix)
 
-// ───────────────────────── art ─────────────────────────
+// ───────────────────────── art realista ─────────────────────────
 const TONGUE = "M-235 40 C-245 -80 -120 -128 0 -128 C120 -128 245 -80 235 40 C225 165 120 255 0 255 C-120 255 -225 165 -235 40Z";
-const glowLine = (d, color, w = 5, extra = "") => `<path d="${d}" fill="none" stroke="${color}" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round" ${extra}/>`;
-
-// Epiteli esquemàtic: capes de cèl·lules sobre la membrana basal.
-// mode: "normal" | "altered". Retorna { svg, cells:[{x,y,id}] }.
-function epithelium(prefix, w, h, mode, seed) {
+function papillae(seed, n, w = 200, h = 170, cy = 50, avoid = null) {
   const R = rng(seed);
-  const memb = (x) => h * 0.7 + Math.sin(x / 70) * 16;
-  let out = "", cells = [];
-  // teixit conjuntiu
-  for (let i = 0; i < 14; i++) {
-    const x = R() * w, y = h * 0.8 + R() * h * 0.2;
-    out += `<path d="M${r2(x)} ${r2(y)} q${r2(30 + R() * 40)} ${r2(-10 + R() * 20)} ${r2(70 + R() * 50)} ${r2(-6 + R() * 12)}" stroke="${C.blue}" stroke-width="3" opacity="0.35" fill="none"/>`;
+  let out = "";
+  for (let i = 0; i < n; i++) {
+    const a = R() * Math.PI * 2, rr = Math.sqrt(R());
+    const x = Math.cos(a) * rr * w, y = cy + Math.sin(a) * rr * h;
+    if (avoid && Math.hypot(x - avoid.x, y - avoid.y) < avoid.r) continue;
+    out += `<circle cx="${r2(x)}" cy="${r2(y)}" r="${r2(2.5 + R() * 3.5)}" fill="#F9B4BE" opacity="${r2(0.4 + R() * 0.45)}"/>`;
   }
-  out += `<path d="M0 ${r2(memb(0))} ${Array.from({ length: 41 }, (_, i) => `L${r2((w * i) / 40)} ${r2(memb((w * i) / 40))}`).join(" ")}" stroke="${C.teal}" stroke-width="4" fill="none" opacity="0.9"/>`;
-  const layers = 9;
-  let k = 0;
-  for (let L = 0; L < layers; L++) {
-    const cw = 54 + L * 7, ch = Math.max(26, 62 - L * 5);
-    for (let x = (L % 2) * cw * 0.5 + 20; x < w - 20; x += cw + 4) {
-      const base = memb(x) - 8 - ch / 2 - L * (ch + 4) - (L > 0 ? 10 : 0);
-      let cx = x, cy = base, sx = 1, rot = 0, nuc = 0.32, dark = 0.55, multi = false;
-      if (mode === "altered") {
-        cx += (R() - 0.5) * 26; cy += (R() - 0.5) * 30;
-        sx = 0.65 + R() * 0.95; rot = (R() - 0.5) * 60; nuc = 0.38 + R() * 0.3; dark = 0.75 + R() * 0.25;
-        multi = R() < 0.12;
-        if (L > 5 && R() < 0.5) continue;
-      }
-      if (cy < 30) continue;
-      const id = `${prefix}c${k++}`;
-      const rw = (cw / 2) * sx, rh = (ch / 2) * (mode === "altered" ? 0.75 + R() * 0.6 : 1);
-      const nr = Math.min(rw, rh) * nuc * 1.4;
-      out += `<g id="${id}" transform="translate(${r2(cx)},${r2(cy)}) rotate(${r2(rot)})">
-        <rect x="${r2(-rw)}" y="${r2(-rh)}" width="${r2(rw * 2)}" height="${r2(rh * 2)}" rx="${r2(Math.min(rw, rh) * 0.7)}" fill="${C.teal}" fill-opacity="0.08" stroke="${C.teal}" stroke-width="2.5" stroke-opacity="0.85"/>
-        <circle r="${r2(nr)}" fill="${C.violet}" fill-opacity="${r2(dark)}" stroke="${C.blue}" stroke-width="2"/>
-        ${multi ? `<circle cx="${r2(nr * 1.2)}" cy="${r2(-nr * 0.4)}" r="${r2(nr * 0.7)}" fill="${C.violet}" fill-opacity="${r2(dark)}" stroke="${C.blue}" stroke-width="2"/>` : ""}
-      </g>`;
-      cells.push({ x: cx, y: cy, id, L, r: Math.max(rw, rh), nr });
-    }
-  }
-  return { svg: out, cells };
+  return out;
+}
+const LES = { x: 190, y: 100 };
+// Lesió nova (no és la imatge dels vídeos anteriors): placa irregular blanquinosa amb halo eritematós.
+const lesion = (id) => `<g id="${id}" transform="translate(${LES.x},${LES.y}) rotate(-58)">
+  <path d="M-46 -6 Q-40 -30 -8 -30 Q24 -36 44 -14 Q54 6 34 24 Q8 36 -22 28 Q-50 18 -46 -6Z" fill="#D9475A" opacity="0.55"/>
+  <path d="M-30 -4 Q-24 -20 -2 -20 Q22 -22 30 -6 Q34 10 16 16 Q-6 22 -22 14 Q-34 8 -30 -4Z" fill="#F1E2C6"/>
+  <path d="M-16 -4 Q-6 -12 10 -8 Q16 0 6 6 Q-8 10 -16 -4Z" fill="#FBF4E4"/>
+</g>`;
+
+function tongueReal(id) {
+  return `<g id="${id}">
+    <path d="${TONGUE}" fill="url(#gTongue)"/>
+    <path d="${TONGUE}" fill="url(#gTongueShade)"/>
+    <path d="M0 -100 Q8 60 0 190" stroke="#B94A5E" stroke-width="12" fill="none" stroke-linecap="round" opacity="0.55"/>
+    ${papillae(12, 220, 205, 175, 55, { x: LES.x, y: LES.y, r: 55 })}
+    <ellipse cx="-80" cy="-40" rx="90" ry="40" fill="#fff" opacity="0.18" transform="rotate(-18 -80 -40)"/>
+    ${lesion(id + "Les")}
+  </g>`;
 }
 
-// Camp circular de microscopi (amb retícula) que conté un epiteli.
-function field(prefix, cx, cy, r, mode, seed) {
-  const ep = epithelium(prefix, r * 2, r * 2, mode, seed);
-  return {
-    cells: ep.cells.map((c) => ({ ...c, wx: cx - r + c.x, wy: cy - r + c.y })),
-    svg: `<g transform="translate(${cx - r},${cy - r})"><g id="${prefix}">
-      <clipPath id="${prefix}Clip"><circle cx="${r}" cy="${r}" r="${r}"/></clipPath>
-      <circle cx="${r}" cy="${r}" r="${r}" fill="${C.bg2}"/>
-      <g clip-path="url(#${prefix}Clip)">${ep.svg}</g>
-      <circle cx="${r}" cy="${r}" r="${r}" fill="none" stroke="${C.cyan}" stroke-width="4" opacity="0.8"/>
-      <path d="M${r} 14 V40 M${r} ${2 * r - 40} V${2 * r - 14} M14 ${r} H40 M${2 * r - 40} ${r} H${2 * r - 14}" stroke="${C.cyan}" stroke-width="3" opacity="0.6"/>
-    </g></g>`,
-  };
+const toothPaths = {
+  sharp: "M-44 60 L-44 -10 L-34 -40 L-22 -14 L-10 -46 L2 -18 L14 -48 L26 -16 L38 -42 L44 -10 L44 60 Q0 74 -44 60Z",
+  smooth: "M-44 60 L-44 -12 Q-42 -46 0 -48 Q42 -46 44 -12 L44 60 Q0 74 -44 60Z",
+};
+
+function mirror() {
+  return `<g id="mirror"><path d="M30 30 L420 420" stroke="url(#gSteel)" stroke-width="22" stroke-linecap="round"/>
+    <path d="M300 300 L420 420" stroke="#64748B" stroke-width="26" stroke-linecap="round" opacity="0.6"/>
+    <circle r="58" fill="url(#gMirror)" stroke="#94A3B8" stroke-width="8"/>
+    <ellipse cx="-16" cy="-20" rx="22" ry="12" fill="#fff" opacity="0.85" transform="rotate(-35 -16 -20)"/></g>`;
 }
 
-const S = SC;
-// Escena 1 i 2: llengua de línies
-const tongueLine = (id, scale, lesionId) => `
-  <g id="${id}" transform="scale(${scale})">
-    <path id="${id}Out" d="${TONGUE}" fill="${C.teal}" fill-opacity="0.05" stroke="${C.teal}" stroke-width="${r2(5 / scale)}" pathLength="1000" stroke-dasharray="1000 1000"/>
-    <path d="M0 -100 Q8 60 0 190" stroke="${C.teal}" stroke-width="${r2(3 / scale)}" opacity="0.5" fill="none"/>
-    <g transform="translate(196,108) rotate(-62)" id="${lesionId}">
-      <ellipse rx="34" ry="22" fill="${C.cyan}" fill-opacity="0.18" stroke="${C.cyan}" stroke-width="${r2(4 / scale)}"/>
-      <ellipse rx="14" ry="8" fill="${C.cyan}" fill-opacity="0.6"/>
+function calendarCard(id, rollId) {
+  return `<g id="${id}" opacity="0">
+    <rect x="-120" y="-130" width="240" height="260" rx="26" fill="#fff" filter="url(#shadow)"/>
+    <rect x="-120" y="-130" width="240" height="70" rx="26" fill="${C.red}"/><rect x="-120" y="-90" width="240" height="30" fill="${C.red}"/>
+    <circle cx="-60" cy="-130" r="10" fill="#94A3B8"/><circle cx="60" cy="-130" r="10" fill="#94A3B8"/>
+    <foreignObject x="-120" y="-56" width="240" height="180"><div xmlns="http://www.w3.org/1999/xhtml" class="calWin" data-layout-allow-overflow="true"><div id="${rollId}" class="calRoll">${Array.from({ length: 15 }, (_, i) => `<div>${i + 1}</div>`).join("")}</div></div></foreignObject>
+  </g>`;
+}
+
+// Bloc de mucosa realista per a la biòpsia (tall en perspectiva).
+function mucosaBlock() {
+  const R = rng(5);
+  let ves = "";
+  for (let i = 0; i < 9; i++) {
+    const x = -520 + i * 90 + R() * 40;
+    ves += `<path d="M${r2(x)} 70 q${r2(20 + R() * 20)} 40 ${r2(-10 + R() * 20)} 90 q-20 40 10 80" stroke="#C2414F" stroke-width="${r2(4 + R() * 4)}" fill="none" opacity="0.55"/>`;
+  }
+  return `<g id="block">
+    <path d="M-600 -60 L260 -60 L460 -220 L-400 -220Z" fill="url(#gSurface)"/>
+    ${papillae(31, 160, 380, 60, -140, { x: -60, y: -140, r: 110 })}
+    <g transform="translate(-60,-140) scale(1.55,0.55)">
+      <path d="M-46 -6 Q-40 -30 -8 -30 Q24 -36 44 -14 Q54 6 34 24 Q8 36 -22 28 Q-50 18 -46 -6Z" fill="#D9475A" opacity="0.6"/>
+      <path d="M-30 -4 Q-24 -20 -2 -20 Q22 -22 30 -6 Q34 10 16 16 Q-6 22 -22 14 Q-34 8 -30 -4Z" fill="#F1E2C6"/>
     </g>
-  </g>`;
-
-// Bloc de teixit en perspectiva (escena 2) amb la lesió a dalt.
-function tissueBlock() {
-  return `
-  <g id="block">
-    <path d="M-420 -40 L120 -40 L320 -180 L-220 -180Z" fill="${C.teal}" fill-opacity="0.08" stroke="${C.teal}" stroke-width="4"/>
-    <path d="M-420 -40 V200 H120 V-40" fill="${C.blue}" fill-opacity="0.06" stroke="${C.teal}" stroke-width="4"/>
-    <path d="M120 200 L320 60 V-180" fill="${C.blue}" fill-opacity="0.04" stroke="${C.teal}" stroke-width="4"/>
-    <path d="M-420 10 H120 L320 -130" stroke="${C.cyan}" stroke-width="3" opacity="0.6" fill="none"/>
-    <path d="M-420 90 H120 L320 -50" stroke="${C.blue}" stroke-width="3" opacity="0.5" fill="none" stroke-dasharray="10 8"/>
-    <ellipse id="bLesion" cx="-50" cy="-110" rx="80" ry="34" fill="${C.cyan}" fill-opacity="0.18" stroke="${C.cyan}" stroke-width="4"/>
-    <ellipse id="bHole" cx="-50" cy="-110" rx="30" ry="13" fill="${C.bg}" stroke="${C.cyan}" stroke-width="3" opacity="0"/>
+    <ellipse id="hole" cx="-60" cy="-140" rx="34" ry="12" fill="#7F1D2D" opacity="0"/>
+    <path d="M-600 -60 V260 H260 V-60Z" fill="url(#gSection)"/>
+    <path d="M-600 -60 H260 V20 Q-170 34 -600 18Z" fill="url(#gEpi)"/>
+    ${ves}
+    <path d="M260 -60 L460 -220 V100 L260 260Z" fill="url(#gSide)"/>
+    <path d="M-600 -60 H260 L460 -220" fill="none" stroke="#fff" stroke-width="3" opacity="0.7"/>
   </g>`;
 }
 
-// Microscopi de línies (escena 3).
+function punchTool() {
+  return `<g id="punch">
+    <rect x="-34" y="-620" width="68" height="300" rx="18" fill="url(#gGrip)"/>
+    ${Array.from({ length: 8 }, (_, i) => `<rect x="-34" y="${-600 + i * 34}" width="68" height="8" fill="#1E3A8A" opacity="0.35"/>`).join("")}
+    <rect x="-22" y="-330" width="44" height="190" rx="8" fill="url(#gSteel)"/>
+    <rect id="punchShine" x="-12" y="-320" width="8" height="170" rx="4" fill="#fff" opacity="0.7"/>
+    <path d="M-22 -140 L-22 -120 L22 -120 L22 -140Z" fill="#94A3B8"/>
+  </g>`;
+}
+
+function vial(capId) {
+  return `
+    <path d="M-110 -160 V170 Q-110 220 -60 220 H60 Q110 220 110 170 V-160Z" fill="#EAF6FB" opacity="0.6"/>
+    <path d="M-104 -30 V170 Q-104 214 -60 214 H60 Q104 214 104 170 V-30Z" fill="url(#gFormol)"/>
+    <ellipse cx="0" cy="-30" rx="104" ry="12" fill="#D8F0F7" opacity="0.9"/>
+    <path d="M-110 -160 V170 Q-110 220 -60 220 H60 Q110 220 110 170 V-160" fill="none" stroke="#B8C6D2" stroke-width="6"/>
+    <rect x="-86" y="-140" width="18" height="320" rx="9" fill="#fff" opacity="0.55"/>
+    <rect x="-90" y="20" width="180" height="110" rx="10" fill="#fff" opacity="0.92"/>
+    <rect x="-70" y="40" width="120" height="12" rx="6" fill="#CBD5E1"/><rect x="-70" y="64" width="90" height="12" rx="6" fill="#CBD5E1"/><rect x="-70" y="88" width="105" height="12" rx="6" fill="#CBD5E1"/>
+    <g id="${capId}"><rect x="-124" y="-226" width="248" height="76" rx="16" fill="url(#gCap)"/>
+      ${Array.from({ length: 11 }, (_, i) => `<rect x="${-112 + i * 22}" y="-220" width="6" height="64" rx="3" fill="#94A3B8" opacity="0.5"/>`).join("")}</g>`;
+}
+
 function microscope() {
-  return `
-  <g id="scope">
-    ${glowLine("M-60 300 H200", C.blue, 6)}
-    ${glowLine("M120 300 V-150 Q120 -210 60 -230", C.blue, 6)}
-    ${glowLine("M-10 -330 L60 -230 M-40 -300 L30 -200", C.blue, 6)}
-    <rect x="-70" y="-380" width="60" height="40" rx="8" fill="none" stroke="${C.blue}" stroke-width="6" transform="rotate(-35 -40 -360)"/>
-    <rect x="-40" y="-150" width="60" height="70" rx="10" fill="none" stroke="${C.blue}" stroke-width="6"/>
-    ${glowLine("M-10 -80 V-50", C.cyan, 6)}
-    ${glowLine("M-150 -20 H140", C.blue, 6)}
-    ${glowLine("M140 120 a30 30 0 1 0 0.1 0", C.blue, 5)}
-    <path id="beam" d="M-10 -20 L-30 -50 H10 Z" fill="${C.cyan}" opacity="0"/>
+  return `<g id="scope">
+    <ellipse cx="0" cy="320" rx="300" ry="34" fill="#0F172A" opacity="0.12"/>
+    <path d="M-260 260 Q-260 230 -230 230 H230 Q260 230 260 260 V300 H-260Z" fill="url(#gBodyDark)"/>
+    <path d="M120 240 Q190 120 170 -60 Q150 -230 40 -300 L0 -260 Q90 -200 100 -60 Q110 100 50 240Z" fill="url(#gBodyLight)"/>
+    <rect x="-230" y="40" width="330" height="40" rx="10" fill="url(#gBodyDark)"/>
+    <circle cx="140" cy="120" r="44" fill="url(#gKnob)"/><circle cx="140" cy="120" r="20" fill="#475569"/>
+    <rect x="-112" y="-170" width="90" height="180" rx="18" fill="url(#gBodyLight)" transform="rotate(-6 -67 -80)"/>
+    <rect x="-96" y="-10" width="30" height="56" rx="6" fill="url(#gSteel)"/><rect x="-60" y="-14" width="26" height="60" rx="6" fill="url(#gSteel)"/>
+    <rect x="-150" y="-330" width="70" height="200" rx="16" fill="url(#gBodyDark)" transform="rotate(-28 -115 -230)"/>
+    <rect x="-175" y="-390" width="74" height="64" rx="14" fill="#1E293B" transform="rotate(-28 -138 -358)"/>
+    <ellipse cx="-110" cy="160" rx="60" ry="14" fill="#FDE68A" opacity="0.9"/>
+    <path id="beam" d="M-140 160 L-80 160 L-70 60 L-150 60Z" fill="#FEF3C7" opacity="0"/>
   </g>`;
 }
 
-// ───────────────────────── composició ─────────────────────────
-function buildWorld() {
-  const s1 = S[1], s2 = S[2], s3 = S[3], s4 = S[4], s5 = S[5], s7 = S[7], s8 = S[8], s10 = S[10], s11 = S[11];
-  const f4 = field("fA", s4.x, s4.y + VY, 370, "normal", 21);
-  const f5n = field("fN", s5.x - 420, s5.y + VY, 335, "normal", 21);
-  const f5a = field("fX", s5.x + 420, s5.y + VY, 335, "altered", 33);
-  const f10 = field("fZ", s10.x - 250, s10.y + VY, 335, "altered", 33);
-  // cèl·lules alterades a ressaltar (les de nucli més gran)
-  const pickHL = (cells, n, seed, cx, cy, r) => {
-    const R = rng(seed);
-    return [...cells].filter((c) => Math.hypot(c.wx - cx, c.wy - cy) < r - 70).sort((a, b) => b.nr - a.nr).slice(0, 8).sort(() => R() - 0.5).slice(0, n);
-  };
-  const hl5 = pickHL(f5a.cells, 3, 5, s5.x + 420, s5.y + VY, 335);
-  const hl10 = pickHL(f10.cells, 3, 7, s10.x - 250, s10.y + VY, 335);
+function slide(id) {
+  return `<g id="${id}">
+    <rect x="-200" y="-46" width="400" height="92" rx="6" fill="#E6F4FA" opacity="0.85" stroke="#B6CAD8" stroke-width="3"/>
+    <rect x="-200" y="-46" width="110" height="92" rx="6" fill="#fff" opacity="0.9"/>
+    <path d="M10 -24 Q70 -40 120 -16 Q150 6 110 24 Q50 40 0 22 Q-30 4 10 -24Z" fill="#D46AA6" opacity="0.8"/>
+    <path d="M30 -10 Q70 -20 100 -6 Q110 6 86 12 Q50 20 30 10Z" fill="#8B5CF6" opacity="0.55"/>
+    <rect x="-180" y="-40" width="370" height="10" rx="5" fill="#fff" opacity="0.55"/>
+  </g>`;
+}
 
-  // Escena 7: neoplàsia (cèl·lules que es multipliquen)
-  const R7 = rng(77);
-  const neo = [];
-  for (let i = 0; i < 70; i++) {
-    const a = R7() * Math.PI * 2, d = Math.sqrt(i / 70) * 260;
-    neo.push({ x: Math.cos(a) * d * 1.25, y: Math.sin(a) * d * 0.85 - 40, r: 20 + R7() * 14, i });
-  }
-  neo.sort((a, b) => Math.hypot(a.x, a.y) - Math.hypot(b.x, b.y));
-  // Escena 8/9: benigna (esquerra) i maligna (dreta)
-  const R8 = rng(88);
-  const benign = Array.from({ length: 26 }, (_, i) => { const a = R8() * Math.PI * 2, d = Math.sqrt(R8()) * 150; return { x: Math.cos(a) * d, y: Math.sin(a) * d * 0.8, r: 16 + R8() * 6 }; });
-  const malig = Array.from({ length: 34 }, () => { const a = R8() * Math.PI * 2, d = Math.sqrt(R8()) * 160; return { x: Math.cos(a) * d * (1 + R8() * 0.3), y: Math.sin(a) * d * 0.85, r: 14 + R8() * 12 }; });
-  const tendrils = [
-    "M120 -40 q60 -30 120 -20 q40 10 70 -30", "M100 80 q70 20 110 70 q20 30 70 30", "M-20 140 q10 60 -30 110",
-    "M-140 -60 q-60 -40 -90 -100", "M40 -150 q20 -60 80 -90",
-  ];
-  const cellG = (c, fill, stroke, id = "") => `<g ${id ? `id="${id}"` : ""} transform="translate(${r2(c.x)},${r2(c.y)})"><circle r="${r2(c.r)}" fill="${fill}" fill-opacity="0.16" stroke="${stroke}" stroke-width="3"/><circle r="${r2(c.r * 0.42)}" fill="${C.violet}" fill-opacity="0.8"/></g>`;
+// Camp de microscopi amb fotografia real retallada en cercle.
+function photoField(id, cx, cy, r, href, { zoom = 1, ox = 0.5, oy = 0.5, iw = 1280, ih = 722 } = {}) {
+  const sc = (2 * r * zoom) / Math.min(iw, ih);
+  const w = iw * sc, h = ih * sc;
+  return `<g transform="translate(${cx},${cy})"><g id="${id}">
+    <clipPath id="${id}Clip"><circle r="${r}"/></clipPath>
+    <circle r="${r + 16}" fill="#0F172A"/>
+    <g clip-path="url(#${id}Clip)">
+      <image id="${id}Img" href="${href}" x="${r2(-w * ox)}" y="${r2(-h * oy)}" width="${r2(w)}" height="${r2(h)}" preserveAspectRatio="none"/>
+      <circle r="${r}" fill="url(#gVignette)"/>
+    </g>
+    <circle r="${r + 8}" fill="none" stroke="#1E293B" stroke-width="16"/>
+  </g></g>`;
+}
 
+// Cèl·lula il·lustrada (paleta H&E, com les fotografies).
+const cell = (x, y, r, id = "", extra = "", nuc = "url(#gNuc)") => `<g transform="translate(${r2(x)},${r2(y)})"><g ${id ? `id="${id}"` : ""} ${extra}>
+  <circle r="${r2(r)}" fill="url(#gCyto)" stroke="#D07BAA" stroke-width="2"/>
+  <circle r="${r2(r * 0.42)}" fill="${nuc}"/>
+  <circle cx="${r2(-r * 0.12)}" cy="${r2(-r * 0.14)}" r="${r2(r * 0.1)}" fill="#fff" opacity="0.35"/></g></g>`;
+const DARK = "url(#gNucDark)";
+
+const DEFS = `<defs>
+  <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#0F172A" flood-opacity="0.18"/></filter>
+  <radialGradient id="gTongue" cx="0.45" cy="0.35" r="0.75"><stop offset="0" stop-color="#F3A2AD"/><stop offset="0.6" stop-color="#E07888"/><stop offset="1" stop-color="#C45467"/></radialGradient>
+  <linearGradient id="gTongueShade" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7F1D2D" stop-opacity="0.25"/><stop offset="0.3" stop-color="#7F1D2D" stop-opacity="0"/><stop offset="0.75" stop-color="#7F1D2D" stop-opacity="0"/><stop offset="1" stop-color="#7F1D2D" stop-opacity="0.3"/></linearGradient>
+  <linearGradient id="gSteel" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#64748B"/><stop offset="0.35" stop-color="#E2E8F0"/><stop offset="0.55" stop-color="#F8FAFC"/><stop offset="1" stop-color="#475569"/></linearGradient>
+  <radialGradient id="gMirror" cx="0.35" cy="0.3" r="0.8"><stop offset="0" stop-color="#FFFFFF"/><stop offset="0.5" stop-color="#CBD5E1"/><stop offset="1" stop-color="#64748B"/></radialGradient>
+  <linearGradient id="gEnamel" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="0.6" stop-color="#F3EEDF"/><stop offset="1" stop-color="#D8CFB8"/></linearGradient>
+  <linearGradient id="gGum" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F1A0AC"/><stop offset="1" stop-color="#D86A7E"/></linearGradient>
+  <linearGradient id="gSurface" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F2A9B4"/><stop offset="1" stop-color="#E58494"/></linearGradient>
+  <linearGradient id="gSection" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F6C8D2"/><stop offset="1" stop-color="#E9A9B8"/></linearGradient>
+  <linearGradient id="gEpi" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E7859A"/><stop offset="1" stop-color="#C95C78"/></linearGradient>
+  <linearGradient id="gSide" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#D98597"/><stop offset="1" stop-color="#B9667A"/></linearGradient>
+  <linearGradient id="gGrip" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1D4ED8"/><stop offset="0.45" stop-color="#60A5FA"/><stop offset="1" stop-color="#1E3A8A"/></linearGradient>
+  <linearGradient id="gFormol" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DDF3F7" stop-opacity="0.85"/><stop offset="1" stop-color="#B9E2EC" stop-opacity="0.9"/></linearGradient>
+  <linearGradient id="gCap" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#E2E8F0"/><stop offset="0.5" stop-color="#FFFFFF"/><stop offset="1" stop-color="#CBD5E1"/></linearGradient>
+  <linearGradient id="gBodyLight" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#E2E8F0"/><stop offset="0.5" stop-color="#FFFFFF"/><stop offset="1" stop-color="#CBD5E1"/></linearGradient>
+  <linearGradient id="gBodyDark" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1E293B"/><stop offset="0.5" stop-color="#475569"/><stop offset="1" stop-color="#0F172A"/></linearGradient>
+  <radialGradient id="gKnob" cx="0.4" cy="0.35" r="0.7"><stop offset="0" stop-color="#94A3B8"/><stop offset="1" stop-color="#1E293B"/></radialGradient>
+  <radialGradient id="gVignette" cx="0.5" cy="0.5" r="0.5"><stop offset="0.75" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="0.45"/></radialGradient>
+  <radialGradient id="gCyto" cx="0.4" cy="0.35" r="0.7"><stop offset="0" stop-color="#FAD3E4"/><stop offset="1" stop-color="#E39AC1"/></radialGradient>
+  <radialGradient id="gNuc" cx="0.4" cy="0.35" r="0.7"><stop offset="0" stop-color="#8B6CC8"/><stop offset="1" stop-color="#3F2479"/></radialGradient>
+  <radialGradient id="gNucDark" cx="0.4" cy="0.35" r="0.7"><stop offset="0" stop-color="#6D4BB0"/><stop offset="1" stop-color="#25124F"/></radialGradient>
+  <linearGradient id="gStroma" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBE3EC"/><stop offset="1" stop-color="#F5CFDD"/></linearGradient>
+  <linearGradient id="gVessel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F7A1AE"/><stop offset="0.5" stop-color="#FCE1E5"/><stop offset="1" stop-color="#E9808F"/></linearGradient>
+  <linearGradient id="gLymph" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D9F99D"/><stop offset="0.5" stop-color="#F7FEE7"/><stop offset="1" stop-color="#BEF264"/></linearGradient>
+  <radialGradient id="gRBC" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#F87171"/><stop offset="0.55" stop-color="#DC2626"/><stop offset="1" stop-color="#B91C1C"/></radialGradient>
+</defs>`;
+
+// ───────────────────────── construcció del món ─────────────────────────
+const ROW = Array.from({ length: 13 }, (_, i) => ({ x: -720 + i * 120, y: 130 }));
+const R10 = rng(101);
+const NEO = Array.from({ length: 80 }, (_, i) => {
+  const a = R10() * Math.PI, d = Math.sqrt(i / 80) * 300;
+  return { x: Math.cos(a) * d * 1.3, y: 90 - Math.sin(a) * d * 0.95, r: 26 + R10() * 18 };
+}).sort((a, b) => Math.hypot(a.x, a.y - 90) - Math.hypot(b.x, b.y - 90));
+const R11 = rng(111);
+const BEN = Array.from({ length: 30 }, () => { const a = R11() * Math.PI * 2, d = Math.sqrt(R11()) * 150; return { x: Math.cos(a) * d, y: Math.sin(a) * d * 0.8, r: 22 + R11() * 6 }; });
+const MAL = Array.from({ length: 40 }, () => { const a = R11() * Math.PI * 2, d = Math.sqrt(R11()) * 170; return { x: Math.cos(a) * d * 1.1, y: Math.sin(a) * d * 0.85, r: 18 + R11() * 16 }; });
+const INV = [[190, -60], [230, 30], [150, 140], [-40, 190], [-190, 80], [40, -180]].map(([x, y], i) => ({ x, y, r: 20 + (i % 3) * 4 }));
+// Cèl·lules alterades ressaltades a la fotografia (fraccions de la imatge).
+const HL = [[0.745, 0.643], [0.448, 0.415], [0.823, 0.346]];
+
+function world() {
+  const m = P.mouth, pu = P.punch, la = P.lab, mi = P.micro, ce = P.cells, ty = P.types, en = P.end;
+  const cmp = { x: mi.x + 2600, y: 40 };
+  const altR = 310, altCx = cmp.x + 430, altCy = cmp.y, nrmCx = cmp.x - 430;
+  const sc = (2 * altR) / 964, iw = 1280 * sc, ih = 964 * sc;
+  const hl = HL.map(([fx, fy]) => ({ x: altCx - iw / 2 + fx * iw, y: altCy - ih / 2 + fy * ih })).filter((p) => Math.hypot(p.x - altCx, p.y - altCy) < altR - 30);
   return {
-    hl5, hl10, neo, f5n,
+    hl, cmp, altCx, altCy,
     svg: `
-<svg class="layer" style="left:-2000px;top:-1600px" width="25600" height="3200" viewBox="-2000 -1600 25600 3200">
-  <defs>
-    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-    <linearGradient id="gLiquid" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${C.cyan}" stop-opacity="0.35"/><stop offset="1" stop-color="${C.blue}" stop-opacity="0.15"/></linearGradient>
-    <radialGradient id="gHalo" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="${C.blue}" stop-opacity="0.35"/><stop offset="1" stop-color="${C.blue}" stop-opacity="0"/></radialGradient>
-  </defs>
+<svg class="layer" style="left:-2000px;top:-1600px" width="26000" height="3200" viewBox="-2000 -1600 26000 3200">
+  ${DEFS}
 
-  <!-- fil que uneix les escenes -->
-  <path id="thread" d="M${S[1].x - 900} 330 ${[2, 3, 4, 5, 7, 8, 10, 11].map((k) => `L${S[k].x} 330`).join(" ")} L${S[11].x + 900} 330" stroke="${C.blue}" stroke-width="3" stroke-dasharray="2 18" stroke-linecap="round" opacity="0.5" fill="none"/>
+  <!-- 1–3 · llengua, dent i calendari -->
+  <g transform="translate(${m.x + 120},${m.y - 10}) scale(1.35)" filter="url(#shadow)">${tongueReal("tg")}</g>
+  <g transform="translate(${r2(m.x + 120 + LES.x * 1.35)},${r2(m.y - 10 + LES.y * 1.35)})">
+    <circle id="okRing" r="100" fill="none" stroke="${C.green}" stroke-width="8" opacity="0"/>
+    <circle id="alertRing" r="110" fill="none" stroke="${C.red}" stroke-width="8" stroke-dasharray="20 12" opacity="0"/>
+  </g>
+  <g transform="translate(${r2(m.x + 120 + 330 * 1.35)},${r2(m.y - 10 + 250 * 1.35)}) rotate(-38) scale(1.3)">
+    <g id="toothG" opacity="0">
+      <path d="M-60 40 Q0 90 60 40 L60 110 H-60Z" fill="url(#gGum)"/>
+      <path id="toothSharp" d="${toothPaths.sharp}" fill="url(#gEnamel)" stroke="#CBBF9F" stroke-width="3"/>
+      <path id="toothSmooth" d="${toothPaths.smooth}" fill="url(#gEnamel)" stroke="#CBBF9F" stroke-width="3" opacity="0"/>
+      <g id="bur" opacity="0"><rect x="-10" y="-170" width="20" height="110" rx="6" fill="url(#gSteel)"/><rect x="-18" y="-300" width="36" height="140" rx="12" fill="#CBD5E1"/>
+        <circle cy="-56" r="13" fill="#A8A29E"/></g>
+      <g id="sparks" opacity="0"><path d="M-30 -60 l-20 -14 M0 -66 v-24 M30 -60 l20 -14" stroke="#F59E0B" stroke-width="5" stroke-linecap="round"/></g>
+    </g>
+  </g>
+  <g transform="translate(${m.x - 560},${m.y + 40})">${calendarCard("calCard", "calRoll")}</g>
+  <g transform="translate(${m.x + 120},${m.y - 10})"><g id="mirrorWrap" opacity="0">${mirror()}</g></g>
 
-  <!-- 1 · llengua, exploració i causa -->
-  <g transform="translate(${s1.x - 120},${s1.y + VY - 40})" filter="url(#glow)">
-    ${tongueLine("tg1", 1.25, "les1")}
-    <g transform="scale(1.25)">
-      <g transform="translate(232,182) rotate(-48)">
-        <path id="toothSharp" d="M-34 30 V-10 L-24 -34 L-14 -16 L-4 -38 L6 -16 L16 -36 L26 -14 L34 -30 V30Z" fill="none" stroke="${C.red}" stroke-width="4" stroke-linejoin="round"/>
-        <path id="toothSmooth" d="M-34 30 V-14 Q-34 -32 0 -34 Q34 -32 34 -14 V30Z" fill="none" stroke="${C.teal}" stroke-width="4" opacity="0"/>
+  <!-- 4–5 · biòpsia -->
+  <g transform="translate(${pu.x - 120},${pu.y + 80})" filter="url(#shadow)">${mucosaBlock()}</g>
+  <g transform="translate(${pu.x - 180},${pu.y - 60})"><g id="punchWrap" opacity="0">${punchTool()}</g></g>
+  <g transform="translate(${pu.x - 180},${pu.y - 60})"><g id="sample" opacity="0">
+    <rect x="-20" y="-60" width="40" height="78" rx="12" fill="#E58494"/><rect x="-20" y="-60" width="40" height="22" rx="10" fill="#C95C78"/>
+    <ellipse cx="0" cy="-60" rx="20" ry="7" fill="#F2A9B4"/><rect x="-14" y="-50" width="6" height="60" rx="3" fill="#fff" opacity="0.4"/></g></g>
+  <g transform="translate(${pu.x + 640},${pu.y + 60})"><g id="vialWrap" opacity="0"><g filter="url(#shadow)">${vial("cap")}</g></g></g>
+
+  <!-- 6 · laboratori -->
+  <rect x="${la.x - 1200}" y="${la.y + 330}" width="2400" height="500" fill="#E4EAF1"/>
+  <rect x="${la.x - 1200}" y="${la.y + 320}" width="2400" height="16" fill="#CBD5E1"/>
+  <g transform="translate(${la.x + 260},${la.y + 30})" filter="url(#shadow)">${microscope()}</g>
+  <g transform="translate(${la.x - 600},${la.y + 200}) scale(0.55)"><g id="vial2" opacity="0"><g filter="url(#shadow)">${vial("cap2")}</g></g></g>
+  <g transform="translate(${la.x - 260},${la.y + 290})"><g id="slideWrap" opacity="0"><g filter="url(#shadow)">${slide("slideA")}</g></g></g>
+
+  <!-- 7 · camp microscòpic (fotografies reals) -->
+  ${photoField("fLow", mi.x, mi.y + 30, 370, "assets/micro/normal-baix.jpg")}
+  ${photoField("fHigh", mi.x, mi.y + 30, 370, "assets/micro/normal-alt.jpg")}
+
+  <!-- 8 · normal vs alterades -->
+  ${photoField("fN", nrmCx, altCy, altR, "assets/micro/normal-alt.jpg")}
+  ${photoField("fX", altCx, altCy, altR, "assets/micro/alterat.jpg", { iw: 1280, ih: 964 })}
+  ${hl.map((p, i) => `<circle id="hl${i}" cx="${r2(p.x)}" cy="${r2(p.y)}" r="34" fill="none" stroke="#fff" stroke-width="4" stroke-dasharray="7 6" opacity="0"/>`).join("")}
+
+  <!-- 9–10 · divisió controlada i neoplàsia (il·lustració H&E) -->
+  <g transform="translate(${ce.x},${ce.y})">
+    <rect x="-1100" y="170" width="2200" height="500" fill="url(#gStroma)"/>
+    <path d="M-1100 172 Q-550 158 0 172 T1100 172" stroke="#C26A97" stroke-width="6" fill="none"/>
+    ${ROW.map((c, i) => cell(c.x, c.y, 50, `row${i}`)).join("")}
+    <g id="divA" opacity="0">${cell(0, 0, 50)}</g>
+    <g id="divB" opacity="0">${cell(0, 0, 50)}</g>
+    ${NEO.map((c, i) => cell(c.x, c.y - 20, c.r, `neo${i}`, 'opacity="0"')).join("")}
+  </g>
+
+  <!-- 11 · benigna i maligna -->
+  <g transform="translate(${ty.x},${ty.y})">
+    <rect x="-1100" y="-600" width="2200" height="1200" fill="url(#gStroma)" opacity="0.7"/>
+    <path d="M0 -600 V600" stroke="#fff" stroke-width="10"/>
+    <g transform="translate(-470,-30)"><g id="ben">
+      <ellipse id="capsule" rx="200" ry="170" fill="#F9D7E6" stroke="#B85C8E" stroke-width="10" opacity="0"/>
+      ${BEN.map((c) => cell(c.x, c.y, c.r)).join("")}
+    </g></g>
+    <g transform="translate(470,-30)">
+      <path d="M-420 260 C-200 230, 200 290, 440 250" stroke="url(#gVessel)" stroke-width="70" fill="none" stroke-linecap="round"/>
+      ${Array.from({ length: 7 }, (_, i) => `<ellipse id="rbc${i}" cx="${-380 + i * 120}" cy="${r2(258 + Math.sin(i) * 10)}" rx="16" ry="11" fill="url(#gRBC)"/>`).join("")}
+      <path d="M-420 -300 C-160 -270, 220 -330, 440 -290" stroke="url(#gLymph)" stroke-width="60" fill="none" stroke-linecap="round"/>
+      <g id="mal" opacity="0">
+        ${MAL.map((c) => cell(c.x, c.y, c.r, "", "", DARK)).join("")}
+        ${INV.map((c, i) => `<g id="inv${i}" opacity="0">${cell(c.x, c.y, c.r, "", "", DARK)}</g>`).join("")}
       </g>
-    </g>
-    <g id="mirror" opacity="0"><circle cx="0" cy="0" r="46" fill="${C.cyan}" fill-opacity="0.12" stroke="${C.cyan}" stroke-width="5"/>${glowLine("M30 34 L300 330", C.cyan, 8)}</g>
-    <circle id="okRing" cx="${196 * 1.25}" cy="${108 * 1.25}" r="70" fill="none" stroke="${C.teal}" stroke-width="5" opacity="0"/>
-    <circle id="timer" cx="${196 * 1.25}" cy="${108 * 1.25}" r="96" fill="none" stroke="${C.blue}" stroke-width="6" pathLength="100" stroke-dasharray="0 100" transform="rotate(-90 ${196 * 1.25} ${108 * 1.25})"/>
-    <circle id="scanRing" cx="${196 * 1.25}" cy="${108 * 1.25}" r="130" fill="none" stroke="${C.cyan}" stroke-width="3" stroke-dasharray="6 10" opacity="0"/>
-  </g>
-
-  <!-- 2 · biòpsia -->
-  <g transform="translate(${s2.x - 160},${s2.y + VY + 40})" filter="url(#glow)">
-    ${tissueBlock()}
-    <g transform="translate(-50,0)"><g id="punch" opacity="0">
-      <rect x="-30" y="-560" width="60" height="320" rx="12" fill="none" stroke="${C.ink}" stroke-width="4" opacity="0.8"/>
-      <rect x="-22" y="-240" width="44" height="110" rx="6" fill="none" stroke="${C.cyan}" stroke-width="4"/>
-      <path d="M-22 -136 l8 10 l8 -10 l8 10 l8 -10 l8 10" stroke="${C.cyan}" stroke-width="3" fill="none"/>
-    </g></g>
-    <g id="sample" opacity="0">
-      <rect x="-20" y="-40" width="40" height="64" rx="10" fill="${C.cyan}" fill-opacity="0.2" stroke="${C.cyan}" stroke-width="4"/>
-      <path d="M-20 -14 H20 M-20 8 H20" stroke="${C.blue}" stroke-width="3"/>
-    </g>
-    <g id="vial" transform="translate(560,40)" opacity="0">
-      <path d="M-80 -150 V140 Q-80 180 -40 180 H40 Q80 180 80 140 V-150" fill="none" stroke="${C.ink}" stroke-width="5" opacity="0.85"/>
-      <path d="M-76 -40 V140 Q-76 176 -40 176 H40 Q76 176 76 140 V-40Z" fill="url(#gLiquid)"/>
-      <path id="liqTop" d="M-76 -40 Q0 -54 76 -40" stroke="${C.cyan}" stroke-width="3" fill="none"/>
-      <g id="lid"><rect x="-96" y="-200" width="192" height="52" rx="14" fill="${C.blue}" fill-opacity="0.25" stroke="${C.blue}" stroke-width="5"/></g>
-      <circle id="bub1" cx="-20" cy="100" r="7" fill="none" stroke="${C.cyan}" stroke-width="3" opacity="0"/>
-      <circle id="bub2" cx="24" cy="130" r="5" fill="none" stroke="${C.cyan}" stroke-width="3" opacity="0"/>
+      <g id="metB" opacity="0">${cell(0, 0, 16, "", "", DARK)}</g>
+      <g id="metL" opacity="0">${cell(0, 0, 16, "", "", DARK)}</g>
     </g>
   </g>
 
-  <!-- 3 · laboratori -->
-  <g transform="translate(${s3.x - 80},${s3.y + VY + 40})" filter="url(#glow)">
-    ${microscope()}
-    <g transform="translate(-480,-20)"><g id="slide" opacity="0">
-      <rect x="-150" y="-36" width="300" height="72" rx="8" fill="${C.cyan}" fill-opacity="0.08" stroke="${C.ink}" stroke-width="4" opacity="0.9"/>
-      <ellipse cx="20" cy="0" rx="60" ry="20" fill="${C.pink}" fill-opacity="0.45" stroke="${C.pink}" stroke-width="3"/>
-      <ellipse cx="20" cy="0" rx="30" ry="9" fill="${C.violet}" fill-opacity="0.6"/>
-    </g></g>
-    <g transform="translate(-560,170) scale(0.5)"><g id="vial3" opacity="0">
-      <path d="M-80 -150 V140 Q-80 180 -40 180 H40 Q80 180 80 140 V-150" fill="none" stroke="${C.ink}" stroke-width="8" opacity="0.85"/>
-      <path d="M-76 -40 V140 Q-76 176 -40 176 H40 Q76 176 76 140 V-40Z" fill="url(#gLiquid)"/>
-      <rect x="-96" y="-200" width="192" height="52" rx="14" fill="${C.blue}" fill-opacity="0.25" stroke="${C.blue}" stroke-width="8"/>
-    </g></g>
-  </g>
-
-  <!-- 4 · camp microscòpic -->
-  <circle cx="${s4.x}" cy="${s4.y + VY}" r="520" fill="url(#gHalo)"/>
-  ${f4.svg}
-
-  <!-- 5/6 · normal vs alterat -->
-  ${f5n.svg}
-  ${f5a.svg}
-  ${hl5.map((c, i) => `<circle id="hl5_${i}" cx="${r2(c.wx)}" cy="${r2(c.wy)}" r="${r2(c.r + 18)}" fill="none" stroke="${C.cyan}" stroke-width="4" stroke-dasharray="8 7" opacity="0"/>`).join("")}
-  <g id="mitosis" transform="translate(${s5.x - 420},${s5.y + VY - 40})" opacity="0">
-    <circle r="96" fill="${C.bg2}" opacity="0.9"/>
-    <g id="mitA"><circle r="34" fill="#0F2A36" stroke="${C.cyan}" stroke-width="4"/><circle r="14" fill="${C.violet}"/></g>
-    <g id="mitB"><circle r="34" fill="#0F2A36" stroke="${C.cyan}" stroke-width="4"/><circle r="14" fill="${C.violet}"/></g>
-  </g>
-
-  <!-- 7 · neoplàsia -->
-  <g transform="translate(${s7.x},${s7.y + VY + 60})" filter="url(#glow)">
-    <path d="M-900 180 Q-450 150 0 180 T900 180" stroke="${C.teal}" stroke-width="5" fill="none" opacity="0.8"/>
-    ${Array.from({ length: 16 }, (_, i) => `<g transform="translate(${-840 + i * 112},${150 + Math.sin(i) * 6})"><rect x="-44" y="-26" width="88" height="52" rx="22" fill="${C.teal}" fill-opacity="0.07" stroke="${C.teal}" stroke-width="3" opacity="0.7"/><circle r="12" fill="${C.violet}" fill-opacity="0.6"/></g>`).join("")}
-    <ellipse id="neoHalo" cx="0" cy="-40" rx="380" ry="260" fill="url(#gHalo)" opacity="0"/>
-    ${neo.map((c, i) => cellG(c, C.cyan, i < 4 ? C.cyan : C.blue, `neo${i}`)).join("")}
-    <path id="neoOutline" d="M-330 120 Q-360 -150 -60 -260 Q260 -320 340 -60 Q390 120 300 160" stroke="${C.cyan}" stroke-width="4" stroke-dasharray="10 10" fill="none" opacity="0"/>
-  </g>
-
-  <!-- 8/9 · benigna i maligna -->
-  <g transform="translate(${s8.x - 470},${s8.y + VY})" filter="url(#glow)">
-    <g id="benign">
-      ${benign.map((c) => cellG(c, C.teal, C.teal)).join("")}
-      <ellipse id="capsule" cx="0" cy="0" rx="190" ry="160" fill="none" stroke="${C.teal}" stroke-width="7" pathLength="100" stroke-dasharray="0 100"/>
-    </g>
-    <path d="M-330 240 H330" stroke="${C.teal}" stroke-width="3" opacity="0.4"/>
-  </g>
-  <g transform="translate(${s8.x + 420},${s8.y + VY})" filter="url(#glow)">
-    <path id="vBlood" d="M-460 230 C -200 200, 200 260, 520 220" stroke="${C.blood}" stroke-width="34" stroke-opacity="0.22" fill="none" stroke-linecap="round"/>
-    <path d="M-460 230 C -200 200, 200 260, 520 220" stroke="${C.blood}" stroke-width="4" fill="none" opacity="0.8"/>
-    <path id="vLymph" d="M-460 -250 C -150 -220, 220 -280, 520 -240" stroke="${C.lymph}" stroke-width="30" stroke-opacity="0.2" fill="none" stroke-linecap="round"/>
-    <path d="M-460 -250 C -150 -220, 220 -280, 520 -240" stroke="${C.lymph}" stroke-width="4" fill="none" opacity="0.8"/>
-    <g id="malig" opacity="0">
-      ${tendrils.map((d, i) => `<path id="tend${i}" d="${d}" stroke="${C.red}" stroke-width="10" stroke-linecap="round" fill="none" pathLength="100" stroke-dasharray="0 100" opacity="0.8"/>`).join("")}
-      ${malig.map((c) => cellG(c, C.red, C.red)).join("")}
-    </g>
-    <g id="metB" opacity="0">${cellG({ x: 0, y: 0, r: 14 }, C.red, C.red)}</g>
-    <g id="metL" opacity="0">${cellG({ x: 0, y: 0, r: 14 }, C.red, C.red)}</g>
-  </g>
-
-  <!-- 10 · la biòpsia permet detectar -->
-  ${f10.svg}
-  ${hl10.map((c, i) => `<circle id="hl10_${i}" cx="${r2(c.wx)}" cy="${r2(c.wy)}" r="${r2(c.r + 18)}" fill="none" stroke="${C.cyan}" stroke-width="4" stroke-dasharray="8 7" opacity="0"/>`).join("")}
-  <g transform="translate(${s10.x - 250},${s10.y + VY})"><g id="reticle" opacity="0">
-    <circle r="80" fill="none" stroke="${C.cyan}" stroke-width="4"/>
-    ${glowLine("M-110 0 H-60 M60 0 H110 M0 -110 V-60 M0 60 V110", C.cyan, 4)}
-  </g></g>
-  <g transform="translate(${s10.x + 420},${s10.y + VY - 40})" filter="url(#glow)" id="slide10" opacity="0">
-    <rect x="-190" y="-46" width="380" height="92" rx="10" fill="${C.cyan}" fill-opacity="0.08" stroke="${C.ink}" stroke-width="4" opacity="0.9"/>
-    <ellipse cx="20" cy="0" rx="80" ry="26" fill="${C.pink}" fill-opacity="0.45" stroke="${C.pink}" stroke-width="3"/>
-  </g>
-
-  <!-- 11 · cicle final: lesió → no cicatritza → estudi -->
-  <g transform="translate(${s11.x},${s11.y + VY})" filter="url(#glow)">
-    <g id="cy1" transform="translate(-560,0)" opacity="0">${tongueLine("tg11", 0.62, "les11")}</g>
-    <g id="cy2" transform="translate(0,0)" opacity="0">
-      <circle r="120" fill="none" stroke="${C.blue}" stroke-width="6"/>
-      <circle id="cyArc" r="120" fill="none" stroke="${C.cyan}" stroke-width="10" pathLength="100" stroke-dasharray="0 100" transform="rotate(-90)"/>
-      ${glowLine("M0 0 V-70 M0 0 L50 30", C.ink, 7)}
-    </g>
-    <g id="cy3" transform="translate(560,40) scale(0.62)" opacity="0">${microscope().replace('id="scope"', 'id="scope11"').replace('id="beam"', 'id="beam11"')}</g>
-    <path id="arr1" d="M-330 0 H-170 M-196 -22 L-170 0 L-196 22" stroke="${C.cyan}" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0"/>
-    <path id="arr2" d="M170 0 H330 M304 -22 L330 0 L304 22" stroke="${C.cyan}" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0"/>
-  </g>
+  <!-- 12 · descartar -->
+  <g transform="translate(${en.x - 560},${en.y - 20}) scale(0.62)"><g id="e1" opacity="0"><g filter="url(#shadow)">${tongueReal("tgE")}</g></g></g>
+  <g transform="translate(${en.x},${en.y - 20})">${calendarCard("e2", "calRoll2")}</g>
+  ${photoField("fE", en.x + 560, en.y - 20, 240, "assets/micro/alterat.jpg", { iw: 1280, ih: 964 })}
+  <g transform="translate(${en.x + 560},${en.y - 20})"><g id="ret" opacity="0">
+    <circle r="70" fill="none" stroke="#fff" stroke-width="5"/>
+    <path d="M-100 0 H-50 M50 0 H100 M0 -100 V-50 M0 50 V100" stroke="#fff" stroke-width="5" stroke-linecap="round"/></g></g>
+  <path id="ea1" d="M${en.x - 360} -20 H${en.x - 170} M${en.x - 200} -48 L${en.x - 170} -20 L${en.x - 200} 8" stroke="${C.blue}" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0"/>
+  <path id="ea2" d="M${en.x + 160} -20 H${en.x + 290} M${en.x + 260} -48 L${en.x + 290} -20 L${en.x + 260} 8" stroke="${C.blue}" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0"/>
 </svg>`,
   };
 }
 
 const CSS = `
 #root{position:absolute;inset:0;overflow:hidden;background:${C.bg};font-family:Inter,sans-serif;color:${C.ink}}
-#bgGlow{position:absolute;inset:0;background:radial-gradient(60% 55% at 50% 40%, rgba(59,130,246,.10), rgba(6,10,19,0) 70%),radial-gradient(80% 50% at 50% 115%, rgba(45,212,191,.14), rgba(6,10,19,0) 70%)}
+#bgSoft{position:absolute;inset:0;background:radial-gradient(70% 60% at 60% 45%, #FFFFFF, ${C.bg} 70%)}
 #cam{position:absolute;left:${W / 2}px;top:${H / 2}px;width:0;height:0}
 #zoom,#pan,#bgpan{position:absolute;left:0;top:0;width:0;height:0;transform-origin:0 0}
 .layer{position:absolute;overflow:visible}
-#txt{position:absolute;left:0;right:0;bottom:0;height:300px}
-.ph{position:absolute;left:220px;right:220px;bottom:96px;text-align:center;font-weight:300;font-size:46px;line-height:1.38;letter-spacing:.005em;color:${C.ink};opacity:0}
-.ph .a{color:${C.teal};font-weight:400}
-.ph .w{display:inline-block;white-space:pre}
-#scrim{position:absolute;left:0;right:0;bottom:0;height:340px;background:linear-gradient(to top, rgba(6,10,19,.92), rgba(6,10,19,.75) 55%, rgba(6,10,19,0))}
+.calWin{width:240px;height:180px;overflow:hidden}
+.calRoll div{height:180px;line-height:180px;text-align:center;font:900 120px Inter,sans-serif;color:${C.ink}}
+.kw{position:absolute;font-weight:900;font-size:96px;letter-spacing:-0.02em;line-height:1;white-space:nowrap;opacity:0;display:flex;align-items:center;gap:22px;text-shadow:0 2px 24px rgba(255,255,255,.9)}
+.kw.big{font-size:150px}
+.kw .bar{display:block;width:16px;height:1em;border-radius:8px;background:${C.blue}}
+.kw.tl,.kw.left{left:110px;top:90px}
+.kw.right{right:110px;top:90px;flex-direction:row-reverse}
+.kw.green{color:${C.green}}.kw.green .bar{background:${C.green}}
+.kw.red{color:${C.red}}.kw.red .bar{background:${C.red}}
+.kw.amber{color:#D97706}.kw.amber .bar{background:${C.amber}}
+.kw.teal{color:${C.teal}}.kw.teal .bar{background:${C.teal}}
+.kw .chk{display:grid;place-items:center;width:96px;height:96px;border-radius:50%;background:${C.green};color:#fff;font-size:60px}
+#flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none}
 `;
 
 // ───────────────────────── línia de temps ─────────────────────────
@@ -375,232 +397,184 @@ const set = (sel, vars, t) => T.push(`tl.set(${JSON.stringify(sel)}, ${JSON.stri
 const raw = (s) => T.push(s);
 let wk = 0;
 const whoosh = () => ["whoosh1", "whoosh2", "whoosh3"][wk++ % 3];
-
 let camState = { x: 0, y: 0, s: 1 };
 let lastCam = null;
-function cam(t, x, y, s, dur = TRAVEL, ease = "power2.inOut", opts = {}) {
-  if (lastCam && t < lastCam.t + lastCam.dur) lastCam.tw.forEach((o) => (o.vars.duration = r2(Math.max(0.2, t - lastCam.t))));
+function cam(t, x, y, s, dur = 0.9, ease = "power3.inOut", opts = {}) {
+  if (lastCam && t < lastCam.t + lastCam.dur) lastCam.tw.forEach((o) => (o.vars.duration = r2(Math.max(0.15, t - lastCam.t))));
   const tws = [
     to("#zoom", { scale: s, duration: dur, ease }, t),
     to("#pan", { x: -x, y: -y, duration: dur, ease }, t),
-    to("#bgpan", { x: -x * 0.6, y: -y * 0.6, duration: dur, ease }, t),
+    to("#bgpan", { x: -x * 0.5, y: -y * 0.5, duration: dur, ease }, t),
   ];
   lastCam = { t, dur, tw: tws };
-  if (opts.blur || Math.hypot(x - camState.x, y - camState.y) > 1200) {
-    to("#zoom", { filter: "blur(6px)", duration: dur * 0.45, ease: "power2.in" }, t);
+  if (opts.blur || Math.hypot(x - camState.x, y - camState.y) > 1500) {
+    to("#zoom", { filter: "blur(10px)", duration: dur * 0.45, ease: "power2.in" }, t);
     to("#zoom", { filter: "blur(0px)", duration: dur * 0.5, ease: "power2.out" }, t + dur * 0.45);
-    sfx(whoosh(), t + dur * 0.5, 0.3);
+    sfx(whoosh(), t + dur * 0.5, 0.35);
   }
   camState = { x, y, s };
 }
-const fadeIn = (sel, t, d = 0.8, extra = {}) => fromTo(sel, { opacity: 0 }, { opacity: 1, duration: d, ease: "power2.out", ...extra }, t);
-const draw = (sel, t, d = 1.2) => fromTo(sel, { attr: { "stroke-dashoffset": 1000 } }, { attr: { "stroke-dashoffset": 0 }, duration: d, ease: "power2.inOut" }, t);
+// Cop de zoom curt (punch-in) sobre la càmera; es fa en un embolcall propi per no barallar-se amb cam().
+const punch = (t, s = 1.06) => {
+  to("#punchz", { scale: s, duration: 0.16, ease: "power3.out" }, t);
+  to("#punchz", { scale: 1, duration: 0.5, ease: "power2.inOut" }, t + 0.18);
+};
+const fadeIn = (sel, t, d = 0.5, extra = {}) => fromTo(sel, { opacity: 0 }, { opacity: 1, duration: d, ease: "power2.out", ...extra }, t);
+const pop = (sel, t, extra = {}) => fromTo(sel, { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)", ...extra }, t);
 
-const { svg: WSVG, hl5, hl10, neo } = buildWorld();
+const { svg: WSVG, hl, cmp, altCx, altCy } = world();
 
-raw(`gsap.set(["#lid","#punch","#sample","#mitA","#mitB","#capsule","#cyArc","#scope11"], {svgOrigin:"0 0"});`);
-raw(`gsap.set(["#okRing","#scanRing","#neoHalo","#reticle"], {transformOrigin:"50% 50%"});`);
+raw(`gsap.set(["#mirror","#punch","#cap","#cap2","#divA","#divB","#ben","#mal","#okRing","#alertRing","#ret","#e1","#e2","#calCard","#toothG"], {svgOrigin:"0 0"});`);
+raw(`gsap.set(["#fE"], {svgOrigin:"0 0"});`);
 
-// Text: cada frase entra amb un desenfocament suau paraula a paraula i surt amb una fosa.
-let txtHTML = "";
-PHRASES.forEach((p) => {
-  const ws = p.t.split(/\s+/).map((w, i) => {
-    const clean = w.toLowerCase().replace(/[.,:…’']/g, "");
-    const acc = p.acc.some((a) => clean.includes(a.toLowerCase()));
-    return `<span class="w${acc ? " a" : ""}" id="${p.id}w${i}">${w}</span>`;
-  });
-  txtHTML += `<div class="ph" id="${p.id}">${ws.join(" ")}</div>`;
-  set(`#${p.id}`, { opacity: 1 }, p.start);
-  ws.forEach((_, i) => fromTo(`#${p.id}w${i}`, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.5, ease: "power2.out" }, p.start + i * 0.045));
-  to(`#${p.id}`, { opacity: 0, duration: 0.4, ease: "power2.in" }, p.end - 0.4);
-  set(`#${p.id}`, { opacity: 0 }, p.end);
+// Paraules clau: entren amb un cop (de gran a mida, amb desenfocament) i surten cap amunt.
+let kwHTML = "";
+KW.forEach((k, i) => {
+  const cls = `kw ${k.pos}${k.big ? " big" : ""}${k.tone ? " " + k.tone : ""}`;
+  kwHTML += `<div class="${cls}" id="kw${i}"><span class="bar"></span><span>${k.text}</span>${k.check ? `<span class="chk">✓</span>` : ""}</div>`;
+  fromTo(`#kw${i}`, { opacity: 0, scale: 1.25, y: 30, filter: "blur(12px)" }, { opacity: 1, scale: 1, y: 0, filter: "blur(0px)", duration: 0.38, ease: "power4.out", transformOrigin: k.pos === "right" ? "100% 50%" : "0% 50%" }, k.t);
+  to(`#kw${i}`, { opacity: 0, y: -26, filter: "blur(6px)", duration: 0.26, ease: "power2.in" }, k.t + k.d - 0.26);
+  sfx(i % 2 ? "pop2" : "pop1", k.t + 0.05, 0.3);
 });
 
-// Vida contínua: el fons i el fil es mouen lentament tot el vídeo.
-fromTo("#thread", { attr: { "stroke-dashoffset": 0 } }, { attr: { "stroke-dashoffset": -400 }, duration: DUR, ease: "none" }, 0);
-fromTo("#bgGlow", { opacity: 0.8 }, { opacity: 1, duration: 4, yoyo: true, repeat: Math.ceil(DUR / 4), ease: "sine.inOut" }, 0);
+// ═════ 1 · EXPLORACIÓ → DIAGNÒSTIC ═════
+set("#zoom", { scale: 1.35 }, 0);
+set("#pan", { x: -260, y: 60 }, 0);
+set("#bgpan", { x: -130, y: 30 }, 0);
+camState = { x: 260, y: -60, s: 1.35 };
+cam(0, 120, 30, 1.0, 1.6, "power3.out");
+fromTo("#mirrorWrap", { opacity: 0, x: 520, y: 360 }, { opacity: 1, x: 120, y: 60, duration: 0.8, ease: "power3.out" }, B.s1 + 0.5);
+to("#mirrorWrap", { x: -60, y: -40, duration: 0.7, ease: "sine.inOut" }, B.s1 + 1.3);
+to("#mirrorWrap", { x: r2(LES.x * 1.35 + 30), y: r2(LES.y * 1.35 - 20), duration: 0.6, ease: "sine.inOut" }, B.s1 + 2.0);
+fromTo("#okRing", { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: 0.45, ease: "expo.out" }, B.s1 + 2.15);
+punch(B.s1 + 2.15);
 
-// ═════ 1 · exploració i causa ═════
-{
-  const p1 = PH.f1, p2 = PH.f2;
-  set("#zoom", { scale: 1.08 }, 0);
-  cam(0, S[1].x, S[1].y, 1, 3, "power1.out");
-  draw("#tg1Out", 0.1, 1.6);
-  fadeIn("#les1", 0.9, 0.6);
-  // exploració: el mirall recorre la llengua
-  fromTo("#mirror", { opacity: 0, x: 420, y: 240 }, { opacity: 1, x: 120, y: 40, duration: 0.9, ease: "power3.out" }, p1.start + 0.4);
-  to("#mirror", { x: 230, y: 120, duration: 1.4, ease: "sine.inOut" }, p1.start + 1.5);
-  fromTo("#okRing", { opacity: 0, scale: 0.6 }, { opacity: 0.9, scale: 1, duration: 0.6, ease: "power3.out" }, p1.start + 2.6);
-  sfx("pop1", p1.start + 2.65, 0.25);
-  // «però…»: l'anell s'apaga
-  to("#okRing", { opacity: 0.15, duration: 0.8 }, p1.end - 1.4);
-  to("#mirror", { opacity: 0, x: 420, y: 240, duration: 0.7, ease: "power2.in" }, p1.end - 1.0);
-  // f2: s'elimina la causa (la vora afilada es fa llisa), passa el temps i la lesió no es cura
-  to("#toothSharp", { opacity: 0, duration: 0.6 }, p2.start + 0.6);
-  fromTo("#toothSmooth", { opacity: 0 }, { opacity: 1, duration: 0.6 }, p2.start + 0.6);
-  sfx("click1", p2.start + 0.7, 0.25);
-  to("#okRing", { opacity: 0, duration: 0.3 }, p2.start);
-  fromTo("#timer", { attr: { "stroke-dasharray": "0 100" } }, { attr: { "stroke-dasharray": "100 0" }, duration: 3.0, ease: "none" }, p2.start + 1.4);
-  fromTo("#les1", { scale: 1 }, { scale: 1.15, duration: 0.5, yoyo: true, repeat: 5, ease: "sine.inOut", svgOrigin: "0 0" }, p2.start + 1.6);
-  fromTo("#scanRing", { opacity: 0, scale: 0.7, rotation: 0 }, { opacity: 1, scale: 1, rotation: 90, duration: 1.2, ease: "power2.out" }, p2.start + 4.8);
-  sfx("pop2", p2.start + 4.9, 0.25);
-}
+// ═════ 2 · PERÒ… ═════
+to("#mirrorWrap", { opacity: 0, x: 520, y: 360, duration: 0.5, ease: "power2.in" }, B.s2);
+fromTo("#okRing", { x: 0 }, { x: 8, duration: 0.06, repeat: 7, yoyo: true }, B.s2 + 0.4);
+to("#okRing", { stroke: C.amber, duration: 0.3 }, B.s2 + 0.5);
+cam(B.s2 + 0.3, r2(120 + LES.x * 1.35 - 200), r2(-10 + LES.y * 1.35 - 90), 1.35, 1.4, "power2.inOut");
 
-// ═════ 2 · biòpsia ═════
-{
-  const p3 = PH.f3, p4 = PH.f4;
-  cam(p3.start - TRAVEL, S[2].x, S[2].y, 1);
-  fadeIn("#block", p3.start - 0.4, 0.8);
-  // el punxó baixa, gira i extreu una mostra cilíndrica
-  fromTo("#punch", { opacity: 0, y: -260 }, { opacity: 1, y: 0, duration: 1.0, ease: "power3.out" }, p3.start + 0.6);
-  to("#punch", { y: 70, duration: 0.7, ease: "power2.inOut" }, p3.start + 1.8);
-  to("#punch", { y: -200, duration: 0.9, ease: "power2.inOut" }, p4.start + 0.3);
-  fromTo("#bHole", { opacity: 0 }, { opacity: 1, duration: 0.3 }, p4.start + 0.4);
-  fromTo("#sample", { opacity: 0, x: -50, y: -110 }, { opacity: 1, x: -50, y: -210, duration: 0.9, ease: "power2.inOut" }, p4.start + 0.4);
-  sfx("click1", p4.start + 0.4, 0.3);
-  // la mostra va al recipient de laboratori
-  fadeIn("#vial", p4.start + 0.2, 0.7);
-  to("#punch", { opacity: 0, duration: 0.5 }, p4.start + 1.5);
-  to("#sample", { x: 560, y: -340, duration: 1.1, ease: "power2.inOut" }, p4.start + 1.5);
-  to("#sample", { x: 560, y: 70, duration: 0.8, ease: "power2.in" }, p4.start + 2.7);
-  fromTo(["#bub1", "#bub2"], { opacity: 0, y: 0 }, { opacity: 1, y: -100, duration: 1.1, ease: "power1.out" }, p4.start + 3.4);
-  sfx("pop1", p4.start + 3.45, 0.3);
-  fromTo("#lid", { y: -120, opacity: 0.4 }, { y: 0, opacity: 1, duration: 0.6, ease: "back.out(1.6)" }, p4.start + 4.2);
-  set("#lid", { y: -120 }, 0);
-  sfx("click1", p4.start + 4.75, 0.3);
-}
+// ═════ 3 · CAUSA ELIMINADA → NO ES CURA ═════
+cam(B.s3, 40, 60, 0.92, 0.8, "power3.inOut");
+to("#okRing", { opacity: 0, duration: 0.3 }, B.s3);
+pop("#toothG", B.s3 + 0.2);
+fromTo("#bur", { opacity: 0, y: -120 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, B.s3 + 0.7);
+fromTo("#bur", { x: -4 }, { x: 4, duration: 0.05, repeat: 19, yoyo: true }, B.s3 + 1.1);
+fromTo("#sparks", { opacity: 0 }, { opacity: 1, duration: 0.08, repeat: 9, yoyo: true }, B.s3 + 1.1);
+to("#toothSharp", { opacity: 0, duration: 0.6 }, B.s3 + 1.5);
+fromTo("#toothSmooth", { opacity: 0 }, { opacity: 1, duration: 0.6 }, B.s3 + 1.5);
+to("#bur", { opacity: 0, y: -140, duration: 0.35, ease: "power2.in" }, B.s3 + 2.2);
+sfx("rub", B.s3 + 1.1, 0.25);
+pop("#calCard", B.s3 + 2.7);
+fromTo("#calRoll", { y: 0 }, { y: -180 * 14, duration: 2.2, ease: "steps(14)" }, B.s3 + 2.9);
+fromTo("#tgLes", { scale: 1 }, { scale: 1.12, duration: 0.3, yoyo: true, repeat: 5, svgOrigin: "0 0" }, B.s3 + 3.6);
+fromTo("#alertRing", { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: 0.45, ease: "expo.out" }, B.s3 + 3.6);
+fromTo("#alertRing", { rotation: 0 }, { rotation: 120, duration: 2.6, ease: "none" }, B.s3 + 4.1);
+punch(B.s3 + 3.6, 1.08);
 
-// ═════ 3 · laboratori ═════
-{
-  const p5 = PH.f5;
-  cam(p5.start - TRAVEL, S[3].x, S[3].y, 1);
-  fadeIn("#scope", p5.start - 0.5, 0.9);
-  fromTo("#vial3", { opacity: 0, x: -200 }, { opacity: 1, x: 0, duration: 0.9, ease: "power3.out" }, p5.start - 0.2);
-  // de la mostra al portaobjectes, i a sota del microscopi
-  fromTo("#slide", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, p5.start + 1.0);
-  to("#slide", { x: 480, y: -10, duration: 1.3, ease: "power2.inOut" }, p5.start + 2.0);
-  fromTo("#beam", { opacity: 0 }, { opacity: 0.8, duration: 0.5 }, p5.start + 3.4);
-  sfx("click1", p5.start + 3.4, 0.25);
-}
+// ═════ 4 · BIÒPSIA ═════
+cam(B.s4 - 0.3, P.punch.x - 60, P.punch.y - 60, 1.0, 1.0, "power3.inOut", { blur: true });
+fromTo("#punchWrap", { opacity: 0, y: -300 }, { opacity: 1, y: -60, duration: 0.8, ease: "power3.out" }, B.s4 + 1.0);
+to("#punchWrap", { y: 40, duration: 0.6, ease: "power2.inOut" }, B.s4 + 2.0);
+fromTo("#punchShine", { x: -8 }, { x: 22, duration: 0.25, repeat: 7, yoyo: true, ease: "sine.inOut" }, B.s4 + 2.6);
+sfx("rub", B.s4 + 2.6, 0.25);
+cam(B.s4 + 2.4, P.punch.x - 160, P.punch.y - 160, 1.45, 2.4, "sine.inOut");
 
-// ═════ 4 · camp microscòpic ═════
-{
-  const p6 = PH.f6;
-  // zoom progressiu cap a la mostra i, a través seu, al camp microscòpic
-  const s3 = S[3];
-  cam(p6.start - TRAVEL - 0.6, s3.x - 80 + 20, s3.y + VY + 40 - 30, 5.5, 1.0, "power3.in");
-  cam(p6.start - TRAVEL + 0.4, S[4].x, S[4].y + VY, 1.0, 1.6, "power3.out", { blur: true });
-  fromTo("#fA", { opacity: 0, scale: 0.7, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 1.4, ease: "power3.out" }, p6.start - 1.0);
-  // les capes s'il·luminen de baix a dalt (organització)
-  fromTo("#fA g[id^=fAc]", { opacity: 0.25 }, { opacity: 1, duration: 0.5, stagger: { each: 0.02, from: "end" } }, p6.start + 0.6);
-  cam(p6.start + 2.6, S[4].x, S[4].y + VY + 120, 1.45, 3.5, "sine.inOut");
-}
+// ═════ 5 · MOSTRA DE TEIXIT → flascó ═════
+to("#punchWrap", { y: -380, duration: 0.8, ease: "power2.inOut" }, B.s5);
+fadeIn("#hole", B.s5 + 0.15, 0.3);
+fromTo("#sample", { opacity: 0, y: 0 }, { opacity: 1, y: -300, duration: 0.8, ease: "power2.inOut" }, B.s5 + 0.15);
+sfx("click1", B.s5 + 0.2, 0.3);
+to("#punchWrap", { opacity: 0, duration: 0.4 }, B.s5 + 0.9);
+cam(B.s5 + 0.8, P.punch.x + 240, P.punch.y - 40, 0.95, 1.0, "power3.inOut");
+fadeIn("#vialWrap", B.s5 + 0.9, 0.5);
+set("#cap", { y: -170 }, 0);
+to("#sample", { x: 820, y: -440, duration: 1.0, ease: "power2.inOut" }, B.s5 + 1.3);
+to("#sample", { x: 820, y: 230, duration: 0.7, ease: "power2.in" }, B.s5 + 2.3);
+sfx("pop1", B.s5 + 3.0, 0.3);
+to("#cap", { y: 0, duration: 0.5, ease: "power3.out" }, B.s5 + 3.4);
+sfx("click1", B.s5 + 3.9, 0.35);
+punch(B.s5 + 3.9);
 
-// ═════ 5 · normal vs alterat ═════
-{
-  const p7 = PH.f7, p8 = PH.f8;
-  cam(p7.start - TRAVEL, S[5].x, S[5].y, 1);
-  fromTo("#fN", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 1.0, ease: "power3.out" }, p7.start - 0.4);
-  fromTo("#fX", { opacity: 0, x: 60 }, { opacity: 1, x: 0, duration: 1.0, ease: "power3.out" }, p7.start - 0.1);
-  hl5.forEach((_, i) => {
-    fromTo(`#hl5_${i}`, { opacity: 0, scale: 1.5, transformOrigin: "50% 50%" }, { opacity: 0.9, scale: 1, duration: 0.6, ease: "power3.out" }, p7.start + 2.2 + i * 0.7);
-    sfx("pop2", p7.start + 2.25 + i * 0.7, 0.18);
-  });
-  fromTo("#hl5_0", { rotation: 0 }, { rotation: 60, duration: p8.end - p7.start, ease: "none", transformOrigin: "50% 50%" }, p7.start + 2.8);
-  // f8: comparació (els dos camps s'alternen el focus)
-  to("#fX", { opacity: 0.45, duration: 0.6 }, p8.start + 0.4);
-  to("#fX", { opacity: 1, duration: 0.6 }, p8.start + 2.4);
-  to("#fN", { opacity: 0.45, duration: 0.6 }, p8.start + 2.4);
-  to("#fN", { opacity: 1, duration: 0.6 }, p8.end - 0.8);
-}
+// ═════ 6 · LABORATORI ═════
+cam(B.s6 - 0.4, P.lab.x, P.lab.y + 40, 0.95, 1.0, "power3.inOut", { blur: true });
+fromTo("#vial2", { opacity: 0, x: -200 }, { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, B.s6 + 0.2);
+fromTo("#slideWrap", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, B.s6 + 1.2);
+to("#slideWrap", { x: 410, y: -205, duration: 1.2, ease: "power2.inOut" }, B.s6 + 2.0);
+fromTo("#beam", { opacity: 0 }, { opacity: 0.9, duration: 0.4 }, B.s6 + 3.3);
+sfx("click1", B.s6 + 3.3, 0.3);
+cam(B.s6 + 3.4, P.lab.x + 120, P.lab.y - 20, 1.2, 2.0, "sine.inOut");
 
-// ═════ 6 · divisió controlada ═════
-{
-  const p9 = PH.f9;
-  hl5.forEach((_, i) => to(`#hl5_${i}`, { opacity: 0, duration: 0.4 }, p9.start - 0.2));
-  to("#fX", { opacity: 0.2, duration: 0.8 }, p9.start);
-  cam(p9.start, S[5].x - 420, S[5].y + VY + 40, 1.5, 1.4, "power2.inOut");
-  fadeIn("#mitosis", p9.start + 0.8, 0.5);
-  // una cèl·lula es divideix en dues, ordenadament
-  fromTo("#mitA", { x: 0, scaleX: 1 }, { x: -40, scaleX: 0.9, duration: 1.4, ease: "power2.inOut" }, p9.start + 1.6);
-  fromTo("#mitB", { x: 0, scaleX: 1 }, { x: 40, scaleX: 0.9, duration: 1.4, ease: "power2.inOut" }, p9.start + 1.6);
-  to(["#mitA", "#mitB"], { scaleX: 1, duration: 0.6 }, p9.start + 3.0);
-  sfx("pop1", p9.start + 3.0, 0.2);
-  to("#mitosis", { opacity: 0, duration: 0.6 }, p9.end - 0.4);
-}
+// ═════ 7 · ZOOM AL CAMP MICROSCÒPIC ═════
+cam(B.s7 - 0.6, P.lab.x + 150, P.lab.y + 85, 6, 0.7, "power3.in");
+fromTo("#flash", { opacity: 0 }, { opacity: 0.9, duration: 0.16 }, B.s7 - 0.05);
+to("#flash", { opacity: 0, duration: 0.45 }, B.s7 + 0.15);
+set("#zoom", { scale: 0.75 }, B.s7 + 0.12);
+set("#pan", { x: -P.micro.x, y: -(P.micro.y + 30) }, B.s7 + 0.12);
+set("#bgpan", { x: -P.micro.x * 0.5, y: -(P.micro.y + 30) * 0.5 }, B.s7 + 0.12);
+camState = { x: P.micro.x, y: P.micro.y + 30, s: 0.75 };
+lastCam = null;
+cam(B.s7 + 0.12, P.micro.x, P.micro.y - 20, 1.0, 1.6, "power3.out");
+set("#fHigh", { opacity: 0 }, 0);
+fromTo("#fLowImg", { scale: 1, svgOrigin: "0 0" }, { scale: 2.4, duration: 3.0, ease: "power1.in", svgOrigin: "0 0" }, B.s7 + 0.8);
+fromTo("#fHigh", { opacity: 0 }, { opacity: 1, duration: 0.9 }, B.s7 + 3.2);
+fromTo("#fHighImg", { scale: 1.3, svgOrigin: "0 0" }, { scale: 1.0, duration: 2.6, ease: "power2.out", svgOrigin: "0 0" }, B.s7 + 3.2);
 
-// ═════ 7 · neoplàsia ═════
-{
-  const p10 = PH.f10;
-  cam(p10.start - TRAVEL, S[7].x, S[7].y, 1);
-  // multiplicació descontrolada: cada vegada en surten més i més de pressa
-  neo.forEach((c, i) => {
-    const t = p10.start + 0.6 + Math.sqrt(i / neo.length) * 5.5;
-    fromTo(`#neo${i}`, { opacity: 0, scale: 0.2, svgOrigin: `${r2(c.x)} ${r2(c.y)}` }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }, t);
-  });
-  [0, 1.6, 3.0, 4.2, 5.2].forEach((d) => sfx("pop2", p10.start + 0.6 + d, 0.15));
-  fromTo("#neoHalo", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 5.5, ease: "power1.in" }, p10.start + 0.8);
-  fromTo("#neoOutline", { opacity: 0 }, { opacity: 1, duration: 0.8 }, p10.start + 6.6);
-  cam(p10.start + 1.0, S[7].x, S[7].y + 20, 1.18, 6, "sine.inOut");
-}
+// ═════ 8 · NORMAL vs ALTERADES ═════
+cam(B.s8 - 0.3, cmp.x, cmp.y, 1.0, 0.9, "power3.inOut", { blur: true });
+fromTo("#fN", { opacity: 0, x: -80 }, { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, B.s8 + 0.3);
+fromTo("#fX", { opacity: 0, x: 80 }, { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, B.s8 + 1.4);
+hl.forEach((_, i) => {
+  fromTo(`#hl${i}`, { opacity: 0, scale: 1.8, transformOrigin: "50% 50%" }, { opacity: 0.95, scale: 1, duration: 0.45, ease: "power3.out" }, B.s8 + 2.6 + i * 0.6);
+  sfx("pop2", B.s8 + 2.65 + i * 0.6, 0.18);
+});
+cam(B.s8 + 2.4, altCx - 60, altCy - 60, 1.25, 2.6, "sine.inOut");
 
-// ═════ 8/9 · benigna i maligna ═════
-{
-  const p11 = PH.f11, p12 = PH.f12, p13 = PH.f13;
-  cam(p11.start - TRAVEL, S[8].x, S[8].y, 1);
-  fromTo("#benign", { opacity: 0, scale: 0.5, svgOrigin: "0 0" }, { opacity: 1, scale: 0.8, duration: 0.9, ease: "power3.out" }, p11.start + 0.2);
-  fromTo("#malig", { opacity: 0, scale: 0.5, svgOrigin: "0 0" }, { opacity: 1, scale: 0.8, duration: 0.9, ease: "power3.out" }, p11.start + 0.5);
-  sfx("pop1", p11.start + 0.3, 0.2);
-  sfx("pop2", p11.start + 0.6, 0.2);
-  // benigna: creix una mica i s'atura dins la càpsula
-  to("#malig", { opacity: 0.25, duration: 0.6 }, p12.start);
-  to("#benign", { scale: 1, duration: 2.2, ease: "power2.out" }, p12.start + 0.4);
-  to("#capsule", { attr: { "stroke-dasharray": "100 0" }, duration: 1.6, ease: "power2.inOut" }, p12.start + 1.4);
-  fromTo("#capsule", { scale: 1.03 }, { scale: 1, duration: 0.3, yoyo: true, repeat: 3 }, p12.start + 3.2);
-  // maligna: envaeix el voltant i passa a la sang i a la limfa
-  to("#benign", { opacity: 0.3, duration: 0.6 }, p13.start);
-  to("#malig", { opacity: 1, scale: 1, duration: 1.2, ease: "power2.out" }, p13.start + 0.2);
-  [0, 1, 2, 3, 4].forEach((i) => to(`#tend${i}`, { attr: { "stroke-dasharray": "100 0" }, duration: 1.6, ease: "power2.out" }, p13.start + 1.2 + i * 0.35));
-  fromTo("#metB", { opacity: 0 }, { opacity: 1, duration: 0.3 }, p13.start + 4.4);
-  fromTo("#metB", { x: 40, y: 230 }, { x: 560, y: 220, duration: 3.6, ease: "power1.in" }, p13.start + 4.4);
-  fromTo("#metL", { opacity: 0 }, { opacity: 1, duration: 0.3 }, p13.start + 5.4);
-  fromTo("#metL", { x: 20, y: -250 }, { x: 560, y: -240, duration: 3.4, ease: "power1.in" }, p13.start + 5.4);
-  to(["#metB", "#metL"], { opacity: 0, duration: 0.4 }, p13.end - 0.6);
-  sfx("whoosh3", p13.start + 6.5, 0.15);
-  cam(p13.start + 0.2, S[8].x + 260, S[8].y + VY / 2, 1.1, 2.0, "power2.inOut");
-}
+// ═════ 9 · DIVISIÓ CONTROLADA ═════
+cam(B.s9 - 0.3, P.cells.x, P.cells.y + 40, 1.15, 0.9, "power3.inOut", { blur: true });
+set("#row6", { opacity: 0 }, B.s9 + 0.8);
+set(["#divA", "#divB"], { opacity: 1, x: ROW[6].x, y: ROW[6].y }, B.s9 + 0.8);
+to("#divA", { x: ROW[6].x - 32, scaleX: 0.72, duration: 1.2, ease: "power2.inOut" }, B.s9 + 1.0);
+to("#divB", { x: ROW[6].x + 32, scaleX: 0.72, duration: 1.2, ease: "power2.inOut" }, B.s9 + 1.0);
+ROW.forEach((c, i) => { if (i !== 6) to(`#row${i}`, { x: (i < 6 ? -1 : 1) * 30, duration: 1.2, ease: "power2.inOut" }, B.s9 + 1.0); });
+sfx("pop1", B.s9 + 2.2, 0.2);
 
-// ═════ 10 · la biòpsia permet detectar ═════
-{
-  const p14 = PH.f14;
-  cam(p14.start - TRAVEL, S[10].x, S[10].y, 1);
-  fadeIn("#slide10", p14.start - 0.3, 0.8);
-  fadeIn("#fZ", p14.start + 0.4, 1.0);
-  fadeIn("#reticle", p14.start + 1.4, 0.5);
-  hl10.forEach((c, i) => {
-    const t = p14.start + 2.2 + i * 1.5;
-    to("#reticle", { x: r2(c.wx - (S[10].x - 250)), y: r2(c.wy - (S[10].y + VY)), duration: 0.9, ease: "power2.inOut" }, t);
-    fromTo(`#hl10_${i}`, { opacity: 0, scale: 1.5, transformOrigin: "50% 50%" }, { opacity: 0.9, scale: 1, duration: 0.5, ease: "power3.out" }, t + 0.8);
-    sfx("pop2", t + 0.85, 0.18);
-  });
-}
+// ═════ 10 · NEOPLÀSIA ═════
+NEO.forEach((c, i) => {
+  const t = B.s10 + 0.4 + Math.sqrt(i / NEO.length) * 3.6;
+  fromTo(`#neo${i}`, { opacity: 0, scale: 0.15, svgOrigin: "0 0" }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2)" }, t);
+});
+[0, 1, 1.8, 2.5, 3.0, 3.4].forEach((d) => sfx("pop2", B.s10 + 0.4 + d, 0.14));
+cam(B.s10 + 0.3, P.cells.x, P.cells.y - 60, 1.0, 4.2, "sine.inOut");
+punch(B.s10 + 4.0, 1.07);
 
-// ═════ 11 · cicle final ═════
-{
-  const p15 = PH.f15;
-  cam(p15.start - TRAVEL, S[11].x, S[11].y, 1);
-  fadeIn("#cy1", p15.start + 0.2, 0.8);
-  draw("#tg11Out", p15.start + 0.2, 1.2);
-  fadeIn("#arr1", p15.start + 1.8, 0.5);
-  fadeIn("#cy2", p15.start + 2.2, 0.6);
-  fromTo("#cyArc", { attr: { "stroke-dasharray": "0 100" } }, { attr: { "stroke-dasharray": "100 0" }, duration: 2.4, ease: "none" }, p15.start + 2.6);
-  fromTo("#les11", { scale: 1 }, { scale: 1.2, duration: 0.5, yoyo: true, repeat: 3, svgOrigin: "0 0" }, p15.start + 3.0);
-  fadeIn("#arr2", p15.start + 5.2, 0.5);
-  fadeIn("#cy3", p15.start + 5.6, 0.8);
-  fromTo("#beam11", { opacity: 0 }, { opacity: 0.8, duration: 0.5 }, p15.start + 6.6);
-  sfx("pop1", p15.start + 6.6, 0.2);
-  cam(p15.start + 0.4, S[11].x, S[11].y + 20, 1.06, p15.end - p15.start + 1.6, "sine.inOut");
-}
+// ═════ 11 · BENIGNA / MALIGNA ═════
+cam(B.s11 - 0.3, P.types.x, P.types.y, 0.92, 0.9, "power3.inOut", { blur: true });
+fromTo("#ben", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 0.85, duration: 0.7, ease: "power3.out" }, B.s11 + 0.3);
+to("#ben", { scale: 1, duration: 1.6, ease: "power2.out" }, B.s11 + 1.0);
+fromTo("#capsule", { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "power3.out" }, B.s11 + 1.2);
+fromTo("#mal", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.8, ease: "power3.out" }, B.s11 + 1.8);
+INV.forEach((c, i) => fromTo(`#inv${i}`, { opacity: 0, x: r2(-c.x * 0.6), y: r2(-c.y * 0.6) }, { opacity: 1, x: r2(c.x * 0.5), y: r2(c.y * 0.5), duration: 1.4, ease: "power2.out" }, B.s11 + 2.4 + i * 0.12));
+for (let i = 0; i < 7; i++) fromTo(`#rbc${i}`, { x: 0 }, { x: 120, duration: 1.6, ease: "none", repeat: 2 }, B.s11 + 0.2);
+fromTo("#metB", { opacity: 0, x: 60, y: 200 }, { opacity: 1, x: 120, y: 256, duration: 0.6, ease: "power2.in" }, B.s11 + 3.2);
+to("#metB", { x: 460, y: 250, duration: 1.4, ease: "power1.in" }, B.s11 + 3.8);
+fromTo("#metL", { opacity: 0, x: 40, y: -180 }, { opacity: 1, x: 100, y: -296, duration: 0.6, ease: "power2.in" }, B.s11 + 3.5);
+to("#metL", { x: 460, y: -290, duration: 1.3, ease: "power1.in" }, B.s11 + 4.1);
+cam(B.s11 + 2.0, P.types.x + 300, P.types.y, 1.05, 3.0, "sine.inOut");
+
+// ═════ 12 · DESCARTAR ═════
+cam(B.s12 - 0.3, P.end.x, P.end.y - 20, 1.0, 0.9, "power3.inOut", { blur: true });
+pop("#e1", B.s12 + 0.2);
+fadeIn("#ea1", B.s12 + 0.9, 0.3);
+pop("#e2", B.s12 + 1.1);
+fromTo("#calRoll2", { y: 0 }, { y: -180 * 14, duration: 1.2, ease: "steps(14)" }, B.s12 + 1.3);
+fadeIn("#ea2", B.s12 + 2.0, 0.3);
+pop("#fE", B.s12 + 2.2);
+fromTo("#ret", { opacity: 0, scale: 1.5 }, { opacity: 1, scale: 1, duration: 0.4, ease: "expo.out" }, B.s12 + 2.9);
+to("#ret", { x: 60, y: 40, duration: 0.7, ease: "power2.inOut" }, B.s12 + 3.4);
+punch(B.s12 + 2.9, 1.05);
+cam(B.s12 + 1.0, P.end.x + 40, P.end.y - 20, 1.06, 3.5, "sine.inOut");
 
 // ───────────────────────── escriptura ─────────────────────────
 function serialize() {
@@ -622,20 +596,23 @@ function serialize() {
     : `tl.to(${JSON.stringify(o.sel)}, ${JSON.stringify(o.vars)}, ${r2(o.t)});`).join("\n    ");
 }
 
-const bgDots = `<svg class="layer" style="left:-3000px;top:-2000px" width="28000" height="4000" viewBox="-3000 -2000 28000 4000">
-  <defs><pattern id="gDots" width="64" height="64" patternUnits="userSpaceOnUse"><circle cx="32" cy="32" r="2.4" fill="${C.grid}"/></pattern></defs>
-  <rect x="-3000" y="-2000" width="28000" height="4000" fill="url(#gDots)"/></svg>`;
+const bgDots = `<svg class="layer" style="left:-3000px;top:-2000px" width="30000" height="4000" viewBox="-3000 -2000 30000 4000">
+  <defs><pattern id="gDots" width="60" height="60" patternUnits="userSpaceOnUse"><circle cx="30" cy="30" r="2.6" fill="#DCE3EC"/></pattern></defs>
+  <rect x="-3000" y="-2000" width="30000" height="4000" fill="url(#gDots)"/></svg>`;
 
 fs.writeFileSync(path.join(ROOT, "compositions/world.html"), `<template>
-  <style>${CSS}</style>
+  <style>${CSS}
+#punchz{position:absolute;left:${W / 2}px;top:${H / 2}px;width:0;height:0}
+#punchz>#cam{left:0;top:0}
+  </style>
   <div id="root" data-composition-id="world" data-width="${W}" data-height="${H}">
-    <div id="bgGlow"></div>
-    <div id="cam"><div id="zoom">
+    <div id="bgSoft"></div>
+    <div id="punchz"><div id="cam"><div id="zoom">
       <div id="bgpan">${bgDots}</div>
       <div id="pan">${WSVG}</div>
-    </div></div>
-    <div id="scrim"></div>
-    <div id="txt">${txtHTML}</div>
+    </div></div></div>
+    <div id="kws">${kwHTML}</div>
+    <div id="flash"></div>
   </div>
   <script>
     const tl = gsap.timeline({ paused: true });
@@ -671,4 +648,3 @@ fs.writeFileSync(path.join(ROOT, "index.html"), `<!doctype html>
 </html>
 `);
 console.log(`OK · ${DUR}s · ${T.length} instruccions · ${SFX.length} efectes`);
-console.log(PHRASES.map((p) => `${p.id} ${p.start}-${p.end}`).join(" | "));
