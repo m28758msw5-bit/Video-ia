@@ -1,23 +1,27 @@
 {
-  "missing": [],
+  "missing": [
+    "al",
+    "té",
+    "per"
+  ],
   "extra": [
-    "«a» (30.97 s)",
-    "«de» (36.96 s)",
-    "«de» (46.66 s)"
+    "«1.» (3.73 s)",
+    "«a» (33.76 s)",
+    "«de» (40.17 s)",
+    "«de» (50.71 s)"
   ],
   "changed": [
-    "«D'on» → s'ha sentit «Doncs» (2.26 s)",
-    "«surt?» → s'ha sentit «1.» (2.72 s)",
-    "«u:» → s'ha sentit «1.» (3.27 s)",
-    "«l'anamnesi.» → s'ha sentit «L'anènesi.» (3.74 s)",
-    "«dos:» → s'ha sentit «2.» (12.82 s)",
-    "«dents» → s'ha sentit «tens» (32.68 s)",
-    "«irregular.» → s'ha sentit «volar.» (37.12 s)",
-    "«frega» → s'ha sentit «freja» (38.08 s)",
-    "«tres:» → s'ha sentit «3.» (40.20 s)",
-    "«Respostes» → s'ha sentit «Despostes» (42.38 s)",
-    "«fregament» → s'ha sentit «frejament» (46.24 s)",
-    "«repetit» → s'ha sentit «petit» (46.78 s)",
-    "«dent» → s'ha sentit «adena» (47.55 s)"
+    "«u:» → s'ha sentit «La» (4.32 s)",
+    "«l'anamnesi.» → s'ha sentit «anènesi.» (4.52 s)",
+    "«dos:» → s'ha sentit «2.» (14.50 s)",
+    "«dents» → s'ha sentit «tens» (35.56 s)",
+    "«la» → s'ha sentit «tela» (38.77 s)",
+    "«irregular.» → s'ha sentit «gulà.» (40.44 s)",
+    "«frega» → s'ha sentit «freja» (41.46 s)",
+    "«tres:» → s'ha sentit «3.» (43.80 s)",
+    "«Respostes» → s'ha sentit «Vespostes» (46.06 s)",
+    "«fregament» → s'ha sentit «Perfrejament» (50.26 s)",
+    "«repetit» → s'ha sentit «petit» (50.86 s)",
+    "«dent» → s'ha sentit «adena» (51.74 s)"
   ]
 }

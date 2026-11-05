@@ -65,7 +65,7 @@ const C = {
   teal: "#14B8A6",
   tealD: "#0F8F84",
   red: "#E11D48",
-  green: "#16A34A",
+  green: "#15803D",
   skinP: "#EDB88B",
   skinD: "#B97A56",
   hairP: "#4A3222",
@@ -86,7 +86,7 @@ const MOUTH = { x: HEAD.x - 26, y: HEAD.y - 54 }; // boca del pacient
 const K = 0.16; // escala de la làmina de la boca dins del món
 const PL = (lx, ly) => ({ x: MOUTH.x + lx * K, y: MOUTH.y + ly * K }); // local → món
 const MON = { x: 860, y: -220, w: 400, h: 260 }; // pantalla de l'ordinador
-const TAG = { a: { x: 120, y: -585 }, b: { x: 360, y: -735 }, c: { x: 580, y: -560 } };
+const TAG = { a: { x: 120, y: -585 }, b: { x: 360, y: -735 }, c: { x: 600, y: -440 } };
 const TRAIL = `M${TAG.a.x + 90} ${TAG.a.y - 40} C ${TAG.a.x + 120} ${TAG.a.y - 160}, ${TAG.b.x - 60} ${TAG.b.y + 40}, ${TAG.b.x + 40} ${TAG.b.y + 30} C ${TAG.b.x + 300} ${TAG.b.y + 20}, ${TAG.c.x - 40} ${TAG.c.y - 200}, ${TAG.c.x + 60} ${TAG.c.y - 40}`;
 
 // Dents (làmina de la boca, coordenades locals).
@@ -799,7 +799,7 @@ set("#dArmBF", { rotation: 4 }, 0);
   // «Tot va a la història clínica»
   const tTot = P("tot");
   cam(tTot - 0.05, MON.x - 30, MON.y + 10, 2.45, 0.8);
-  to(["#qBubble", "#aBubble"], { opacity: 0, duration: 0.25 }, tTot + 0.2);
+  to(["#qBubble", "#aBubble"], { opacity: 0, duration: 0.25 }, tTot + 0.45);
   to("#dHead", { rotation: 4, duration: 0.4, ease: "power2.inOut" }, tTot);
   to("#dArmFU", { rotation: -38, duration: 0.5, ease: "power2.inOut" }, tTot);
   to("#dArmFF", { rotation: -50, duration: 0.5, ease: "power2.inOut" }, tTot);
@@ -1014,15 +1014,15 @@ const plateCam = (t, lx, ly, f = 1, dur = 0.7, ease = "power2.inOut", opts = {})
 
   // «I li explica els resultats al pacient.»
   const tX = P("explica");
-  cam(tX - 0.2, 560, -150, 1.0, 0.9);
+  cam(tX - 0.2, 590, -150, 0.96, 0.9);
   to("#cone", { opacity: 0, duration: 0.4 }, tX);
   to("#lampFace", { fill: "#CBD5E1", duration: 0.3 }, tX);
   to("#lamp", { rotation: 40, duration: 0.8, ease: "power2.inOut" }, tX);
   to("#dHead", { rotation: -12, duration: 0.4 }, tX);
   to("#dArmBU", { rotation: -70, duration: 0.5, ease: "back.out(1.5)" }, tX + 0.1);
   to("#dArmBF", { rotation: -30, duration: 0.5, ease: "back.out(1.5)" }, tX + 0.1);
-  to("#dArmFU", { rotation: 14, duration: 0.5, ease: "power2.inOut" }, P("resultats"));
-  to("#dArmFF", { rotation: 38, duration: 0.5, ease: "back.out(1.6)" }, P("resultats"));
+  to("#dArmFU", { rotation: -4, duration: 0.5, ease: "power2.inOut" }, P("resultats"));
+  to("#dArmFF", { rotation: 22, duration: 0.5, ease: "back.out(1.6)" }, P("resultats"));
   to("#dTorso", { rotation: -2, duration: 0.5 }, P("resultats"));
   // el pacient assenteix i somriu
   const tPa = P("pacient");
@@ -1176,7 +1176,7 @@ const index = `<!doctype html>
     <script>
       const tl = gsap.timeline({ paused: true });
       const vars = (window.__hyperframes && window.__hyperframes.getVariables && window.__hyperframes.getVariables()) || {};
-      if (vars.captions === false) tl.set("#captions", { opacity: 0 }, 0);
+      if (vars.captions === false) { gsap.set("#captions", { opacity: 0 }); tl.set("#captions", { opacity: 0 }, 0.001); }
       window.__timelines["main"] = tl;
     </script>
   </body>

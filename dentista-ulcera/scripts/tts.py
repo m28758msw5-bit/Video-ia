@@ -11,8 +11,8 @@ from piper.config import SynthesisConfig
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 MODEL = ROOT / "audio/tts-model/ca_ES-upc_ona-medium.onnx"
-GAP = 0.25
-LENGTH_SCALE = 0.98  # ritme natural de la veu (1 = normal); fixat perquè el vídeo duri ~56 s
+GAP = 0.38  # pausa entre frases
+LENGTH_SCALE = 1.10  # ritme de la veu (1 = normal, més gran = més pausat)
 
 lines = [l.strip() for l in open(sys.argv[1] if len(sys.argv) > 1 else ROOT / "guion.txt", encoding="utf8") if l.strip()]
 voice = PiperVoice.load(str(MODEL))

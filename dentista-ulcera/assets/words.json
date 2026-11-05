@@ -2,946 +2,946 @@
  {
   "text": "Una",
   "line": 0,
-  "start": 0.16,
-  "end": 0.22,
+  "start": 0.15,
+  "end": 0.2,
   "heard": "Una"
  },
  {
   "text": "ferida",
   "line": 0,
-  "start": 0.22,
-  "end": 0.66,
+  "start": 0.2,
+  "end": 0.6,
   "heard": "ferida"
  },
  {
   "text": "a",
   "line": 0,
-  "start": 0.66,
-  "end": 0.73,
+  "start": 0.6,
+  "end": 0.66,
   "heard": "a"
  },
  {
   "text": "la",
   "line": 0,
-  "start": 0.73,
-  "end": 0.87,
+  "start": 0.66,
+  "end": 0.79,
   "heard": "la"
  },
  {
   "text": "llengua",
   "line": 0,
-  "start": 0.87,
-  "end": 1.37,
+  "start": 0.79,
+  "end": 1.24,
   "heard": "llengua"
  },
  {
   "text": "que",
   "line": 0,
-  "start": 1.37,
-  "end": 1.59,
+  "start": 1.26,
+  "end": 1.37,
   "heard": "que"
  },
  {
   "text": "no",
   "line": 0,
-  "start": 1.59,
-  "end": 1.73,
+  "start": 1.48,
+  "end": 1.58,
   "heard": "no"
  },
  {
   "text": "es",
   "line": 0,
-  "start": 1.73,
-  "end": 1.85,
+  "start": 1.58,
+  "end": 1.71,
   "heard": "es"
  },
  {
   "text": "cura.",
   "line": 0,
-  "start": 1.93,
-  "end": 2.26,
+  "start": 1.71,
+  "end": 2.16,
   "heard": "cura."
  },
  {
   "text": "D'on",
   "line": 1,
-  "start": 2.26,
-  "end": 2.72,
-  "heard": "Doncs"
+  "start": 2.16,
+  "end": 2.81,
+  "heard": "D'on"
  },
  {
   "text": "surt?",
   "line": 1,
-  "start": 2.72,
-  "end": 3.04,
-  "heard": "1."
+  "start": 2.81,
+  "end": 3.17,
+  "heard": "surt?"
  },
  {
   "text": "Pas",
   "line": 2,
-  "start": 3.04,
-  "end": 3.27,
+  "start": 3.58,
+  "end": 3.6,
   "heard": "Pas"
  },
  {
   "text": "u:",
   "line": 2,
-  "start": 3.27,
-  "end": 3.74,
-  "heard": "1."
+  "start": 4.32,
+  "end": 4.52,
+  "heard": "La"
  },
  {
   "text": "l'anamnesi.",
   "line": 2,
-  "start": 3.74,
-  "end": 4.77,
-  "heard": "L'anènesi."
+  "start": 4.52,
+  "end": 5.24,
+  "heard": "anènesi."
  },
  {
   "text": "Quan",
   "line": 3,
-  "start": 4.77,
-  "end": 4.995,
+  "start": 5.24,
+  "end": 5.525,
   "heard": "Quan"
  },
  {
   "text": "va",
   "line": 3,
-  "start": 4.995,
-  "end": 5.22,
+  "start": 5.525,
+  "end": 5.81,
   "heard": "va"
  },
  {
   "text": "sortir?",
   "line": 3,
-  "start": 5.22,
-  "end": 5.77,
+  "start": 5.81,
+  "end": 6.4,
   "heard": "sortir?"
  },
  {
   "text": "Et",
   "line": 3,
-  "start": 5.77,
-  "end": 5.9,
+  "start": 6.4,
+  "end": 6.54,
   "heard": "Et"
  },
  {
   "text": "fa",
   "line": 3,
-  "start": 5.9,
-  "end": 6.03,
+  "start": 6.54,
+  "end": 6.68,
   "heard": "fa"
  },
  {
   "text": "mal?",
   "line": 3,
-  "start": 6.03,
-  "end": 6.46,
+  "start": 6.68,
+  "end": 7.11,
   "heard": "mal?"
  },
  {
   "text": "N'havies",
   "line": 4,
-  "start": 6.46,
-  "end": 6.9,
+  "start": 7.56,
+  "end": 7.7,
   "heard": "N'havies"
  },
  {
   "text": "tingut",
   "line": 4,
-  "start": 6.99,
-  "end": 7.27,
+  "start": 7.71,
+  "end": 8.15,
   "heard": "tingut"
  },
  {
   "text": "abans?",
   "line": 4,
-  "start": 7.48,
-  "end": 7.89,
+  "start": 8.15,
+  "end": 8.8,
   "heard": "abans?"
  },
  {
   "text": "Prens",
   "line": 4,
-  "start": 8.02,
-  "end": 8.19,
+  "start": 8.92,
+  "end": 9.07,
   "heard": "Prens"
  },
  {
   "text": "medicació?",
   "line": 4,
-  "start": 8.19,
-  "end": 8.88,
+  "start": 9.07,
+  "end": 9.78,
   "heard": "medicació?"
  },
  {
   "text": "Malalties?",
   "line": 5,
-  "start": 8.88,
-  "end": 9.56,
+  "start": 9.78,
+  "end": 10.59,
   "heard": "Malalties?"
  },
  {
   "text": "Al·lèrgies?",
   "line": 5,
-  "start": 9.56,
-  "end": 10.23,
+  "start": 10.59,
+  "end": 11.5,
   "heard": "Al·lèrgies?"
  },
  {
   "text": "Tot",
   "line": 6,
-  "start": 10.23,
-  "end": 10.473,
+  "start": 11.5,
+  "end": 11.683,
   "heard": "Tot"
  },
  {
   "text": "va",
   "line": 6,
-  "start": 10.473,
-  "end": 10.717,
+  "start": 11.683,
+  "end": 11.865,
   "heard": "va"
  },
  {
   "text": "a",
   "line": 6,
-  "start": 10.717,
-  "end": 10.96,
+  "start": 11.865,
+  "end": 12.048,
   "heard": "a"
  },
  {
   "text": "la",
   "line": 6,
-  "start": 10.96,
-  "end": 11,
+  "start": 12.048,
+  "end": 12.23,
   "heard": "la"
  },
  {
   "text": "història",
   "line": 6,
-  "start": 11,
-  "end": 11.62,
+  "start": 12.23,
+  "end": 12.97,
   "heard": "història"
  },
  {
   "text": "clínica.",
   "line": 6,
-  "start": 11.62,
-  "end": 12.44,
+  "start": 12.97,
+  "end": 13.86,
   "heard": "clínica."
  },
  {
   "text": "Pas",
   "line": 7,
-  "start": 12.44,
-  "end": 12.82,
+  "start": 13.86,
+  "end": 14.5,
   "heard": "Pas"
  },
  {
   "text": "dos:",
   "line": 7,
-  "start": 12.82,
-  "end": 13.01,
+  "start": 14.5,
+  "end": 14.75,
   "heard": "2."
  },
  {
   "text": "l'exploració.",
   "line": 7,
-  "start": 13.01,
-  "end": 14,
+  "start": 14.8,
+  "end": 16.16,
   "heard": "L'exploració."
  },
  {
   "text": "Llum",
   "line": 8,
-  "start": 14,
-  "end": 14.96,
+  "start": 16.16,
+  "end": 16.83,
   "heard": "Llum"
  },
  {
   "text": "encès,",
   "line": 8,
-  "start": 14.96,
-  "end": 15.1,
-  "heard": "encès."
+  "start": 16.83,
+  "end": 17.44,
+  "heard": "encès,"
  },
  {
   "text": "obre",
   "line": 8,
-  "start": 15.12,
-  "end": 15.46,
-  "heard": "Obre"
+  "start": 17.44,
+  "end": 17.79,
+  "heard": "obre"
  },
  {
   "text": "la",
   "line": 8,
-  "start": 15.48,
-  "end": 15.65,
+  "start": 17.79,
+  "end": 17.97,
   "heard": "la"
  },
  {
   "text": "boca",
   "line": 8,
-  "start": 15.65,
-  "end": 16.02,
+  "start": 17.97,
+  "end": 18.34,
   "heard": "boca"
  },
  {
   "text": "i",
   "line": 8,
-  "start": 16.02,
-  "end": 16.11,
+  "start": 18.34,
+  "end": 18.39,
   "heard": "i"
  },
  {
   "text": "mirada",
   "line": 8,
-  "start": 16.11,
-  "end": 16.67,
+  "start": 18.39,
+  "end": 18.72,
   "heard": "mirada"
  },
  {
   "text": "general.",
   "line": 8,
-  "start": 16.67,
-  "end": 17.66,
+  "start": 18.72,
+  "end": 19.34,
   "heard": "general."
  },
  {
   "text": "Amb",
   "line": 9,
-  "start": 17.66,
-  "end": 17.93,
+  "start": 19.34,
+  "end": 19.645,
   "heard": "Amb"
  },
  {
   "text": "el",
   "line": 9,
-  "start": 17.93,
-  "end": 18.2,
+  "start": 19.645,
+  "end": 19.95,
   "heard": "el"
  },
  {
   "text": "mirall,",
   "line": 9,
-  "start": 18.2,
-  "end": 18.53,
+  "start": 19.95,
+  "end": 20.33,
   "heard": "mirall,"
  },
  {
   "text": "la",
   "line": 9,
-  "start": 18.53,
-  "end": 18.67,
+  "start": 20.33,
+  "end": 20.48,
   "heard": "la"
  },
  {
   "text": "llengua",
   "line": 9,
-  "start": 18.67,
-  "end": 19.14,
+  "start": 20.48,
+  "end": 21.01,
   "heard": "llengua"
  },
  {
   "text": "per",
   "line": 9,
-  "start": 19.14,
-  "end": 19.34,
+  "start": 21.01,
+  "end": 21.21,
   "heard": "per"
  },
  {
   "text": "dalt,",
   "line": 9,
-  "start": 19.34,
-  "end": 19.74,
+  "start": 21.31,
+  "end": 21.78,
   "heard": "dalt,"
  },
  {
   "text": "pels",
   "line": 9,
-  "start": 19.74,
-  "end": 19.98,
+  "start": 21.78,
+  "end": 21.99,
   "heard": "pels"
  },
  {
   "text": "costats",
   "line": 9,
-  "start": 20,
-  "end": 20.48,
+  "start": 22.33,
+  "end": 22.49,
   "heard": "costats"
  },
  {
   "text": "i",
   "line": 9,
-  "start": 20.54,
-  "end": 20.55,
+  "start": 22.53,
+  "end": 22.6,
   "heard": "i"
  },
  {
   "text": "per",
   "line": 9,
-  "start": 20.55,
-  "end": 20.75,
+  "start": 22.6,
+  "end": 22.75,
   "heard": "per"
  },
  {
   "text": "sota.",
   "line": 9,
-  "start": 20.75,
-  "end": 21.07,
+  "start": 22.81,
+  "end": 23.32,
   "heard": "sota."
  },
  {
   "text": "Treu-la",
   "line": 10,
-  "start": 21.72,
-  "end": 21.88,
+  "start": 23.8,
+  "end": 23.9,
   "heard": "Treu-la"
  },
  {
   "text": "i",
   "line": 10,
-  "start": 21.88,
-  "end": 21.95,
+  "start": 23.95,
+  "end": 23.98,
   "heard": "i"
  },
  {
   "text": "mou-la",
   "line": 10,
-  "start": 21.95,
-  "end": 22.39,
+  "start": 23.98,
+  "end": 24.48,
   "heard": "mou-la"
  },
  {
   "text": "a",
   "line": 10,
-  "start": 22.39,
-  "end": 22.46,
+  "start": 24.48,
+  "end": 24.56,
   "heard": "a"
  },
  {
   "text": "banda",
   "line": 10,
-  "start": 22.46,
-  "end": 22.85,
+  "start": 24.56,
+  "end": 24.98,
   "heard": "banda"
  },
  {
   "text": "i",
   "line": 10,
-  "start": 22.85,
-  "end": 22.92,
+  "start": 24.98,
+  "end": 25.04,
   "heard": "i"
  },
  {
   "text": "banda.",
   "line": 10,
-  "start": 22.92,
-  "end": 23.66,
+  "start": 25.07,
+  "end": 25.8,
   "heard": "banda."
  },
  {
   "text": "Aquí",
   "line": 11,
-  "start": 23.66,
-  "end": 24.24,
+  "start": 25.8,
+  "end": 26.47,
   "heard": "Aquí"
  },
  {
   "text": "està:",
   "line": 11,
-  "start": 24.24,
-  "end": 24.57,
+  "start": 26.47,
+  "end": 26.92,
   "heard": "està."
  },
  {
   "text": "una",
   "line": 11,
-  "start": 24.57,
-  "end": 24.79,
+  "start": 26.92,
+  "end": 27.14,
   "heard": "Una"
  },
  {
   "text": "úlcera",
   "line": 11,
-  "start": 24.79,
-  "end": 25.19,
+  "start": 27.14,
+  "end": 27.56,
   "heard": "úlcera"
  },
  {
   "text": "al",
   "line": 11,
-  "start": 25.19,
-  "end": 25.32,
-  "heard": "al"
+  "start": 27.5675,
+  "end": 27.5795,
+  "interpolated": true
  },
  {
   "text": "lateral",
   "line": 11,
-  "start": 25.33,
-  "end": 25.81,
+  "start": 27.59,
+  "end": 28.08,
   "heard": "lateral"
  },
  {
   "text": "de",
   "line": 11,
-  "start": 25.81,
-  "end": 25.93,
+  "start": 28.08,
+  "end": 28.22,
   "heard": "de"
  },
  {
   "text": "la",
   "line": 11,
-  "start": 26.01,
-  "end": 26.09,
+  "start": 28.22,
+  "end": 28.36,
   "heard": "la"
  },
  {
   "text": "llengua.",
   "line": 11,
-  "start": 26.09,
-  "end": 26.82,
+  "start": 28.36,
+  "end": 29.12,
   "heard": "llengua."
  },
  {
   "text": "Mida,",
   "line": 12,
-  "start": 26.94,
-  "end": 27.31,
+  "start": 29.51,
+  "end": 29.93,
   "heard": "Mida,"
  },
  {
   "text": "forma,",
   "line": 12,
-  "start": 27.36,
-  "end": 27.96,
+  "start": 29.96,
+  "end": 30.6,
   "heard": "forma,"
  },
  {
   "text": "color",
   "line": 12,
-  "start": 27.96,
-  "end": 28.36,
+  "start": 30.6,
+  "end": 31.06,
   "heard": "color"
  },
  {
   "text": "i",
   "line": 12,
-  "start": 28.44,
-  "end": 28.5,
+  "start": 31.06,
+  "end": 31.15,
   "heard": "i"
  },
  {
   "text": "localització.",
   "line": 12,
-  "start": 28.5,
-  "end": 29.88,
+  "start": 31.15,
+  "end": 32.55,
   "heard": "localització."
  },
  {
   "text": "Una",
   "line": 13,
-  "start": 29.88,
-  "end": 30.32,
+  "start": 32.55,
+  "end": 33.04,
   "heard": "Una"
  },
  {
   "text": "gasa",
   "line": 13,
-  "start": 30.32,
-  "end": 30.39,
+  "start": 33.04,
+  "end": 33.12,
   "heard": "gasa"
  },
  {
   "text": "subjecta",
   "line": 13,
-  "start": 30.42,
-  "end": 30.97,
+  "start": 33.19,
+  "end": 33.76,
   "heard": "subjecta"
  },
  {
   "text": "la",
   "line": 13,
-  "start": 31.04,
-  "end": 31.18,
+  "start": 33.84,
+  "end": 34,
   "heard": "la"
  },
  {
   "text": "llengua.",
   "line": 13,
-  "start": 31.18,
-  "end": 31.94,
+  "start": 34,
+  "end": 34.82,
   "heard": "llengua."
  },
  {
   "text": "Ara,",
   "line": 14,
-  "start": 32.26,
-  "end": 32.39,
+  "start": 35.28,
+  "end": 35.29,
   "heard": "Ara,"
  },
  {
   "text": "les",
   "line": 14,
-  "start": 32.42,
-  "end": 32.64,
+  "start": 35.43,
+  "end": 35.56,
   "heard": "les"
  },
  {
   "text": "dents",
   "line": 14,
-  "start": 32.68,
-  "end": 33.02,
+  "start": 35.56,
+  "end": 35.92,
   "heard": "tens"
  },
  {
   "text": "properes,",
   "line": 14,
-  "start": 33.02,
-  "end": 33.68,
-  "heard": "properes"
+  "start": 35.92,
+  "end": 36.82,
+  "heard": "properes,"
  },
  {
   "text": "amb",
   "line": 14,
-  "start": 33.76,
-  "end": 34.02,
+  "start": 36.82,
+  "end": 37.06,
   "heard": "amb"
  },
  {
   "text": "mirall",
   "line": 14,
-  "start": 34.02,
-  "end": 34.47,
+  "start": 37.14,
+  "end": 37.46,
   "heard": "mirall"
  },
  {
   "text": "i",
   "line": 14,
-  "start": 34.47,
-  "end": 34.74,
+  "start": 37.63,
+  "end": 37.72,
   "heard": "i"
  },
  {
   "text": "sonda.",
   "line": 14,
-  "start": 34.74,
-  "end": 35.29,
+  "start": 37.81,
+  "end": 38.44,
   "heard": "sonda."
  },
  {
   "text": "Una",
   "line": 15,
-  "start": 35.29,
-  "end": 35.82,
+  "start": 38.44,
+  "end": 38.775,
   "heard": "Una"
  },
  {
   "text": "té",
   "line": 15,
-  "start": 35.82,
-  "end": 35.84,
-  "heard": "té"
+  "start": 38.775,
+  "end": 38.775,
+  "interpolated": true
  },
  {
   "text": "la",
   "line": 15,
-  "start": 35.98,
-  "end": 36,
-  "heard": "la"
+  "start": 38.775,
+  "end": 39.11,
+  "heard": "tela"
  },
  {
   "text": "vora",
   "line": 15,
-  "start": 36,
-  "end": 36.31,
+  "start": 39.11,
+  "end": 39.45,
   "heard": "vora"
  },
  {
   "text": "afilada",
   "line": 15,
-  "start": 36.31,
-  "end": 36.88,
+  "start": 39.45,
+  "end": 40.08,
   "heard": "afilada"
  },
  {
   "text": "i",
   "line": 15,
-  "start": 36.88,
-  "end": 36.96,
+  "start": 40.08,
+  "end": 40.17,
   "heard": "i"
  },
  {
   "text": "irregular.",
   "line": 15,
-  "start": 37.12,
-  "end": 37.76,
-  "heard": "volar."
+  "start": 40.44,
+  "end": 40.97,
+  "heard": "gulà."
  },
  {
   "text": "I",
   "line": 16,
-  "start": 37.76,
-  "end": 38.08,
+  "start": 40.97,
+  "end": 41.46,
   "heard": "I"
  },
  {
   "text": "frega",
   "line": 16,
-  "start": 38.08,
-  "end": 38.2,
+  "start": 41.46,
+  "end": 41.48,
   "heard": "freja"
  },
  {
   "text": "just",
   "line": 16,
-  "start": 38.24,
-  "end": 38.46,
+  "start": 41.61,
+  "end": 41.8,
   "heard": "just"
  },
  {
   "text": "on",
   "line": 16,
-  "start": 38.5,
-  "end": 38.62,
+  "start": 41.8,
+  "end": 41.96,
   "heard": "on"
  },
  {
   "text": "hi",
   "line": 16,
-  "start": 38.62,
-  "end": 38.75,
+  "start": 41.96,
+  "end": 42.12,
   "heard": "hi"
  },
  {
   "text": "ha",
   "line": 16,
-  "start": 38.76,
-  "end": 38.9,
+  "start": 42.12,
+  "end": 42.28,
   "heard": "ha"
  },
  {
   "text": "l'úlcera.",
   "line": 16,
-  "start": 38.9,
-  "end": 39.67,
+  "start": 42.28,
+  "end": 43.18,
   "heard": "l'úlcera."
  },
  {
   "text": "Pas",
   "line": 17,
-  "start": 39.67,
-  "end": 40.2,
+  "start": 43.18,
+  "end": 43.8,
   "heard": "Pas"
  },
  {
   "text": "tres:",
   "line": 17,
-  "start": 40.2,
-  "end": 40.58,
+  "start": 43.8,
+  "end": 44.11,
   "heard": "3."
  },
  {
   "text": "el",
   "line": 17,
-  "start": 40.58,
-  "end": 40.78,
+  "start": 44.11,
+  "end": 44.31,
   "heard": "El"
  },
  {
   "text": "diagnòstic.",
   "line": 17,
-  "start": 40.78,
-  "end": 42.1,
+  "start": 44.31,
+  "end": 45.67,
   "heard": "diagnòstic."
  },
  {
   "text": "Respostes",
   "line": 18,
-  "start": 42.38,
-  "end": 42.75,
-  "heard": "Despostes"
+  "start": 46.06,
+  "end": 46.4,
+  "heard": "Vespostes"
  },
  {
   "text": "més",
   "line": 18,
-  "start": 42.8,
-  "end": 43.01,
+  "start": 46.4,
+  "end": 46.64,
   "heard": "més"
  },
  {
   "text": "exploració.",
   "line": 18,
-  "start": 43.01,
-  "end": 44.02,
+  "start": 46.64,
+  "end": 47.72,
   "heard": "exploració."
  },
  {
   "text": "Úlcera",
   "line": 19,
-  "start": 44.36,
-  "end": 44.46,
+  "start": 48.22,
+  "end": 48.23,
   "heard": "Úlcera"
  },
  {
   "text": "traumàtica",
   "line": 19,
-  "start": 44.52,
-  "end": 45.09,
+  "start": 48.37,
+  "end": 48.98,
   "heard": "traumàtica"
  },
  {
   "text": "lingual,",
   "line": 19,
-  "start": 45.09,
-  "end": 45.78,
+  "start": 48.98,
+  "end": 49.8,
   "heard": "lingual."
  },
  {
   "text": "per",
   "line": 19,
-  "start": 45.78,
-  "end": 46.24,
-  "heard": "Per"
+  "start": 49.915,
+  "end": 50.099,
+  "interpolated": true
  },
  {
   "text": "fregament",
   "line": 19,
-  "start": 46.24,
-  "end": 46.62,
-  "heard": "frejament"
+  "start": 50.26,
+  "end": 50.71,
+  "heard": "Perfrejament"
  },
  {
   "text": "repetit",
   "line": 19,
-  "start": 46.78,
-  "end": 47.13,
+  "start": 50.86,
+  "end": 51.24,
   "heard": "petit"
  },
  {
   "text": "amb",
   "line": 19,
-  "start": 47.13,
-  "end": 47.34,
+  "start": 51.24,
+  "end": 51.47,
   "heard": "amb"
  },
  {
   "text": "una",
   "line": 19,
-  "start": 47.34,
-  "end": 47.55,
+  "start": 51.47,
+  "end": 51.63,
   "heard": "una"
  },
  {
   "text": "dent",
   "line": 19,
-  "start": 47.55,
-  "end": 47.9,
+  "start": 51.74,
+  "end": 52.04,
   "heard": "adena"
  },
  {
   "text": "afilada.",
   "line": 19,
-  "start": 47.9,
-  "end": 48.45,
+  "start": 52.12,
+  "end": 52.9,
   "heard": "afilada."
  },
  {
   "text": "Però",
   "line": 20,
-  "start": 48.45,
-  "end": 49.18,
+  "start": 52.9,
+  "end": 53.47,
   "heard": "Però"
  },
  {
   "text": "també",
   "line": 20,
-  "start": 49.18,
-  "end": 49.25,
+  "start": 53.47,
+  "end": 53.58,
   "heard": "també"
  },
  {
   "text": "descarta",
   "line": 20,
-  "start": 49.25,
-  "end": 49.79,
+  "start": 53.58,
+  "end": 54.18,
   "heard": "descarta"
  },
  {
   "text": "infeccions",
   "line": 20,
-  "start": 49.79,
-  "end": 50.44,
+  "start": 54.18,
+  "end": 54.92,
   "heard": "infeccions"
  },
  {
   "text": "i",
   "line": 20,
-  "start": 50.44,
-  "end": 50.52,
+  "start": 54.92,
+  "end": 54.99,
   "heard": "i"
  },
  {
   "text": "altres",
   "line": 20,
-  "start": 50.52,
-  "end": 50.86,
+  "start": 54.99,
+  "end": 55.43,
   "heard": "altres"
  },
  {
   "text": "malalties.",
   "line": 20,
-  "start": 50.95,
-  "end": 51.84,
+  "start": 55.43,
+  "end": 56.41,
   "heard": "malalties."
  },
  {
   "text": "I",
   "line": 21,
-  "start": 51.84,
-  "end": 52.12,
+  "start": 56.41,
+  "end": 56.57,
   "heard": "I"
  },
  {
   "text": "li",
   "line": 21,
-  "start": 52.12,
-  "end": 52.4,
+  "start": 56.57,
+  "end": 56.75,
   "heard": "li"
  },
  {
   "text": "explica",
   "line": 21,
-  "start": 52.4,
-  "end": 52.64,
+  "start": 56.75,
+  "end": 57.51,
   "heard": "explica"
  },
  {
   "text": "els",
   "line": 21,
-  "start": 52.64,
-  "end": 52.88,
+  "start": 57.51,
+  "end": 57.79,
   "heard": "els"
  },
  {
   "text": "resultats",
   "line": 21,
-  "start": 52.88,
-  "end": 53.58,
+  "start": 57.9,
+  "end": 58.6,
   "heard": "resultats"
  },
  {
   "text": "al",
   "line": 21,
-  "start": 53.61,
-  "end": 53.74,
+  "start": 58.6,
+  "end": 58.99,
   "heard": "al"
  },
  {
   "text": "pacient.",
   "line": 21,
-  "start": 53.82,
-  "end": 54.53,
+  "start": 58.99,
+  "end": 59.5,
   "heard": "pacient."
  }
 ]
