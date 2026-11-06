@@ -34,3 +34,8 @@ video4/.hyperframes/
 video4/audio/*16k.wav
 video4/audio/segs/
 video4/assets/mix-filter.txt
+video5/renders/
+video5/.hyperframes/
+video5/audio/*16k.wav
+video5/audio/segs/
+video5/assets/mix-filter.txt
