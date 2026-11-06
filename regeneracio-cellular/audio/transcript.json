@@ -1,0 +1,626 @@
+[
+  {
+    "text": "El",
+    "start": 0,
+    "end": 0.12,
+    "id": "w0"
+  },
+  {
+    "text": "teixit?",
+    "start": 0.17,
+    "end": 0.69,
+    "id": "w1"
+  },
+  {
+    "text": "L'organisme",
+    "start": 0.69,
+    "end": 1.68,
+    "id": "w2"
+  },
+  {
+    "text": "activa",
+    "start": 1.68,
+    "end": 2.28,
+    "id": "w3"
+  },
+  {
+    "text": "mecanismes",
+    "start": 2.28,
+    "end": 2.79,
+    "id": "w4"
+  },
+  {
+    "text": "de",
+    "start": 2.84,
+    "end": 2.94,
+    "id": "w5"
+  },
+  {
+    "text": "reparació",
+    "start": 2.94,
+    "end": 3.48,
+    "id": "w6"
+  },
+  {
+    "text": "per",
+    "start": 3.48,
+    "end": 3.63,
+    "id": "w7"
+  },
+  {
+    "text": "recuperar",
+    "start": 3.63,
+    "end": 4.1,
+    "id": "w8"
+  },
+  {
+    "text": "la",
+    "start": 4.1,
+    "end": 4.2,
+    "id": "w9"
+  },
+  {
+    "text": "integritat",
+    "start": 4.2,
+    "end": 4.7,
+    "id": "w10"
+  },
+  {
+    "text": "de",
+    "start": 4.7,
+    "end": 4.85,
+    "id": "w11"
+  },
+  {
+    "text": "la",
+    "start": 4.85,
+    "end": 5,
+    "id": "w12"
+  },
+  {
+    "text": "mucosa,",
+    "start": 5,
+    "end": 5.48,
+    "id": "w13"
+  },
+  {
+    "text": "sabons,",
+    "start": 5.64,
+    "end": 5.96,
+    "id": "w14"
+  },
+  {
+    "text": "el",
+    "start": 5.96,
+    "end": 6.08,
+    "id": "w15"
+  },
+  {
+    "text": "tipus",
+    "start": 6.08,
+    "end": 6.31,
+    "id": "w16"
+  },
+  {
+    "text": "de",
+    "start": 6.31,
+    "end": 6.5,
+    "id": "w17"
+  },
+  {
+    "text": "dany",
+    "start": 6.5,
+    "end": 6.74,
+    "id": "w18"
+  },
+  {
+    "text": "i",
+    "start": 6.77,
+    "end": 6.8,
+    "id": "w19"
+  },
+  {
+    "text": "les",
+    "start": 6.8,
+    "end": 6.98,
+    "id": "w20"
+  },
+  {
+    "text": "condicions",
+    "start": 6.98,
+    "end": 7.57,
+    "id": "w21"
+  },
+  {
+    "text": "del",
+    "start": 7.72,
+    "end": 7.76,
+    "id": "w22"
+  },
+  {
+    "text": "teixit.",
+    "start": 7.76,
+    "end": 8.38,
+    "id": "w23"
+  },
+  {
+    "text": "Podem",
+    "start": 8.38,
+    "end": 8.86,
+    "id": "w24"
+  },
+  {
+    "text": "distingir",
+    "start": 8.86,
+    "end": 9.39,
+    "id": "w25"
+  },
+  {
+    "text": "dos",
+    "start": 9.39,
+    "end": 9.44,
+    "id": "w26"
+  },
+  {
+    "text": "processos",
+    "start": 9.99,
+    "end": 10.27,
+    "id": "w27"
+  },
+  {
+    "text": "principals.",
+    "start": 10.27,
+    "end": 11.27,
+    "id": "w28"
+  },
+  {
+    "text": "La",
+    "start": 11.27,
+    "end": 11.727,
+    "id": "w29"
+  },
+  {
+    "text": "regeneració",
+    "start": 11.727,
+    "end": 12.183,
+    "id": "w30"
+  },
+  {
+    "text": "és",
+    "start": 12.183,
+    "end": 12.64,
+    "id": "w31"
+  },
+  {
+    "text": "el",
+    "start": 12.64,
+    "end": 12.68,
+    "id": "w32"
+  },
+  {
+    "text": "procés",
+    "start": 12.68,
+    "end": 13.17,
+    "id": "w33"
+  },
+  {
+    "text": "mitjançal",
+    "start": 13.17,
+    "end": 13.91,
+    "id": "w34"
+  },
+  {
+    "text": "al",
+    "start": 13.91,
+    "end": 14.07,
+    "id": "w35"
+  },
+  {
+    "text": "qual",
+    "start": 14.07,
+    "end": 14.4,
+    "id": "w36"
+  },
+  {
+    "text": "les",
+    "start": 14.4,
+    "end": 14.57,
+    "id": "w37"
+  },
+  {
+    "text": "cèl·lules",
+    "start": 14.72,
+    "end": 15.38,
+    "id": "w38"
+  },
+  {
+    "text": "que",
+    "start": 15.38,
+    "end": 15.63,
+    "id": "w39"
+  },
+  {
+    "text": "han",
+    "start": 15.63,
+    "end": 15.88,
+    "id": "w40"
+  },
+  {
+    "text": "estat",
+    "start": 15.88,
+    "end": 16.3,
+    "id": "w41"
+  },
+  {
+    "text": "destruïdes",
+    "start": 16.3,
+    "end": 17.21,
+    "id": "w42"
+  },
+  {
+    "text": "són",
+    "start": 17.28,
+    "end": 17.49,
+    "id": "w43"
+  },
+  {
+    "text": "substituïdes",
+    "start": 17.49,
+    "end": 18.33,
+    "id": "w44"
+  },
+  {
+    "text": "per",
+    "start": 18.41,
+    "end": 18.54,
+    "id": "w45"
+  },
+  {
+    "text": "cèl·lules",
+    "start": 18.54,
+    "end": 19.17,
+    "id": "w46"
+  },
+  {
+    "text": "noves",
+    "start": 19.17,
+    "end": 19.52,
+    "id": "w47"
+  },
+  {
+    "text": "del",
+    "start": 19.52,
+    "end": 19.73,
+    "id": "w48"
+  },
+  {
+    "text": "mateix",
+    "start": 19.73,
+    "end": 20.15,
+    "id": "w49"
+  },
+  {
+    "text": "tipus.",
+    "start": 20.15,
+    "end": 20.72,
+    "id": "w50"
+  },
+  {
+    "text": "Aquestes",
+    "start": 20.72,
+    "end": 21.38,
+    "id": "w51"
+  },
+  {
+    "text": "noves",
+    "start": 21.38,
+    "end": 21.58,
+    "id": "w52"
+  },
+  {
+    "text": "cèl·lules",
+    "start": 21.58,
+    "end": 22.05,
+    "id": "w53"
+  },
+  {
+    "text": "es",
+    "start": 22.05,
+    "end": 22.28,
+    "id": "w54"
+  },
+  {
+    "text": "formen",
+    "start": 22.51,
+    "end": 22.67,
+    "id": "w55"
+  },
+  {
+    "text": "a",
+    "start": 22.7,
+    "end": 22.74,
+    "id": "w56"
+  },
+  {
+    "text": "partir",
+    "start": 22.74,
+    "end": 23.14,
+    "id": "w57"
+  },
+  {
+    "text": "de",
+    "start": 23.14,
+    "end": 23.27,
+    "id": "w58"
+  },
+  {
+    "text": "les",
+    "start": 23.27,
+    "end": 23.46,
+    "id": "w59"
+  },
+  {
+    "text": "cèl·lules",
+    "start": 23.47,
+    "end": 24.04,
+    "id": "w60"
+  },
+  {
+    "text": "supervivents",
+    "start": 24.04,
+    "end": 24.98,
+    "id": "w61"
+  },
+  {
+    "text": "i",
+    "start": 24.98,
+    "end": 25.04,
+    "id": "w62"
+  },
+  {
+    "text": "d'altres",
+    "start": 25.04,
+    "end": 25.54,
+    "id": "w63"
+  },
+  {
+    "text": "cèl·lules",
+    "start": 25.54,
+    "end": 26.09,
+    "id": "w64"
+  },
+  {
+    "text": "amb",
+    "start": 26.11,
+    "end": 26.28,
+    "id": "w65"
+  },
+  {
+    "text": "capacitat",
+    "start": 26.28,
+    "end": 26.84,
+    "id": "w66"
+  },
+  {
+    "text": "de",
+    "start": 26.84,
+    "end": 26.91,
+    "id": "w67"
+  },
+  {
+    "text": "proliferació.",
+    "start": 27.07,
+    "end": 27.98,
+    "id": "w68"
+  },
+  {
+    "text": "Durant",
+    "start": 28.56,
+    "end": 28.91,
+    "id": "w69"
+  },
+  {
+    "text": "aquest",
+    "start": 28.91,
+    "end": 29.14,
+    "id": "w70"
+  },
+  {
+    "text": "procés,",
+    "start": 29.14,
+    "end": 29.78,
+    "id": "w71"
+  },
+  {
+    "text": "les",
+    "start": 29.78,
+    "end": 29.96,
+    "id": "w72"
+  },
+  {
+    "text": "cèl·lules",
+    "start": 29.96,
+    "end": 30.49,
+    "id": "w73"
+  },
+  {
+    "text": "es",
+    "start": 30.49,
+    "end": 30.65,
+    "id": "w74"
+  },
+  {
+    "text": "divideixen",
+    "start": 30.65,
+    "end": 31.23,
+    "id": "w75"
+  },
+  {
+    "text": "i",
+    "start": 31.23,
+    "end": 31.29,
+    "id": "w76"
+  },
+  {
+    "text": "mirem",
+    "start": 31.29,
+    "end": 31.59,
+    "id": "w77"
+  },
+  {
+    "text": "cap",
+    "start": 31.59,
+    "end": 31.77,
+    "id": "w78"
+  },
+  {
+    "text": "a",
+    "start": 31.77,
+    "end": 31.83,
+    "id": "w79"
+  },
+  {
+    "text": "la",
+    "start": 31.83,
+    "end": 31.86,
+    "id": "w80"
+  },
+  {
+    "text": "zona",
+    "start": 31.95,
+    "end": 32.2,
+    "id": "w81"
+  },
+  {
+    "text": "lesionada,",
+    "start": 32.2,
+    "end": 33,
+    "id": "w82"
+  },
+  {
+    "text": "on",
+    "start": 33,
+    "end": 33.44,
+    "id": "w83"
+  },
+  {
+    "text": "contribueixen",
+    "start": 33.44,
+    "end": 34,
+    "id": "w84"
+  },
+  {
+    "text": "a",
+    "start": 34,
+    "end": 34.01,
+    "id": "w85"
+  },
+  {
+    "text": "reconstruir",
+    "start": 34.54,
+    "end": 34.8,
+    "id": "w86"
+  },
+  {
+    "text": "el",
+    "start": 34.8,
+    "end": 34.93,
+    "id": "w87"
+  },
+  {
+    "text": "teixit.",
+    "start": 34.93,
+    "end": 35.62,
+    "id": "w88"
+  },
+  {
+    "text": "D'aquesta",
+    "start": 36.06,
+    "end": 36.18,
+    "id": "w89"
+  },
+  {
+    "text": "manera",
+    "start": 36.18,
+    "end": 36.58,
+    "id": "w90"
+  },
+  {
+    "text": "es",
+    "start": 36.58,
+    "end": 36.64,
+    "id": "w91"
+  },
+  {
+    "text": "pot",
+    "start": 36.72,
+    "end": 36.74,
+    "id": "w92"
+  },
+  {
+    "text": "recuperar",
+    "start": 37.19,
+    "end": 37.49,
+    "id": "w93"
+  },
+  {
+    "text": "l'estructura",
+    "start": 37.49,
+    "end": 38.25,
+    "id": "w94"
+  },
+  {
+    "text": "original",
+    "start": 38.25,
+    "end": 38.77,
+    "id": "w95"
+  },
+  {
+    "text": "de",
+    "start": 38.77,
+    "end": 38.86,
+    "id": "w96"
+  },
+  {
+    "text": "la",
+    "start": 38.9,
+    "end": 39.03,
+    "id": "w97"
+  },
+  {
+    "text": "mucosa",
+    "start": 39.03,
+    "end": 39.5,
+    "id": "w98"
+  },
+  {
+    "text": "i",
+    "start": 39.5,
+    "end": 39.55,
+    "id": "w99"
+  },
+  {
+    "text": "restaurar",
+    "start": 39.55,
+    "end": 40.06,
+    "id": "w100"
+  },
+  {
+    "text": "la",
+    "start": 40.06,
+    "end": 40.08,
+    "id": "w101"
+  },
+  {
+    "text": "funció",
+    "start": 40.08,
+    "end": 40.51,
+    "id": "w102"
+  },
+  {
+    "text": "portadora.",
+    "start": 40.63,
+    "end": 41.22,
+    "id": "w103"
+  }
+]

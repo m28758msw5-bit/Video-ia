@@ -17,3 +17,9 @@ biopsia-histologia/assets/mix-filter.txt
 tractament-ulcera/renders/
 tractament-ulcera/.hyperframes/
 tractament-ulcera/assets/mix-filter.txt
+regeneracio-cellular/renders/
+regeneracio-cellular/.hyperframes/
+regeneracio-cellular/audio/*16k.wav
+regeneracio-cellular/audio/hi.wav
+regeneracio-cellular/audio/lo.wav
+regeneracio-cellular/audio/audio-pre.wav
