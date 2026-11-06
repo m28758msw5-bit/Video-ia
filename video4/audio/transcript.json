@@ -1,0 +1,1988 @@
+[
+  {
+    "text": "Cas",
+    "start": 0.11,
+    "end": 0.22,
+    "id": "w0"
+  },
+  {
+    "text": "resolt,",
+    "start": 0.22,
+    "end": 0.8,
+    "id": "w1"
+  },
+  {
+    "text": "però",
+    "start": 0.8,
+    "end": 1.01,
+    "id": "w2"
+  },
+  {
+    "text": "abans",
+    "start": 1.09,
+    "end": 1.45,
+    "id": "w3"
+  },
+  {
+    "text": "d'acabar",
+    "start": 1.45,
+    "end": 2.01,
+    "id": "w4"
+  },
+  {
+    "text": "et",
+    "start": 2.01,
+    "end": 2.15,
+    "id": "w5"
+  },
+  {
+    "text": "donaré",
+    "start": 2.15,
+    "end": 2.59,
+    "id": "w6"
+  },
+  {
+    "text": "alguns",
+    "start": 2.59,
+    "end": 3.03,
+    "id": "w7"
+  },
+  {
+    "text": "trucs",
+    "start": 3.03,
+    "end": 3.42,
+    "id": "w8"
+  },
+  {
+    "text": "per",
+    "start": 3.42,
+    "end": 3.6,
+    "id": "w9"
+  },
+  {
+    "text": "entendre",
+    "start": 3.6,
+    "end": 3.97,
+    "id": "w10"
+  },
+  {
+    "text": "millor",
+    "start": 3.97,
+    "end": 4.25,
+    "id": "w11"
+  },
+  {
+    "text": "el",
+    "start": 4.25,
+    "end": 4.34,
+    "id": "w12"
+  },
+  {
+    "text": "llenguatge",
+    "start": 4.34,
+    "end": 4.75,
+    "id": "w13"
+  },
+  {
+    "text": "científic.",
+    "start": 4.84,
+    "end": 5.32,
+    "id": "w14"
+  },
+  {
+    "text": "T'ha",
+    "start": 5.32,
+    "end": 5.637,
+    "id": "w15"
+  },
+  {
+    "text": "passat",
+    "start": 5.637,
+    "end": 5.953,
+    "id": "w16"
+  },
+  {
+    "text": "mai",
+    "start": 5.953,
+    "end": 6.27,
+    "id": "w17"
+  },
+  {
+    "text": "que",
+    "start": 6.27,
+    "end": 6.44,
+    "id": "w18"
+  },
+  {
+    "text": "has",
+    "start": 6.44,
+    "end": 6.63,
+    "id": "w19"
+  },
+  {
+    "text": "anat",
+    "start": 6.63,
+    "end": 6.89,
+    "id": "w20"
+  },
+  {
+    "text": "a",
+    "start": 6.89,
+    "end": 6.95,
+    "id": "w21"
+  },
+  {
+    "text": "l'antista",
+    "start": 6.95,
+    "end": 7.52,
+    "id": "w22"
+  },
+  {
+    "text": "i",
+    "start": 7.54,
+    "end": 7.58,
+    "id": "w23"
+  },
+  {
+    "text": "no",
+    "start": 7.58,
+    "end": 7.71,
+    "id": "w24"
+  },
+  {
+    "text": "has",
+    "start": 7.71,
+    "end": 7.9,
+    "id": "w25"
+  },
+  {
+    "text": "entès",
+    "start": 7.9,
+    "end": 8.22,
+    "id": "w26"
+  },
+  {
+    "text": "algunes",
+    "start": 8.22,
+    "end": 8.65,
+    "id": "w27"
+  },
+  {
+    "text": "de",
+    "start": 8.74,
+    "end": 8.81,
+    "id": "w28"
+  },
+  {
+    "text": "les",
+    "start": 8.81,
+    "end": 9,
+    "id": "w29"
+  },
+  {
+    "text": "paraules",
+    "start": 9,
+    "end": 9.52,
+    "id": "w30"
+  },
+  {
+    "text": "que",
+    "start": 9.52,
+    "end": 9.57,
+    "id": "w31"
+  },
+  {
+    "text": "utilitzava?",
+    "start": 9.75,
+    "end": 10.72,
+    "id": "w32"
+  },
+  {
+    "text": "Doncs",
+    "start": 10.72,
+    "end": 11.29,
+    "id": "w33"
+  },
+  {
+    "text": "avui",
+    "start": 11.29,
+    "end": 11.45,
+    "id": "w34"
+  },
+  {
+    "text": "aprendrem",
+    "start": 11.45,
+    "end": 12.14,
+    "id": "w35"
+  },
+  {
+    "text": "a",
+    "start": 12.24,
+    "end": 12.25,
+    "id": "w36"
+  },
+  {
+    "text": "xifrar-les.",
+    "start": 12.25,
+    "end": 13.38,
+    "id": "w37"
+  },
+  {
+    "text": "Molts",
+    "start": 13.38,
+    "end": 14.18,
+    "id": "w38"
+  },
+  {
+    "text": "termes",
+    "start": 14.18,
+    "end": 14.28,
+    "id": "w39"
+  },
+  {
+    "text": "tècnics",
+    "start": 14.29,
+    "end": 14.84,
+    "id": "w40"
+  },
+  {
+    "text": "provenen",
+    "start": 14.84,
+    "end": 15.49,
+    "id": "w41"
+  },
+  {
+    "text": "del",
+    "start": 15.56,
+    "end": 15.74,
+    "id": "w42"
+  },
+  {
+    "text": "grec",
+    "start": 15.74,
+    "end": 16.07,
+    "id": "w43"
+  },
+  {
+    "text": "i",
+    "start": 16.07,
+    "end": 16.11,
+    "id": "w44"
+  },
+  {
+    "text": "del",
+    "start": 16.17,
+    "end": 16.4,
+    "id": "w45"
+  },
+  {
+    "text": "llatí",
+    "start": 16.4,
+    "end": 16.88,
+    "id": "w46"
+  },
+  {
+    "text": "i",
+    "start": 16.88,
+    "end": 16.95,
+    "id": "w47"
+  },
+  {
+    "text": "es",
+    "start": 16.95,
+    "end": 17.09,
+    "id": "w48"
+  },
+  {
+    "text": "formen",
+    "start": 17.09,
+    "end": 17.51,
+    "id": "w49"
+  },
+  {
+    "text": "combinant",
+    "start": 17.51,
+    "end": 18.14,
+    "id": "w50"
+  },
+  {
+    "text": "diferents",
+    "start": 18.14,
+    "end": 18.77,
+    "id": "w51"
+  },
+  {
+    "text": "parts,",
+    "start": 18.77,
+    "end": 19.14,
+    "id": "w52"
+  },
+  {
+    "text": "les",
+    "start": 19.14,
+    "end": 19.41,
+    "id": "w53"
+  },
+  {
+    "text": "arrels,",
+    "start": 19.41,
+    "end": 19.85,
+    "id": "w54"
+  },
+  {
+    "text": "que",
+    "start": 19.85,
+    "end": 20.04,
+    "id": "w55"
+  },
+  {
+    "text": "ens",
+    "start": 20.04,
+    "end": 20.2,
+    "id": "w56"
+  },
+  {
+    "text": "indiquen",
+    "start": 20.3,
+    "end": 20.74,
+    "id": "w57"
+  },
+  {
+    "text": "de",
+    "start": 20.74,
+    "end": 20.87,
+    "id": "w58"
+  },
+  {
+    "text": "què",
+    "start": 20.87,
+    "end": 21.06,
+    "id": "w59"
+  },
+  {
+    "text": "parlem,",
+    "start": 21.06,
+    "end": 21.58,
+    "id": "w60"
+  },
+  {
+    "text": "els",
+    "start": 21.68,
+    "end": 21.79,
+    "id": "w61"
+  },
+  {
+    "text": "prefixos,",
+    "start": 21.88,
+    "end": 22.63,
+    "id": "w62"
+  },
+  {
+    "text": "que",
+    "start": 22.63,
+    "end": 22.71,
+    "id": "w63"
+  },
+  {
+    "text": "modifiquen",
+    "start": 22.89,
+    "end": 23.62,
+    "id": "w64"
+  },
+  {
+    "text": "el",
+    "start": 23.62,
+    "end": 23.77,
+    "id": "w65"
+  },
+  {
+    "text": "significat,",
+    "start": 23.77,
+    "end": 24.6,
+    "id": "w66"
+  },
+  {
+    "text": "i",
+    "start": 24.6,
+    "end": 24.71,
+    "id": "w67"
+  },
+  {
+    "text": "els",
+    "start": 24.71,
+    "end": 24.9,
+    "id": "w68"
+  },
+  {
+    "text": "sufixos,",
+    "start": 24.9,
+    "end": 25.5,
+    "id": "w69"
+  },
+  {
+    "text": "que",
+    "start": 25.6,
+    "end": 25.62,
+    "id": "w70"
+  },
+  {
+    "text": "ens",
+    "start": 25.97,
+    "end": 26.04,
+    "id": "w71"
+  },
+  {
+    "text": "poden",
+    "start": 26.04,
+    "end": 26.4,
+    "id": "w72"
+  },
+  {
+    "text": "indicar",
+    "start": 26.43,
+    "end": 26.89,
+    "id": "w73"
+  },
+  {
+    "text": "una",
+    "start": 26.98,
+    "end": 27.09,
+    "id": "w74"
+  },
+  {
+    "text": "inflamació,",
+    "start": 27.18,
+    "end": 28.02,
+    "id": "w75"
+  },
+  {
+    "text": "una",
+    "start": 28.19,
+    "end": 28.32,
+    "id": "w76"
+  },
+  {
+    "text": "malaltia",
+    "start": 28.32,
+    "end": 28.93,
+    "id": "w77"
+  },
+  {
+    "text": "o",
+    "start": 28.93,
+    "end": 29,
+    "id": "w78"
+  },
+  {
+    "text": "un",
+    "start": 29,
+    "end": 29.15,
+    "id": "w79"
+  },
+  {
+    "text": "procediment.",
+    "start": 29.15,
+    "end": 30.23,
+    "id": "w80"
+  },
+  {
+    "text": "Comencem",
+    "start": 30.9,
+    "end": 30.98,
+    "id": "w81"
+  },
+  {
+    "text": "per",
+    "start": 31.01,
+    "end": 31.2,
+    "id": "w82"
+  },
+  {
+    "text": "les",
+    "start": 31.25,
+    "end": 31.46,
+    "id": "w83"
+  },
+  {
+    "text": "arrels.",
+    "start": 31.46,
+    "end": 32.22,
+    "id": "w84"
+  },
+  {
+    "text": "Aquestes",
+    "start": 32.28,
+    "end": 32.75,
+    "id": "w85"
+  },
+  {
+    "text": "ens",
+    "start": 32.75,
+    "end": 32.95,
+    "id": "w86"
+  },
+  {
+    "text": "indiquen",
+    "start": 32.95,
+    "end": 33.39,
+    "id": "w87"
+  },
+  {
+    "text": "l'estructura",
+    "start": 33.48,
+    "end": 34.27,
+    "id": "w88"
+  },
+  {
+    "text": "o",
+    "start": 34.27,
+    "end": 34.32,
+    "id": "w89"
+  },
+  {
+    "text": "òrgan",
+    "start": 34.37,
+    "end": 34.71,
+    "id": "w90"
+  },
+  {
+    "text": "del",
+    "start": 34.71,
+    "end": 34.91,
+    "id": "w91"
+  },
+  {
+    "text": "qual",
+    "start": 34.91,
+    "end": 35.18,
+    "id": "w92"
+  },
+  {
+    "text": "estem",
+    "start": 35.18,
+    "end": 35.5,
+    "id": "w93"
+  },
+  {
+    "text": "parlant.",
+    "start": 35.51,
+    "end": 36.22,
+    "id": "w94"
+  },
+  {
+    "text": "Per",
+    "start": 36.22,
+    "end": 36.73,
+    "id": "w95"
+  },
+  {
+    "text": "exemple,",
+    "start": 36.73,
+    "end": 37.38,
+    "id": "w96"
+  },
+  {
+    "text": "odonto",
+    "start": 37.38,
+    "end": 37.63,
+    "id": "w97"
+  },
+  {
+    "text": "significa",
+    "start": 38,
+    "end": 38.69,
+    "id": "w98"
+  },
+  {
+    "text": "dent,",
+    "start": 38.69,
+    "end": 39.26,
+    "id": "w99"
+  },
+  {
+    "text": "gingi",
+    "start": 39.26,
+    "end": 39.68,
+    "id": "w100"
+  },
+  {
+    "text": "significa",
+    "start": 39.83,
+    "end": 40.72,
+    "id": "w101"
+  },
+  {
+    "text": "geniva,",
+    "start": 40.72,
+    "end": 41.57,
+    "id": "w102"
+  },
+  {
+    "text": "glos,",
+    "start": 41.62,
+    "end": 42.25,
+    "id": "w103"
+  },
+  {
+    "text": "llengua,",
+    "start": 42.31,
+    "end": 43.5,
+    "id": "w104"
+  },
+  {
+    "text": "estomat,",
+    "start": 43.5,
+    "end": 44.72,
+    "id": "w105"
+  },
+  {
+    "text": "boca,",
+    "start": 44.8,
+    "end": 45.58,
+    "id": "w106"
+  },
+  {
+    "text": "i",
+    "start": 45.58,
+    "end": 45.71,
+    "id": "w107"
+  },
+  {
+    "text": "sial",
+    "start": 45.71,
+    "end": 46.12,
+    "id": "w108"
+  },
+  {
+    "text": "significa",
+    "start": 46.12,
+    "end": 47.09,
+    "id": "w109"
+  },
+  {
+    "text": "saliva.",
+    "start": 47.09,
+    "end": 48.09,
+    "id": "w110"
+  },
+  {
+    "text": "També",
+    "start": 48.18,
+    "end": 48.55,
+    "id": "w111"
+  },
+  {
+    "text": "trobem",
+    "start": 48.55,
+    "end": 49.02,
+    "id": "w112"
+  },
+  {
+    "text": "cardio,",
+    "start": 49.19,
+    "end": 49.81,
+    "id": "w113"
+  },
+  {
+    "text": "que",
+    "start": 49.81,
+    "end": 50.08,
+    "id": "w114"
+  },
+  {
+    "text": "significa",
+    "start": 50.08,
+    "end": 50.89,
+    "id": "w115"
+  },
+  {
+    "text": "cor,",
+    "start": 50.89,
+    "end": 51.23,
+    "id": "w116"
+  },
+  {
+    "text": "i",
+    "start": 51.33,
+    "end": 51.43,
+    "id": "w117"
+  },
+  {
+    "text": "hepato,",
+    "start": 51.43,
+    "end": 52.15,
+    "id": "w118"
+  },
+  {
+    "text": "que",
+    "start": 52.15,
+    "end": 52.42,
+    "id": "w119"
+  },
+  {
+    "text": "significa",
+    "start": 52.42,
+    "end": 53.23,
+    "id": "w120"
+  },
+  {
+    "text": "fetge.",
+    "start": 53.23,
+    "end": 53.98,
+    "id": "w121"
+  },
+  {
+    "text": "Ara",
+    "start": 54.71,
+    "end": 54.8,
+    "id": "w122"
+  },
+  {
+    "text": "que",
+    "start": 54.8,
+    "end": 55,
+    "id": "w123"
+  },
+  {
+    "text": "coneixem",
+    "start": 55,
+    "end": 55.5,
+    "id": "w124"
+  },
+  {
+    "text": "algunes",
+    "start": 55.6,
+    "end": 55.99,
+    "id": "w125"
+  },
+  {
+    "text": "arrels,",
+    "start": 55.99,
+    "end": 56.53,
+    "id": "w126"
+  },
+  {
+    "text": "podem",
+    "start": 56.59,
+    "end": 56.8,
+    "id": "w127"
+  },
+  {
+    "text": "entendre",
+    "start": 56.8,
+    "end": 57.09,
+    "id": "w128"
+  },
+  {
+    "text": "millor",
+    "start": 57.18,
+    "end": 57.5,
+    "id": "w129"
+  },
+  {
+    "text": "com",
+    "start": 57.5,
+    "end": 57.66,
+    "id": "w130"
+  },
+  {
+    "text": "es",
+    "start": 57.66,
+    "end": 57.81,
+    "id": "w131"
+  },
+  {
+    "text": "construeixen",
+    "start": 57.81,
+    "end": 58.44,
+    "id": "w132"
+  },
+  {
+    "text": "els",
+    "start": 58.44,
+    "end": 58.67,
+    "id": "w133"
+  },
+  {
+    "text": "termes",
+    "start": 58.67,
+    "end": 59.13,
+    "id": "w134"
+  },
+  {
+    "text": "clínics.",
+    "start": 59.13,
+    "end": 59.74,
+    "id": "w135"
+  },
+  {
+    "text": "Per",
+    "start": 59.91,
+    "end": 59.98,
+    "id": "w136"
+  },
+  {
+    "text": "exemple,",
+    "start": 59.98,
+    "end": 60.53,
+    "id": "w137"
+  },
+  {
+    "text": "quan",
+    "start": 60.53,
+    "end": 60.7,
+    "id": "w138"
+  },
+  {
+    "text": "veiem",
+    "start": 60.8,
+    "end": 60.91,
+    "id": "w139"
+  },
+  {
+    "text": "una",
+    "start": 61.18,
+    "end": 61.25,
+    "id": "w140"
+  },
+  {
+    "text": "paraula",
+    "start": 61.25,
+    "end": 61.67,
+    "id": "w141"
+  },
+  {
+    "text": "que",
+    "start": 61.67,
+    "end": 61.85,
+    "id": "w142"
+  },
+  {
+    "text": "acaba",
+    "start": 61.85,
+    "end": 62.09,
+    "id": "w143"
+  },
+  {
+    "text": "amb\"-itis\",",
+    "start": 62.18,
+    "end": 62.86,
+    "id": "w144"
+  },
+  {
+    "text": "podem",
+    "start": 63.01,
+    "end": 63.21,
+    "id": "w145"
+  },
+  {
+    "text": "relacionar-la",
+    "start": 63.21,
+    "end": 63.92,
+    "id": "w146"
+  },
+  {
+    "text": "amb",
+    "start": 63.92,
+    "end": 64.08,
+    "id": "w147"
+  },
+  {
+    "text": "una",
+    "start": 64.08,
+    "end": 64.28,
+    "id": "w148"
+  },
+  {
+    "text": "inflamació.",
+    "start": 64.28,
+    "end": 65.22,
+    "id": "w149"
+  },
+  {
+    "text": "Així,",
+    "start": 65.3,
+    "end": 65.71,
+    "id": "w150"
+  },
+  {
+    "text": "gingivitis",
+    "start": 65.71,
+    "end": 66.23,
+    "id": "w151"
+  },
+  {
+    "text": "significa",
+    "start": 66.6,
+    "end": 67.28,
+    "id": "w152"
+  },
+  {
+    "text": "inflamació",
+    "start": 67.28,
+    "end": 68.11,
+    "id": "w153"
+  },
+  {
+    "text": "a",
+    "start": 68.11,
+    "end": 68.19,
+    "id": "w154"
+  },
+  {
+    "text": "les",
+    "start": 68.19,
+    "end": 68.44,
+    "id": "w155"
+  },
+  {
+    "text": "genives,",
+    "start": 68.44,
+    "end": 69.17,
+    "id": "w156"
+  },
+  {
+    "text": "perquè",
+    "start": 69.17,
+    "end": 69.4,
+    "id": "w157"
+  },
+  {
+    "text": "gingi",
+    "start": 69.4,
+    "end": 70.13,
+    "id": "w158"
+  },
+  {
+    "text": "fa",
+    "start": 70.17,
+    "end": 70.33,
+    "id": "w159"
+  },
+  {
+    "text": "referència",
+    "start": 70.33,
+    "end": 70.85,
+    "id": "w160"
+  },
+  {
+    "text": "a",
+    "start": 71.09,
+    "end": 71.28,
+    "id": "w161"
+  },
+  {
+    "text": "geniva,",
+    "start": 71.44,
+    "end": 71.91,
+    "id": "w162"
+  },
+  {
+    "text": "i\"-itis\",",
+    "start": 71.91,
+    "end": 72.48,
+    "id": "w163"
+  },
+  {
+    "text": "a",
+    "start": 72.48,
+    "end": 72.53,
+    "id": "w164"
+  },
+  {
+    "text": "la",
+    "start": 72.6,
+    "end": 72.7,
+    "id": "w165"
+  },
+  {
+    "text": "inflamació.",
+    "start": 72.7,
+    "end": 73.69,
+    "id": "w166"
+  },
+  {
+    "text": "El",
+    "start": 73.81,
+    "end": 73.85,
+    "id": "w167"
+  },
+  {
+    "text": "mateix",
+    "start": 73.85,
+    "end": 74.27,
+    "id": "w168"
+  },
+  {
+    "text": "passa",
+    "start": 74.33,
+    "end": 74.6,
+    "id": "w169"
+  },
+  {
+    "text": "amb",
+    "start": 74.7,
+    "end": 74.72,
+    "id": "w170"
+  },
+  {
+    "text": "glositis,",
+    "start": 75.04,
+    "end": 75.61,
+    "id": "w171"
+  },
+  {
+    "text": "on\"-glos\",",
+    "start": 75.61,
+    "end": 76.41,
+    "id": "w172"
+  },
+  {
+    "text": "significa",
+    "start": 76.41,
+    "end": 77.08,
+    "id": "w173"
+  },
+  {
+    "text": "llengua.",
+    "start": 77.08,
+    "end": 77.9,
+    "id": "w174"
+  },
+  {
+    "text": "També",
+    "start": 78.01,
+    "end": 78.28,
+    "id": "w175"
+  },
+  {
+    "text": "trobem",
+    "start": 78.28,
+    "end": 78.73,
+    "id": "w176"
+  },
+  {
+    "text": "prefixos,",
+    "start": 78.73,
+    "end": 79.5,
+    "id": "w177"
+  },
+  {
+    "text": "que",
+    "start": 79.5,
+    "end": 79.7,
+    "id": "w178"
+  },
+  {
+    "text": "ens",
+    "start": 79.74,
+    "end": 79.96,
+    "id": "w179"
+  },
+  {
+    "text": "indiquen",
+    "start": 79.96,
+    "end": 80.57,
+    "id": "w180"
+  },
+  {
+    "text": "quantitat",
+    "start": 80.57,
+    "end": 81.27,
+    "id": "w181"
+  },
+  {
+    "text": "o",
+    "start": 81.27,
+    "end": 81.32,
+    "id": "w182"
+  },
+  {
+    "text": "intensitat.",
+    "start": 81.49,
+    "end": 82.5,
+    "id": "w183"
+  },
+  {
+    "text": "Per",
+    "start": 82.5,
+    "end": 82.58,
+    "id": "w184"
+  },
+  {
+    "text": "exemple,\"-ipo\",",
+    "start": 82.58,
+    "end": 82.62,
+    "id": "w185"
+  },
+  {
+    "text": "significa",
+    "start": 82.63,
+    "end": 82.71,
+    "id": "w186"
+  },
+  {
+    "text": "intensitat,",
+    "start": 82.71,
+    "end": 82.9,
+    "id": "w187"
+  },
+  {
+    "text": "i\"-ipo\",",
+    "start": 82.9,
+    "end": 82.915,
+    "id": "w188"
+  },
+  {
+    "text": "significa",
+    "start": 82.915,
+    "end": 82.93,
+    "id": "w189"
+  },
+  {
+    "text": "intensitat.",
+    "start": 82.93,
+    "end": 82.945,
+    "id": "w190"
+  },
+  {
+    "text": "Per",
+    "start": 82.945,
+    "end": 82.96,
+    "id": "w191"
+  },
+  {
+    "text": "exemple,\"-ipo\",",
+    "start": 82.96,
+    "end": 83.01,
+    "id": "w192"
+  },
+  {
+    "text": "significa",
+    "start": 83.01,
+    "end": 83.07,
+    "id": "w193"
+  },
+  {
+    "text": "intensitat,",
+    "start": 83.07,
+    "end": 83.14,
+    "id": "w194"
+  },
+  {
+    "text": "i\"-ipo\",",
+    "start": 83.14,
+    "end": 83.18,
+    "id": "w195"
+  },
+  {
+    "text": "significa",
+    "start": 83.18,
+    "end": 83.2,
+    "id": "w196"
+  },
+  {
+    "text": "intensitat.",
+    "start": 83.25,
+    "end": 83.4,
+    "id": "w197"
+  },
+  {
+    "text": "Per",
+    "start": 83.4,
+    "end": 83.46,
+    "id": "w198"
+  },
+  {
+    "text": "exemple,\"-ipo\",",
+    "start": 83.46,
+    "end": 83.51,
+    "id": "w199"
+  },
+  {
+    "text": "significa",
+    "start": 83.51,
+    "end": 83.57,
+    "id": "w200"
+  },
+  {
+    "text": "intensitat,",
+    "start": 83.57,
+    "end": 83.64,
+    "id": "w201"
+  },
+  {
+    "text": "i\"-ipo\",",
+    "start": 83.64,
+    "end": 83.68,
+    "id": "w202"
+  },
+  {
+    "text": "significa",
+    "start": 83.68,
+    "end": 83.7,
+    "id": "w203"
+  },
+  {
+    "text": "intensitat.",
+    "start": 83.75,
+    "end": 83.9,
+    "id": "w204"
+  },
+  {
+    "text": "Per",
+    "start": 83.9,
+    "end": 83.96,
+    "id": "w205"
+  },
+  {
+    "text": "exemple,\"-ipo\",",
+    "start": 83.96,
+    "end": 84.01,
+    "id": "w206"
+  },
+  {
+    "text": "significa",
+    "start": 84.01,
+    "end": 84.07,
+    "id": "w207"
+  },
+  {
+    "text": "intensitat,",
+    "start": 84.07,
+    "end": 84.14,
+    "id": "w208"
+  },
+  {
+    "text": "i\"-ipo\",",
+    "start": 84.14,
+    "end": 84.18,
+    "id": "w209"
+  },
+  {
+    "text": "significa",
+    "start": 84.18,
+    "end": 84.2,
+    "id": "w210"
+  },
+  {
+    "text": "intensitat.",
+    "start": 84.25,
+    "end": 84.4,
+    "id": "w211"
+  },
+  {
+    "text": "disminució",
+    "start": 84.71,
+    "end": 85.5,
+    "id": "w212"
+  },
+  {
+    "text": "i",
+    "start": 85.6,
+    "end": 85.61,
+    "id": "w213"
+  },
+  {
+    "text": "hiperaugment.",
+    "start": 85.61,
+    "end": 87.08,
+    "id": "w214"
+  },
+  {
+    "text": "Per",
+    "start": 87.08,
+    "end": 87.51,
+    "id": "w215"
+  },
+  {
+    "text": "això,",
+    "start": 87.51,
+    "end": 87.8,
+    "id": "w216"
+  },
+  {
+    "text": "una",
+    "start": 87.8,
+    "end": 88.04,
+    "id": "w217"
+  },
+  {
+    "text": "hipoglucemia",
+    "start": 88.04,
+    "end": 89.04,
+    "id": "w218"
+  },
+  {
+    "text": "indica",
+    "start": 89.04,
+    "end": 89.6,
+    "id": "w219"
+  },
+  {
+    "text": "una",
+    "start": 89.6,
+    "end": 89.69,
+    "id": "w220"
+  },
+  {
+    "text": "concentració",
+    "start": 89.78,
+    "end": 90.46,
+    "id": "w221"
+  },
+  {
+    "text": "baixa",
+    "start": 90.61,
+    "end": 90.82,
+    "id": "w222"
+  },
+  {
+    "text": "de",
+    "start": 90.93,
+    "end": 90.94,
+    "id": "w223"
+  },
+  {
+    "text": "glucosa",
+    "start": 90.94,
+    "end": 91.38,
+    "id": "w224"
+  },
+  {
+    "text": "a",
+    "start": 91.38,
+    "end": 91.39,
+    "id": "w225"
+  },
+  {
+    "text": "la",
+    "start": 91.45,
+    "end": 91.56,
+    "id": "w226"
+  },
+  {
+    "text": "sang,",
+    "start": 91.56,
+    "end": 91.84,
+    "id": "w227"
+  },
+  {
+    "text": "mentre",
+    "start": 92.2,
+    "end": 92.49,
+    "id": "w228"
+  },
+  {
+    "text": "que",
+    "start": 92.49,
+    "end": 92.74,
+    "id": "w229"
+  },
+  {
+    "text": "hiperglucemia",
+    "start": 92.74,
+    "end": 93.86,
+    "id": "w230"
+  },
+  {
+    "text": "indica",
+    "start": 93.97,
+    "end": 94.16,
+    "id": "w231"
+  },
+  {
+    "text": "una",
+    "start": 94.21,
+    "end": 94.37,
+    "id": "w232"
+  },
+  {
+    "text": "concentració",
+    "start": 94.37,
+    "end": 95.05,
+    "id": "w233"
+  },
+  {
+    "text": "elevada.",
+    "start": 95.21,
+    "end": 95.64,
+    "id": "w234"
+  },
+  {
+    "text": "Un",
+    "start": 95.64,
+    "end": 96.005,
+    "id": "w235"
+  },
+  {
+    "text": "altre",
+    "start": 96.005,
+    "end": 96.37,
+    "id": "w236"
+  },
+  {
+    "text": "exemple",
+    "start": 96.37,
+    "end": 96.8,
+    "id": "w237"
+  },
+  {
+    "text": "són",
+    "start": 96.8,
+    "end": 97.05,
+    "id": "w238"
+  },
+  {
+    "text": "els",
+    "start": 97.05,
+    "end": 97.16,
+    "id": "w239"
+  },
+  {
+    "text": "sufixos\"-algia\",",
+    "start": 97.55,
+    "end": 98.75,
+    "id": "w240"
+  },
+  {
+    "text": "que",
+    "start": 98.84,
+    "end": 98.93,
+    "id": "w241"
+  },
+  {
+    "text": "significa",
+    "start": 98.93,
+    "end": 99.32,
+    "id": "w242"
+  },
+  {
+    "text": "dolor,",
+    "start": 99.55,
+    "end": 100,
+    "id": "w243"
+  },
+  {
+    "text": "com",
+    "start": 100,
+    "end": 100.24,
+    "id": "w244"
+  },
+  {
+    "text": "neuralgia,",
+    "start": 100.24,
+    "end": 101.13,
+    "id": "w245"
+  },
+  {
+    "text": "i\"-actomia\",",
+    "start": 101.13,
+    "end": 102.17,
+    "id": "w246"
+  },
+  {
+    "text": "que",
+    "start": 102.17,
+    "end": 102.41,
+    "id": "w247"
+  },
+  {
+    "text": "significa",
+    "start": 102.41,
+    "end": 103.2,
+    "id": "w248"
+  },
+  {
+    "text": "extirpació",
+    "start": 103.31,
+    "end": 103.85,
+    "id": "w249"
+  },
+  {
+    "text": "quirúrgica",
+    "start": 103.85,
+    "end": 104.49,
+    "id": "w250"
+  },
+  {
+    "text": "d'una",
+    "start": 104.55,
+    "end": 104.81,
+    "id": "w251"
+  },
+  {
+    "text": "estructura.",
+    "start": 104.81,
+    "end": 105.69,
+    "id": "w252"
+  },
+  {
+    "text": "També",
+    "start": 105.69,
+    "end": 106.07,
+    "id": "w253"
+  },
+  {
+    "text": "hi",
+    "start": 106.07,
+    "end": 106.45,
+    "id": "w254"
+  },
+  {
+    "text": "ha",
+    "start": 106.45,
+    "end": 106.58,
+    "id": "w255"
+  },
+  {
+    "text": "termes",
+    "start": 106.58,
+    "end": 107.13,
+    "id": "w256"
+  },
+  {
+    "text": "que",
+    "start": 107.13,
+    "end": 107.35,
+    "id": "w257"
+  },
+  {
+    "text": "indiquen",
+    "start": 107.69,
+    "end": 108.22,
+    "id": "w258"
+  },
+  {
+    "text": "perseguiments,",
+    "start": 108.22,
+    "end": 108.83,
+    "id": "w259"
+  },
+  {
+    "text": "per",
+    "start": 108.83,
+    "end": 109.11,
+    "id": "w260"
+  },
+  {
+    "text": "exemple,",
+    "start": 109.11,
+    "end": 109.68,
+    "id": "w261"
+  },
+  {
+    "text": "escòpia",
+    "start": 109.68,
+    "end": 110.11,
+    "id": "w262"
+  },
+  {
+    "text": "fa",
+    "start": 110.13,
+    "end": 110.17,
+    "id": "w263"
+  },
+  {
+    "text": "referència",
+    "start": 110.38,
+    "end": 110.92,
+    "id": "w264"
+  },
+  {
+    "text": "a",
+    "start": 110.92,
+    "end": 110.93,
+    "id": "w265"
+  },
+  {
+    "text": "l'observació",
+    "start": 110.99,
+    "end": 111.86,
+    "id": "w266"
+  },
+  {
+    "text": "o",
+    "start": 111.86,
+    "end": 111.97,
+    "id": "w267"
+  },
+  {
+    "text": "exploració",
+    "start": 111.97,
+    "end": 112.76,
+    "id": "w268"
+  },
+  {
+    "text": "visual,",
+    "start": 113.23,
+    "end": 113.62,
+    "id": "w269"
+  },
+  {
+    "text": "com",
+    "start": 113.62,
+    "end": 113.9,
+    "id": "w270"
+  },
+  {
+    "text": "endoscòpia,",
+    "start": 113.9,
+    "end": 115.08,
+    "id": "w271"
+  },
+  {
+    "text": "i\"-metria\",",
+    "start": 115.58,
+    "end": 116.32,
+    "id": "w272"
+  },
+  {
+    "text": "indica",
+    "start": 116.32,
+    "end": 116.94,
+    "id": "w273"
+  },
+  {
+    "text": "una",
+    "start": 116.96,
+    "end": 117.25,
+    "id": "w274"
+  },
+  {
+    "text": "mesura,",
+    "start": 117.25,
+    "end": 117.92,
+    "id": "w275"
+  },
+  {
+    "text": "com",
+    "start": 117.92,
+    "end": 118.52,
+    "id": "w276"
+  },
+  {
+    "text": "xerometria,",
+    "start": 118.52,
+    "end": 119.09,
+    "id": "w277"
+  },
+  {
+    "text": "que",
+    "start": 119.15,
+    "end": 119.4,
+    "id": "w278"
+  },
+  {
+    "text": "serveix",
+    "start": 119.4,
+    "end": 119.98,
+    "id": "w279"
+  },
+  {
+    "text": "per",
+    "start": 119.98,
+    "end": 120.23,
+    "id": "w280"
+  },
+  {
+    "text": "mesurar",
+    "start": 120.23,
+    "end": 120.8,
+    "id": "w281"
+  },
+  {
+    "text": "el",
+    "start": 120.8,
+    "end": 120.97,
+    "id": "w282"
+  },
+  {
+    "text": "flux",
+    "start": 120.97,
+    "end": 121.16,
+    "id": "w283"
+  },
+  {
+    "text": "salival.",
+    "start": 121.21,
+    "end": 121.76,
+    "id": "w284"
+  },
+  {
+    "text": "Per",
+    "start": 121.77,
+    "end": 121.87,
+    "id": "w285"
+  },
+  {
+    "text": "tant,",
+    "start": 122.24,
+    "end": 122.63,
+    "id": "w286"
+  },
+  {
+    "text": "si",
+    "start": 122.63,
+    "end": 122.79,
+    "id": "w287"
+  },
+  {
+    "text": "aprenem",
+    "start": 122.85,
+    "end": 123.5,
+    "id": "w288"
+  },
+  {
+    "text": "a",
+    "start": 123.5,
+    "end": 123.6,
+    "id": "w289"
+  },
+  {
+    "text": "identificar",
+    "start": 123.6,
+    "end": 124.16,
+    "id": "w290"
+  },
+  {
+    "text": "aquestes",
+    "start": 124.27,
+    "end": 124.66,
+    "id": "w291"
+  },
+  {
+    "text": "parts,",
+    "start": 124.66,
+    "end": 125.06,
+    "id": "w292"
+  },
+  {
+    "text": "podem",
+    "start": 125.16,
+    "end": 125.18,
+    "id": "w293"
+  },
+  {
+    "text": "deduir",
+    "start": 125.53,
+    "end": 125.78,
+    "id": "w294"
+  },
+  {
+    "text": "el",
+    "start": 125.78,
+    "end": 125.9,
+    "id": "w295"
+  },
+  {
+    "text": "significat",
+    "start": 125.9,
+    "end": 126.58,
+    "id": "w296"
+  },
+  {
+    "text": "de",
+    "start": 126.58,
+    "end": 126.65,
+    "id": "w297"
+  },
+  {
+    "text": "moltes",
+    "start": 126.74,
+    "end": 127.09,
+    "id": "w298"
+  },
+  {
+    "text": "paraules",
+    "start": 127.21,
+    "end": 127.52,
+    "id": "w299"
+  },
+  {
+    "text": "mèdiques",
+    "start": 127.52,
+    "end": 127.93,
+    "id": "w300"
+  },
+  {
+    "text": "sense",
+    "start": 127.93,
+    "end": 128.11,
+    "id": "w301"
+  },
+  {
+    "text": "haver-les",
+    "start": 128.45,
+    "end": 128.65,
+    "id": "w302"
+  },
+  {
+    "text": "memoritzat",
+    "start": 128.65,
+    "end": 129.16,
+    "id": "w303"
+  },
+  {
+    "text": "prèviament.",
+    "start": 129.16,
+    "end": 129.92,
+    "id": "w304"
+  },
+  {
+    "text": "Això",
+    "start": 129.92,
+    "end": 130.46,
+    "id": "w305"
+  },
+  {
+    "text": "sí,",
+    "start": 130.46,
+    "end": 130.64,
+    "id": "w306"
+  },
+  {
+    "text": "sempre",
+    "start": 130.64,
+    "end": 131.18,
+    "id": "w307"
+  },
+  {
+    "text": "hem",
+    "start": 131.18,
+    "end": 131.39,
+    "id": "w308"
+  },
+  {
+    "text": "de",
+    "start": 131.47,
+    "end": 131.61,
+    "id": "w309"
+  },
+  {
+    "text": "comprovar-ne",
+    "start": 131.76,
+    "end": 132.67,
+    "id": "w310"
+  },
+  {
+    "text": "el",
+    "start": 132.76,
+    "end": 132.87,
+    "id": "w311"
+  },
+  {
+    "text": "significat",
+    "start": 132.96,
+    "end": 133.44,
+    "id": "w312"
+  },
+  {
+    "text": "clínic,",
+    "start": 133.61,
+    "end": 133.94,
+    "id": "w313"
+  },
+  {
+    "text": "perquè",
+    "start": 133.94,
+    "end": 134.28,
+    "id": "w314"
+  },
+  {
+    "text": "no",
+    "start": 134.28,
+    "end": 134.38,
+    "id": "w315"
+  },
+  {
+    "text": "totes",
+    "start": 134.38,
+    "end": 134.67,
+    "id": "w316"
+  },
+  {
+    "text": "les",
+    "start": 134.67,
+    "end": 134.88,
+    "id": "w317"
+  },
+  {
+    "text": "paraules",
+    "start": 134.88,
+    "end": 135.28,
+    "id": "w318"
+  },
+  {
+    "text": "serveixen",
+    "start": 135.28,
+    "end": 135.79,
+    "id": "w319"
+  },
+  {
+    "text": "exactament",
+    "start": 135.95,
+    "end": 136.5,
+    "id": "w320"
+  },
+  {
+    "text": "les",
+    "start": 136.5,
+    "end": 136.7,
+    "id": "w321"
+  },
+  {
+    "text": "mateixes",
+    "start": 136.7,
+    "end": 137.22,
+    "id": "w322"
+  },
+  {
+    "text": "normes.",
+    "start": 137.22,
+    "end": 137.86,
+    "id": "w323"
+  },
+  {
+    "text": "Ara",
+    "start": 137.86,
+    "end": 138.54,
+    "id": "w324"
+  },
+  {
+    "text": "bé,",
+    "start": 138.54,
+    "end": 138.55,
+    "id": "w325"
+  },
+  {
+    "text": "sabries",
+    "start": 138.65,
+    "end": 139.24,
+    "id": "w326"
+  },
+  {
+    "text": "desxifrar",
+    "start": 139.24,
+    "end": 140.11,
+    "id": "w327"
+  },
+  {
+    "text": "què",
+    "start": 140.11,
+    "end": 140.41,
+    "id": "w328"
+  },
+  {
+    "text": "significa",
+    "start": 140.41,
+    "end": 141.36,
+    "id": "w329"
+  },
+  {
+    "text": "periodontitis,",
+    "start": 141.47,
+    "end": 142.88,
+    "id": "w330"
+  }
+]

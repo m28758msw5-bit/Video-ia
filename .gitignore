@@ -29,3 +29,8 @@ terminologia/audio/*16k.wav
 terminologia/audio/hi.wav
 terminologia/audio/lo.wav
 terminologia/audio/audio-pre.wav
+video4/renders/
+video4/.hyperframes/
+video4/audio/*16k.wav
+video4/audio/segs/
+video4/assets/mix-filter.txt
