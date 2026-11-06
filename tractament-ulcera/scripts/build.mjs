@@ -36,7 +36,11 @@ const S = [
   { id: 6, t: 40, end: 49, theory: "Comprova la resposta al tractament i permet detectar si cal modificar-lo.", title: "SEGUIMENT", sub: "Controlar l’evolució", ex: "visites de revisió per comprovar la cicatrització.", color: C.green },
   { id: 7, t: 49, end: 55 },
 ];
-const DUR = +(UNTIL ?? 55).toFixed(3);
+// Ritme: tot el vídeo (moments i moviments) s'allarga per aquest factor.
+const SLOW = 1.4;
+// Text a les targetes: només títol + idea curta (la frase teòrica i l'exemple queden desats a S).
+const SHOW_THEORY = false, SHOW_EX = false;
+const DUR = +(UNTIL ?? 55 * SLOW).toFixed(3);
 const SC = Object.fromEntries(S.map((s) => [s.id, s]));
 const WX = (id) => (id - 1) * 3200; // centre de cada escena al món
 const VX = 430; // les il·lustracions van a la meitat dreta (el text, a l'esquerra)
@@ -256,11 +260,11 @@ const CSS = `
 .layer{position:absolute;overflow:visible}
 #title{position:absolute;left:0;right:0;top:120px;text-align:center;font-weight:900;font-size:110px;letter-spacing:-0.02em;opacity:0}
 #title small{display:block;font-size:34px;font-weight:700;letter-spacing:.24em;color:${C.blue};margin-bottom:10px}
-.panel{position:absolute;left:110px;top:150px;width:720px;opacity:0}
+.panel{position:absolute;left:110px;top:150px;width:800px;opacity:0}
 .theory{font-size:40px;font-weight:500;line-height:1.3;color:${C.ink2};padding-left:26px;border-left:8px solid var(--c);margin-bottom:46px}
-.card{background:#fff;border-radius:34px;padding:34px 40px;box-shadow:0 18px 50px rgba(15,23,42,.12);border:3px solid ${C.line}}
-.card h2{font-size:60px;font-weight:900;line-height:1.02;letter-spacing:-0.01em;color:var(--c)}
-.card .sub{font-size:44px;font-weight:800;margin-top:14px}
+.card{background:#fff;border-radius:38px;padding:44px 50px;box-shadow:0 18px 50px rgba(15,23,42,.12);border:3px solid ${C.line}}
+.card h2{font-size:68px;font-weight:900;line-height:1.02;letter-spacing:-0.01em;color:var(--c)}
+.card .sub{font-size:50px;font-weight:700;margin-top:18px;color:${C.ink2}}
 .card .ex{font-size:34px;font-weight:500;line-height:1.3;color:${C.ink2};margin-top:20px;padding-top:20px;border-top:3px solid ${C.line}}
 .card .ex b{color:var(--c);font-weight:800}
 .card>*{opacity:0}
@@ -271,11 +275,11 @@ const CSS = `
 
 // ───────────────────────── línia de temps ─────────────────────────
 const T = [], SFX = [];
-const sfx = (file, t, vol = 0.4) => SFX.push({ file, t: +Math.max(0, t).toFixed(3), vol });
+const sfx = (file, t, vol = 0.4) => SFX.push({ file, t: +Math.max(0, t * SLOW).toFixed(3), vol });
 const tw = (sel, from, vars, t) => { const o = { sel, from, vars, t }; T.push(o); return o; };
 const to = (sel, vars, t) => tw(sel, null, vars, t);
 const fromTo = (sel, a, b, t) => tw(sel, a, b, t);
-const set = (sel, vars, t) => T.push(`tl.set(${JSON.stringify(sel)}, ${JSON.stringify(vars)}, ${r2(t)});`);
+const set = (sel, vars, t) => T.push(`tl.set(${JSON.stringify(sel)}, ${JSON.stringify(vars)}, ${r2(t * SLOW)});`);
 const raw = (s) => T.push(s);
 let wk = 0;
 const whoosh = () => ["whoosh1", "whoosh2", "whoosh3"][wk++ % 3];
@@ -307,19 +311,20 @@ raw(`gsap.set(["#hp","#bur","#blister","#pillOut","#food1","#food2","#food3","#x
 // Panells de text (teoria + targeta) per a les escenes 2–6.
 let html = `<div id="title"><small>NUCLI 8 · RECURSOS TERAPÈUTICS</small>TRACTAMENT DE L’ÚLCERA</div>`;
 S.filter((s) => s.title).forEach((s) => {
-  const top = s.theory ? 150 : 300;
+  const th = SHOW_THEORY && s.theory, ex = SHOW_EX && s.ex;
+  const top = th ? 150 : 330;
   html += `<div class="panel" id="p${s.id}" style="--c:${s.color};top:${top}px">
-    ${s.theory ? `<div class="theory" id="th${s.id}">«${s.theory}»</div>` : ""}
-    <div class="card"><h2 id="h${s.id}">${s.title}</h2><div class="sub" id="sb${s.id}">${s.sub}</div>${s.ex ? `<div class="ex" id="ex${s.id}"><b>Exemple:</b> ${s.ex}</div>` : ""}</div>
+    ${th ? `<div class="theory" id="th${s.id}">«${s.theory}»</div>` : ""}
+    <div class="card"><h2 id="h${s.id}">${s.title}</h2><div class="sub" id="sb${s.id}">${s.sub}</div>${ex ? `<div class="ex" id="ex${s.id}"><b>Exemple:</b> ${s.ex}</div>` : ""}</div>
   </div>`;
   const t0 = s.t;
   set(`#p${s.id}`, { opacity: 1 }, t0 + 0.2);
-  if (s.theory) fromTo(`#th${s.id}`, { opacity: 0, x: -30, filter: "blur(8px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.6, ease: "power3.out" }, t0 + 0.3);
-  const tc = s.theory ? t0 + 2.0 : t0 + 0.5;
+  if (th) fromTo(`#th${s.id}`, { opacity: 0, x: -30, filter: "blur(8px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.6, ease: "power3.out" }, t0 + 0.3);
+  const tc = th ? t0 + 2.0 : t0 + 0.8;
   fromTo(`#p${s.id} .card`, { opacity: 0, y: 40, scale: 0.96 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "power3.out" }, tc);
   fromTo(`#h${s.id}`, { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.4, ease: "power3.out" }, tc + 0.1);
   fromTo(`#sb${s.id}`, { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.4, ease: "power3.out" }, tc + 0.5);
-  if (s.ex) fromTo(`#ex${s.id}`, { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.4, ease: "power3.out" }, tc + 1.2);
+  if (ex) fromTo(`#ex${s.id}`, { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.4, ease: "power3.out" }, tc + 1.2);
   sfx("pop1", tc + 0.1, 0.3);
   to(`#p${s.id}`, { opacity: 0, x: -60, duration: 0.35, ease: "power2.in" }, s.end - 0.45);
 });
@@ -450,6 +455,11 @@ function serialize() {
       if (JSON.stringify(b.sel) !== JSON.stringify(a.sel) || b.t <= a.t) continue;
       if (props(b).some((k) => props(a).includes(k))) { a.vars.duration = Math.max(0.04, r2(b.t - a.t)); break; }
     }
+  });
+  objs.forEach((o) => {
+    o.t *= SLOW;
+    o.vars = { ...o.vars, duration: r2((o.vars.duration ?? 0.5) * SLOW * 1000) / 1000 };
+    if (o.vars.repeatDelay) o.vars.repeatDelay = r2(o.vars.repeatDelay * SLOW);
   });
   return T.map((o) => typeof o === "string" ? o
     : o.from ? `tl.fromTo(${JSON.stringify(o.sel)}, ${JSON.stringify(o.from)}, ${JSON.stringify(o.vars)}, ${r2(o.t)});`

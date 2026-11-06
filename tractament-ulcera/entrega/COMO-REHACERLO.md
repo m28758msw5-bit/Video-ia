@@ -1,6 +1,6 @@
 # Cómo rehacer «Nucli 8 · Recursos terapèutics — Tractament de l'úlcera»
 
-Horizontal 1920×1080 a 30 fps, 55 s. Fondo claro e ilustración realista (mismo estilo que «Biòpsia i estudi histològic»).
+Horizontal 1920×1080 a 30 fps, 77 s (ritmo lento: `SLOW = 1.4`). Tarjetas solo con título + idea corta (`SHOW_THEORY`, `SHOW_EX` = false; los textos completos siguen en la lista `S`). Fondo claro e ilustración realista (mismo estilo que «Biòpsia i estudi histològic»).
 Sin voz, sin música y sin subtítulos: en cada tipo de tratamiento aparece primero la frase teórica y después la tarjeta con las palabras clave y el ejemplo aplicado al caso, mientras a la derecha se ve la acción. Efectos de sonido discretos.
 
 ## Rehacer
