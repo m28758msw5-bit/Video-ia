@@ -1,0 +1,440 @@
+[
+  {
+    "text": "Un",
+    "start": 0,
+    "end": 0.16,
+    "id": "w0"
+  },
+  {
+    "text": "nen",
+    "start": 0.16,
+    "end": 0.28,
+    "id": "w1"
+  },
+  {
+    "text": "menja",
+    "start": 0.52,
+    "end": 0.79,
+    "id": "w2"
+  },
+  {
+    "text": "la",
+    "start": 0.83,
+    "end": 0.96,
+    "id": "w3"
+  },
+  {
+    "text": "pizza",
+    "start": 0.96,
+    "end": 1.3,
+    "id": "w4"
+  },
+  {
+    "text": "d'una",
+    "start": 1.39,
+    "end": 1.76,
+    "id": "w5"
+  },
+  {
+    "text": "mossegada",
+    "start": 1.76,
+    "end": 2.52,
+    "id": "w6"
+  },
+  {
+    "text": "i",
+    "start": 2.52,
+    "end": 2.59,
+    "id": "w7"
+  },
+  {
+    "text": "què",
+    "start": 2.59,
+    "end": 2.8,
+    "id": "w8"
+  },
+  {
+    "text": "passa?",
+    "start": 2.81,
+    "end": 3.4,
+    "id": "w9"
+  },
+  {
+    "text": "Que",
+    "start": 3.4,
+    "end": 3.61,
+    "id": "w10"
+  },
+  {
+    "text": "li",
+    "start": 3.63,
+    "end": 3.76,
+    "id": "w11"
+  },
+  {
+    "text": "fa",
+    "start": 3.76,
+    "end": 3.8,
+    "id": "w12"
+  },
+  {
+    "text": "mal",
+    "start": 3.92,
+    "end": 4.07,
+    "id": "w13"
+  },
+  {
+    "text": "la",
+    "start": 4.19,
+    "end": 4.26,
+    "id": "w14"
+  },
+  {
+    "text": "panxa.",
+    "start": 4.26,
+    "end": 4.88,
+    "id": "w15"
+  },
+  {
+    "text": "Quina",
+    "start": 4.88,
+    "end": 5.74,
+    "id": "w16"
+  },
+  {
+    "text": "seria",
+    "start": 5.74,
+    "end": 5.87,
+    "id": "w17"
+  },
+  {
+    "text": "la",
+    "start": 5.87,
+    "end": 6.02,
+    "id": "w18"
+  },
+  {
+    "text": "teologia?",
+    "start": 6.26,
+    "end": 7.18,
+    "id": "w19"
+  },
+  {
+    "text": "Ha",
+    "start": 7.18,
+    "end": 7.31,
+    "id": "w20"
+  },
+  {
+    "text": "menjat",
+    "start": 7.41,
+    "end": 7.81,
+    "id": "w21"
+  },
+  {
+    "text": "massa",
+    "start": 7.81,
+    "end": 8.2,
+    "id": "w22"
+  },
+  {
+    "text": "i",
+    "start": 8.2,
+    "end": 8.28,
+    "id": "w23"
+  },
+  {
+    "text": "molt",
+    "start": 8.28,
+    "end": 8.6,
+    "id": "w24"
+  },
+  {
+    "text": "ràpid.",
+    "start": 8.6,
+    "end": 9.23,
+    "id": "w25"
+  },
+  {
+    "text": "La",
+    "start": 9.23,
+    "end": 9.62,
+    "id": "w26"
+  },
+  {
+    "text": "patogènia",
+    "start": 9.62,
+    "end": 9.9,
+    "id": "w27"
+  },
+  {
+    "text": "és",
+    "start": 10.14,
+    "end": 10.17,
+    "id": "w28"
+  },
+  {
+    "text": "que",
+    "start": 10.17,
+    "end": 10.38,
+    "id": "w29"
+  },
+  {
+    "text": "l'estómac",
+    "start": 10.38,
+    "end": 10.92,
+    "id": "w30"
+  },
+  {
+    "text": "s'ha",
+    "start": 11.01,
+    "end": 11.16,
+    "id": "w31"
+  },
+  {
+    "text": "omplert",
+    "start": 11.29,
+    "end": 11.7,
+    "id": "w32"
+  },
+  {
+    "text": "massa",
+    "start": 11.78,
+    "end": 12.13,
+    "id": "w33"
+  },
+  {
+    "text": "i",
+    "start": 12.13,
+    "end": 12.2,
+    "id": "w34"
+  },
+  {
+    "text": "s'ha",
+    "start": 12.2,
+    "end": 12.48,
+    "id": "w35"
+  },
+  {
+    "text": "dilatat.",
+    "start": 12.48,
+    "end": 13.11,
+    "id": "w36"
+  },
+  {
+    "text": "L'anatomia",
+    "start": 13.82,
+    "end": 13.84,
+    "id": "w37"
+  },
+  {
+    "text": "patològica",
+    "start": 13.84,
+    "end": 14.49,
+    "id": "w38"
+  },
+  {
+    "text": "a",
+    "start": 14.49,
+    "end": 14.55,
+    "id": "w39"
+  },
+  {
+    "text": "l'estómac",
+    "start": 14.55,
+    "end": 15.13,
+    "id": "w40"
+  },
+  {
+    "text": "s'ha",
+    "start": 15.13,
+    "end": 15.37,
+    "id": "w41"
+  },
+  {
+    "text": "inflat",
+    "start": 15.49,
+    "end": 15.78,
+    "id": "w42"
+  },
+  {
+    "text": "temporalment",
+    "start": 15.78,
+    "end": 16.59,
+    "id": "w43"
+  },
+  {
+    "text": "per",
+    "start": 16.59,
+    "end": 16.79,
+    "id": "w44"
+  },
+  {
+    "text": "l'excés",
+    "start": 16.79,
+    "end": 17.24,
+    "id": "w45"
+  },
+  {
+    "text": "de",
+    "start": 17.24,
+    "end": 17.31,
+    "id": "w46"
+  },
+  {
+    "text": "menjar.",
+    "start": 17.43,
+    "end": 18.14,
+    "id": "w47"
+  },
+  {
+    "text": "La",
+    "start": 18.14,
+    "end": 18.62,
+    "id": "w48"
+  },
+  {
+    "text": "fisiopatologia",
+    "start": 18.62,
+    "end": 19.42,
+    "id": "w49"
+  },
+  {
+    "text": "seria",
+    "start": 19.45,
+    "end": 19.82,
+    "id": "w50"
+  },
+  {
+    "text": "que",
+    "start": 19.82,
+    "end": 20.06,
+    "id": "w51"
+  },
+  {
+    "text": "l'estómac",
+    "start": 20.06,
+    "end": 20.7,
+    "id": "w52"
+  },
+  {
+    "text": "té",
+    "start": 20.78,
+    "end": 20.94,
+    "id": "w53"
+  },
+  {
+    "text": "més",
+    "start": 20.94,
+    "end": 21.18,
+    "id": "w54"
+  },
+  {
+    "text": "feina",
+    "start": 21.18,
+    "end": 21.58,
+    "id": "w55"
+  },
+  {
+    "text": "per",
+    "start": 21.58,
+    "end": 21.82,
+    "id": "w56"
+  },
+  {
+    "text": "digerir.",
+    "start": 21.82,
+    "end": 22.4,
+    "id": "w57"
+  },
+  {
+    "text": "I",
+    "start": 22.4,
+    "end": 22.52,
+    "id": "w58"
+  },
+  {
+    "text": "de",
+    "start": 22.52,
+    "end": 22.64,
+    "id": "w59"
+  },
+  {
+    "text": "la",
+    "start": 22.64,
+    "end": 22.76,
+    "id": "w60"
+  },
+  {
+    "text": "semiologia,",
+    "start": 22.76,
+    "end": 23.62,
+    "id": "w61"
+  },
+  {
+    "text": "té",
+    "start": 23.62,
+    "end": 23.76,
+    "id": "w62"
+  },
+  {
+    "text": "la",
+    "start": 23.76,
+    "end": 23.81,
+    "id": "w63"
+  },
+  {
+    "text": "panxa",
+    "start": 23.89,
+    "end": 24.26,
+    "id": "w64"
+  },
+  {
+    "text": "inflamada",
+    "start": 24.26,
+    "end": 24.84,
+    "id": "w65"
+  },
+  {
+    "text": "i",
+    "start": 24.92,
+    "end": 24.99,
+    "id": "w66"
+  },
+  {
+    "text": "es",
+    "start": 24.99,
+    "end": 25.13,
+    "id": "w67"
+  },
+  {
+    "text": "veu",
+    "start": 25.13,
+    "end": 25.34,
+    "id": "w68"
+  },
+  {
+    "text": "que",
+    "start": 25.34,
+    "end": 25.56,
+    "id": "w69"
+  },
+  {
+    "text": "li",
+    "start": 25.56,
+    "end": 25.64,
+    "id": "w70"
+  },
+  {
+    "text": "té",
+    "start": 25.7,
+    "end": 25.8,
+    "id": "w71"
+  },
+  {
+    "text": "dolor.",
+    "start": 25.87,
+    "end": 26.56,
+    "id": "w72"
+  }
+]

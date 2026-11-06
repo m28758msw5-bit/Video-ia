@@ -23,3 +23,9 @@ regeneracio-cellular/audio/*16k.wav
 regeneracio-cellular/audio/hi.wav
 regeneracio-cellular/audio/lo.wav
 regeneracio-cellular/audio/audio-pre.wav
+terminologia/renders/
+terminologia/.hyperframes/
+terminologia/audio/*16k.wav
+terminologia/audio/hi.wav
+terminologia/audio/lo.wav
+terminologia/audio/audio-pre.wav
