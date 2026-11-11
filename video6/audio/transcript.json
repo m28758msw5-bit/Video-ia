@@ -1,0 +1,1202 @@
+[
+  {
+    "text": "preguntat",
+    "start": 0.08,
+    "end": 0.43,
+    "id": "w0"
+  },
+  {
+    "text": "mai",
+    "start": 0.47,
+    "end": 0.61,
+    "id": "w1"
+  },
+  {
+    "text": "per",
+    "start": 0.61,
+    "end": 0.71,
+    "id": "w2"
+  },
+  {
+    "text": "què",
+    "start": 0.78,
+    "end": 0.89,
+    "id": "w3"
+  },
+  {
+    "text": "algunes",
+    "start": 0.97,
+    "end": 1.26,
+    "id": "w4"
+  },
+  {
+    "text": "cèl·lules",
+    "start": 1.26,
+    "end": 1.76,
+    "id": "w5"
+  },
+  {
+    "text": "comencen",
+    "start": 1.76,
+    "end": 2.3,
+    "id": "w6"
+  },
+  {
+    "text": "a",
+    "start": 2.3,
+    "end": 2.38,
+    "id": "w7"
+  },
+  {
+    "text": "dividir-se",
+    "start": 2.38,
+    "end": 2.87,
+    "id": "w8"
+  },
+  {
+    "text": "sense",
+    "start": 2.87,
+    "end": 3.14,
+    "id": "w9"
+  },
+  {
+    "text": "parar,",
+    "start": 3.14,
+    "end": 3.56,
+    "id": "w10"
+  },
+  {
+    "text": "és",
+    "start": 3.56,
+    "end": 4.08,
+    "id": "w11"
+  },
+  {
+    "text": "com",
+    "start": 4.2,
+    "end": 4.24,
+    "id": "w12"
+  },
+  {
+    "text": "si",
+    "start": 4.32,
+    "end": 4.34,
+    "id": "w13"
+  },
+  {
+    "text": "algú",
+    "start": 4.34,
+    "end": 4.54,
+    "id": "w14"
+  },
+  {
+    "text": "hagués",
+    "start": 4.54,
+    "end": 4.85,
+    "id": "w15"
+  },
+  {
+    "text": "apretat",
+    "start": 4.85,
+    "end": 5.13,
+    "id": "w16"
+  },
+  {
+    "text": "l'accelerador",
+    "start": 5.21,
+    "end": 5.96,
+    "id": "w17"
+  },
+  {
+    "text": "i",
+    "start": 5.96,
+    "end": 6.04,
+    "id": "w18"
+  },
+  {
+    "text": "no",
+    "start": 6.04,
+    "end": 6.14,
+    "id": "w19"
+  },
+  {
+    "text": "hi",
+    "start": 6.14,
+    "end": 6.26,
+    "id": "w20"
+  },
+  {
+    "text": "hagués",
+    "start": 6.26,
+    "end": 6.62,
+    "id": "w21"
+  },
+  {
+    "text": "ningú",
+    "start": 6.62,
+    "end": 6.92,
+    "id": "w22"
+  },
+  {
+    "text": "capaç",
+    "start": 6.93,
+    "end": 7.22,
+    "id": "w23"
+  },
+  {
+    "text": "de",
+    "start": 7.22,
+    "end": 7.31,
+    "id": "w24"
+  },
+  {
+    "text": "frenar-ho.",
+    "start": 7.43,
+    "end": 8.08,
+    "id": "w25"
+  },
+  {
+    "text": "Però,",
+    "start": 8.41,
+    "end": 8.57,
+    "id": "w26"
+  },
+  {
+    "text": "un",
+    "start": 8.57,
+    "end": 8.71,
+    "id": "w27"
+  },
+  {
+    "text": "moment,",
+    "start": 8.74,
+    "end": 9.39,
+    "id": "w28"
+  },
+  {
+    "text": "realment",
+    "start": 9.39,
+    "end": 10.1,
+    "id": "w29"
+  },
+  {
+    "text": "les",
+    "start": 10.18,
+    "end": 10.27,
+    "id": "w30"
+  },
+  {
+    "text": "cèl·lules",
+    "start": 10.27,
+    "end": 10.74,
+    "id": "w31"
+  },
+  {
+    "text": "no",
+    "start": 10.74,
+    "end": 10.81,
+    "id": "w32"
+  },
+  {
+    "text": "tenen",
+    "start": 10.88,
+    "end": 11.13,
+    "id": "w33"
+  },
+  {
+    "text": "cap",
+    "start": 11.13,
+    "end": 11.3,
+    "id": "w34"
+  },
+  {
+    "text": "sistema",
+    "start": 11.3,
+    "end": 11.7,
+    "id": "w35"
+  },
+  {
+    "text": "que",
+    "start": 11.7,
+    "end": 11.88,
+    "id": "w36"
+  },
+  {
+    "text": "controli",
+    "start": 12.02,
+    "end": 12.55,
+    "id": "w37"
+  },
+  {
+    "text": "quan",
+    "start": 12.55,
+    "end": 12.83,
+    "id": "w38"
+  },
+  {
+    "text": "han",
+    "start": 12.91,
+    "end": 13.08,
+    "id": "w39"
+  },
+  {
+    "text": "de",
+    "start": 13.08,
+    "end": 13.23,
+    "id": "w40"
+  },
+  {
+    "text": "créixer",
+    "start": 13.23,
+    "end": 13.72,
+    "id": "w41"
+  },
+  {
+    "text": "i",
+    "start": 13.72,
+    "end": 13.86,
+    "id": "w42"
+  },
+  {
+    "text": "quan",
+    "start": 13.86,
+    "end": 14.08,
+    "id": "w43"
+  },
+  {
+    "text": "han",
+    "start": 14.16,
+    "end": 14.26,
+    "id": "w44"
+  },
+  {
+    "text": "de",
+    "start": 14.26,
+    "end": 14.38,
+    "id": "w45"
+  },
+  {
+    "text": "deixar",
+    "start": 14.38,
+    "end": 14.75,
+    "id": "w46"
+  },
+  {
+    "text": "de",
+    "start": 14.75,
+    "end": 14.87,
+    "id": "w47"
+  },
+  {
+    "text": "fer-ho?",
+    "start": 14.87,
+    "end": 15.41,
+    "id": "w48"
+  },
+  {
+    "text": "Doncs",
+    "start": 15.41,
+    "end": 15.72,
+    "id": "w49"
+  },
+  {
+    "text": "sí,",
+    "start": 15.72,
+    "end": 16.04,
+    "id": "w50"
+  },
+  {
+    "text": "i",
+    "start": 16.04,
+    "end": 16.2,
+    "id": "w51"
+  },
+  {
+    "text": "de",
+    "start": 16.2,
+    "end": 16.36,
+    "id": "w52"
+  },
+  {
+    "text": "fet,",
+    "start": 16.36,
+    "end": 16.59,
+    "id": "w53"
+  },
+  {
+    "text": "el",
+    "start": 16.62,
+    "end": 16.71,
+    "id": "w54"
+  },
+  {
+    "text": "nostre",
+    "start": 16.75,
+    "end": 17.16,
+    "id": "w55"
+  },
+  {
+    "text": "organisme",
+    "start": 17.16,
+    "end": 17.82,
+    "id": "w56"
+  },
+  {
+    "text": "té",
+    "start": 17.82,
+    "end": 18.06,
+    "id": "w57"
+  },
+  {
+    "text": "diversos",
+    "start": 18.14,
+    "end": 18.47,
+    "id": "w58"
+  },
+  {
+    "text": "mecanismes",
+    "start": 18.47,
+    "end": 18.95,
+    "id": "w59"
+  },
+  {
+    "text": "per",
+    "start": 19.03,
+    "end": 19.12,
+    "id": "w60"
+  },
+  {
+    "text": "controlar-ho.",
+    "start": 19.12,
+    "end": 19.84,
+    "id": "w61"
+  },
+  {
+    "text": "Normalment,",
+    "start": 20.66,
+    "end": 20.87,
+    "id": "w62"
+  },
+  {
+    "text": "les",
+    "start": 20.87,
+    "end": 21.09,
+    "id": "w63"
+  },
+  {
+    "text": "cèl·lules",
+    "start": 21.13,
+    "end": 21.8,
+    "id": "w64"
+  },
+  {
+    "text": "saeixen",
+    "start": 21.8,
+    "end": 22.24,
+    "id": "w65"
+  },
+  {
+    "text": "en",
+    "start": 22.32,
+    "end": 22.36,
+    "id": "w66"
+  },
+  {
+    "text": "un",
+    "start": 22.36,
+    "end": 22.48,
+    "id": "w67"
+  },
+  {
+    "text": "procés",
+    "start": 22.48,
+    "end": 22.85,
+    "id": "w68"
+  },
+  {
+    "text": "anomenat",
+    "start": 22.85,
+    "end": 23.34,
+    "id": "w69"
+  },
+  {
+    "text": "cicle",
+    "start": 23.34,
+    "end": 23.59,
+    "id": "w70"
+  },
+  {
+    "text": "celular",
+    "start": 23.71,
+    "end": 24.14,
+    "id": "w71"
+  },
+  {
+    "text": "que",
+    "start": 24.24,
+    "end": 24.34,
+    "id": "w72"
+  },
+  {
+    "text": "està",
+    "start": 24.34,
+    "end": 24.58,
+    "id": "w73"
+  },
+  {
+    "text": "regulat",
+    "start": 24.58,
+    "end": 25,
+    "id": "w74"
+  },
+  {
+    "text": "per",
+    "start": 25,
+    "end": 25.18,
+    "id": "w75"
+  },
+  {
+    "text": "diferents",
+    "start": 25.18,
+    "end": 25.74,
+    "id": "w76"
+  },
+  {
+    "text": "mecanismes",
+    "start": 25.74,
+    "end": 26.32,
+    "id": "w77"
+  },
+  {
+    "text": "de",
+    "start": 26.4,
+    "end": 26.45,
+    "id": "w78"
+  },
+  {
+    "text": "control.",
+    "start": 26.45,
+    "end": 27.13,
+    "id": "w79"
+  },
+  {
+    "text": "Aquests",
+    "start": 27.13,
+    "end": 27.6,
+    "id": "w80"
+  },
+  {
+    "text": "mecanismes",
+    "start": 27.6,
+    "end": 28.32,
+    "id": "w81"
+  },
+  {
+    "text": "funcionen",
+    "start": 28.4,
+    "end": 28.88,
+    "id": "w82"
+  },
+  {
+    "text": "com",
+    "start": 28.88,
+    "end": 29.03,
+    "id": "w83"
+  },
+  {
+    "text": "un",
+    "start": 29.1,
+    "end": 29.19,
+    "id": "w84"
+  },
+  {
+    "text": "semàfor,",
+    "start": 29.19,
+    "end": 29.67,
+    "id": "w85"
+  },
+  {
+    "text": "indiquen",
+    "start": 29.79,
+    "end": 30.46,
+    "id": "w86"
+  },
+  {
+    "text": "a",
+    "start": 30.46,
+    "end": 30.54,
+    "id": "w87"
+  },
+  {
+    "text": "la",
+    "start": 30.54,
+    "end": 30.65,
+    "id": "w88"
+  },
+  {
+    "text": "cèl·lula",
+    "start": 30.65,
+    "end": 31.15,
+    "id": "w89"
+  },
+  {
+    "text": "quan",
+    "start": 31.15,
+    "end": 31.35,
+    "id": "w90"
+  },
+  {
+    "text": "pot",
+    "start": 31.43,
+    "end": 31.6,
+    "id": "w91"
+  },
+  {
+    "text": "créixer,",
+    "start": 31.6,
+    "end": 32.24,
+    "id": "w92"
+  },
+  {
+    "text": "quan",
+    "start": 32.24,
+    "end": 32.68,
+    "id": "w93"
+  },
+  {
+    "text": "s'ha",
+    "start": 32.68,
+    "end": 32.92,
+    "id": "w94"
+  },
+  {
+    "text": "de",
+    "start": 32.92,
+    "end": 33.07,
+    "id": "w95"
+  },
+  {
+    "text": "dividir",
+    "start": 33.11,
+    "end": 33.64,
+    "id": "w96"
+  },
+  {
+    "text": "i",
+    "start": 33.64,
+    "end": 33.72,
+    "id": "w97"
+  },
+  {
+    "text": "quan",
+    "start": 33.72,
+    "end": 33.99,
+    "id": "w98"
+  },
+  {
+    "text": "s'ha",
+    "start": 34.11,
+    "end": 34.26,
+    "id": "w99"
+  },
+  {
+    "text": "d'aturar.",
+    "start": 34.26,
+    "end": 34.68,
+    "id": "w100"
+  },
+  {
+    "text": "Abans",
+    "start": 34.68,
+    "end": 35.08,
+    "id": "w101"
+  },
+  {
+    "text": "de",
+    "start": 35.08,
+    "end": 35.48,
+    "id": "w102"
+  },
+  {
+    "text": "dividir-se,",
+    "start": 35.48,
+    "end": 36.42,
+    "id": "w103"
+  },
+  {
+    "text": "la",
+    "start": 36.42,
+    "end": 36.61,
+    "id": "w104"
+  },
+  {
+    "text": "cèl·lula",
+    "start": 36.61,
+    "end": 37.03,
+    "id": "w105"
+  },
+  {
+    "text": "comprova",
+    "start": 37.07,
+    "end": 37.49,
+    "id": "w106"
+  },
+  {
+    "text": "que",
+    "start": 37.57,
+    "end": 37.74,
+    "id": "w107"
+  },
+  {
+    "text": "l'ADN",
+    "start": 37.76,
+    "end": 38.14,
+    "id": "w108"
+  },
+  {
+    "text": "estigui",
+    "start": 38.22,
+    "end": 38.57,
+    "id": "w109"
+  },
+  {
+    "text": "en",
+    "start": 38.61,
+    "end": 38.73,
+    "id": "w110"
+  },
+  {
+    "text": "bon",
+    "start": 38.73,
+    "end": 38.93,
+    "id": "w111"
+  },
+  {
+    "text": "estat",
+    "start": 38.93,
+    "end": 39.27,
+    "id": "w112"
+  },
+  {
+    "text": "i",
+    "start": 39.27,
+    "end": 39.33,
+    "id": "w113"
+  },
+  {
+    "text": "que",
+    "start": 39.33,
+    "end": 39.49,
+    "id": "w114"
+  },
+  {
+    "text": "no",
+    "start": 39.61,
+    "end": 39.66,
+    "id": "w115"
+  },
+  {
+    "text": "hi",
+    "start": 39.66,
+    "end": 39.79,
+    "id": "w116"
+  },
+  {
+    "text": "hagi",
+    "start": 39.79,
+    "end": 40.14,
+    "id": "w117"
+  },
+  {
+    "text": "errors",
+    "start": 40.22,
+    "end": 40.53,
+    "id": "w118"
+  },
+  {
+    "text": "importants.",
+    "start": 40.53,
+    "end": 41.36,
+    "id": "w119"
+  },
+  {
+    "text": "Si",
+    "start": 41.36,
+    "end": 41.49,
+    "id": "w120"
+  },
+  {
+    "text": "detecta",
+    "start": 41.49,
+    "end": 41.92,
+    "id": "w121"
+  },
+  {
+    "text": "algun",
+    "start": 42.04,
+    "end": 42.18,
+    "id": "w122"
+  },
+  {
+    "text": "problema,",
+    "start": 42.26,
+    "end": 42.79,
+    "id": "w123"
+  },
+  {
+    "text": "pot",
+    "start": 42.79,
+    "end": 42.97,
+    "id": "w124"
+  },
+  {
+    "text": "aturar",
+    "start": 42.97,
+    "end": 43.32,
+    "id": "w125"
+  },
+  {
+    "text": "temporàriament",
+    "start": 43.32,
+    "end": 44.24,
+    "id": "w126"
+  },
+  {
+    "text": "el",
+    "start": 44.32,
+    "end": 44.35,
+    "id": "w127"
+  },
+  {
+    "text": "cicle",
+    "start": 44.35,
+    "end": 44.62,
+    "id": "w128"
+  },
+  {
+    "text": "per",
+    "start": 44.62,
+    "end": 44.78,
+    "id": "w129"
+  },
+  {
+    "text": "intentar",
+    "start": 44.78,
+    "end": 45.22,
+    "id": "w130"
+  },
+  {
+    "text": "reparar-lo.",
+    "start": 45.22,
+    "end": 45.98,
+    "id": "w131"
+  },
+  {
+    "text": "Si",
+    "start": 45.98,
+    "end": 46.27,
+    "id": "w132"
+  },
+  {
+    "text": "el",
+    "start": 46.27,
+    "end": 46.56,
+    "id": "w133"
+  },
+  {
+    "text": "dany",
+    "start": 46.56,
+    "end": 46.73,
+    "id": "w134"
+  },
+  {
+    "text": "és",
+    "start": 46.73,
+    "end": 46.92,
+    "id": "w135"
+  },
+  {
+    "text": "massa",
+    "start": 46.92,
+    "end": 47.39,
+    "id": "w136"
+  },
+  {
+    "text": "breu,",
+    "start": 47.39,
+    "end": 47.91,
+    "id": "w137"
+  },
+  {
+    "text": "pot",
+    "start": 48.03,
+    "end": 48.2,
+    "id": "w138"
+  },
+  {
+    "text": "activar",
+    "start": 48.28,
+    "end": 48.63,
+    "id": "w139"
+  },
+  {
+    "text": "l'apoptosi.",
+    "start": 48.67,
+    "end": 49.52,
+    "id": "w140"
+  },
+  {
+    "text": "Però",
+    "start": 49.52,
+    "end": 50.3,
+    "id": "w141"
+  },
+  {
+    "text": "què",
+    "start": 50.38,
+    "end": 50.47,
+    "id": "w142"
+  },
+  {
+    "text": "passa",
+    "start": 50.47,
+    "end": 50.73,
+    "id": "w143"
+  },
+  {
+    "text": "quan",
+    "start": 50.77,
+    "end": 50.99,
+    "id": "w144"
+  },
+  {
+    "text": "aquest",
+    "start": 50.99,
+    "end": 51.34,
+    "id": "w145"
+  },
+  {
+    "text": "sistema",
+    "start": 51.34,
+    "end": 51.65,
+    "id": "w146"
+  },
+  {
+    "text": "falla?",
+    "start": 51.77,
+    "end": 52.24,
+    "id": "w147"
+  },
+  {
+    "text": "Aquí",
+    "start": 52.24,
+    "end": 52.76,
+    "id": "w148"
+  },
+  {
+    "text": "entren",
+    "start": 52.76,
+    "end": 52.99,
+    "id": "w149"
+  },
+  {
+    "text": "en",
+    "start": 53.02,
+    "end": 53.11,
+    "id": "w150"
+  },
+  {
+    "text": "joc",
+    "start": 53.15,
+    "end": 53.37,
+    "id": "w151"
+  },
+  {
+    "text": "les",
+    "start": 53.37,
+    "end": 53.57,
+    "id": "w152"
+  },
+  {
+    "text": "mutacions.",
+    "start": 53.65,
+    "end": 54.46,
+    "id": "w153"
+  },
+  {
+    "text": "Les",
+    "start": 54.46,
+    "end": 54.98,
+    "id": "w154"
+  },
+  {
+    "text": "mutacions",
+    "start": 54.98,
+    "end": 55.53,
+    "id": "w155"
+  },
+  {
+    "text": "són",
+    "start": 55.53,
+    "end": 55.77,
+    "id": "w156"
+  },
+  {
+    "text": "canvis",
+    "start": 55.77,
+    "end": 56.25,
+    "id": "w157"
+  },
+  {
+    "text": "en",
+    "start": 56.36,
+    "end": 56.4,
+    "id": "w158"
+  },
+  {
+    "text": "la",
+    "start": 56.4,
+    "end": 56.52,
+    "id": "w159"
+  },
+  {
+    "text": "seqüència",
+    "start": 56.52,
+    "end": 57.07,
+    "id": "w160"
+  },
+  {
+    "text": "de",
+    "start": 57.07,
+    "end": 57.17,
+    "id": "w161"
+  },
+  {
+    "text": "l'ADN.",
+    "start": 57.25,
+    "end": 57.63,
+    "id": "w162"
+  },
+  {
+    "text": "El",
+    "start": 57.75,
+    "end": 58.04,
+    "id": "w163"
+  },
+  {
+    "text": "problema",
+    "start": 58.04,
+    "end": 58.3,
+    "id": "w164"
+  },
+  {
+    "text": "apareix",
+    "start": 58.38,
+    "end": 58.73,
+    "id": "w165"
+  },
+  {
+    "text": "quan",
+    "start": 58.77,
+    "end": 59.01,
+    "id": "w166"
+  },
+  {
+    "text": "les",
+    "start": 59.08,
+    "end": 59.19,
+    "id": "w167"
+  },
+  {
+    "text": "mutacions",
+    "start": 59.27,
+    "end": 59.85,
+    "id": "w168"
+  },
+  {
+    "text": "alteren",
+    "start": 59.85,
+    "end": 60.36,
+    "id": "w169"
+  },
+  {
+    "text": "els",
+    "start": 60.44,
+    "end": 60.52,
+    "id": "w170"
+  },
+  {
+    "text": "mecanismes",
+    "start": 60.52,
+    "end": 61.04,
+    "id": "w171"
+  },
+  {
+    "text": "que",
+    "start": 61.04,
+    "end": 61.2,
+    "id": "w172"
+  },
+  {
+    "text": "regulen",
+    "start": 61.2,
+    "end": 61.57,
+    "id": "w173"
+  },
+  {
+    "text": "aquests",
+    "start": 61.57,
+    "end": 62,
+    "id": "w174"
+  },
+  {
+    "text": "processos",
+    "start": 62,
+    "end": 62.72,
+    "id": "w175"
+  },
+  {
+    "text": "i",
+    "start": 62.72,
+    "end": 62.8,
+    "id": "w176"
+  },
+  {
+    "text": "les",
+    "start": 62.8,
+    "end": 62.98,
+    "id": "w177"
+  },
+  {
+    "text": "cèl·lules",
+    "start": 62.98,
+    "end": 63.54,
+    "id": "w178"
+  },
+  {
+    "text": "deixen",
+    "start": 63.54,
+    "end": 63.93,
+    "id": "w179"
+  },
+  {
+    "text": "de",
+    "start": 63.93,
+    "end": 64.07,
+    "id": "w180"
+  },
+  {
+    "text": "respondre",
+    "start": 64.19,
+    "end": 64.62,
+    "id": "w181"
+  },
+  {
+    "text": "correctament",
+    "start": 64.72,
+    "end": 65.35,
+    "id": "w182"
+  },
+  {
+    "text": "als",
+    "start": 65.42,
+    "end": 65.53,
+    "id": "w183"
+  },
+  {
+    "text": "senyals",
+    "start": 65.61,
+    "end": 65.99,
+    "id": "w184"
+  },
+  {
+    "text": "que",
+    "start": 65.99,
+    "end": 66.22,
+    "id": "w185"
+  },
+  {
+    "text": "haurien",
+    "start": 66.22,
+    "end": 66.42,
+    "id": "w186"
+  },
+  {
+    "text": "de",
+    "start": 66.56,
+    "end": 66.6,
+    "id": "w187"
+  },
+  {
+    "text": "controlar",
+    "start": 66.6,
+    "end": 67.16,
+    "id": "w188"
+  },
+  {
+    "text": "el",
+    "start": 67.16,
+    "end": 67.28,
+    "id": "w189"
+  },
+  {
+    "text": "seu",
+    "start": 67.28,
+    "end": 67.46,
+    "id": "w190"
+  },
+  {
+    "text": "creixement",
+    "start": 67.46,
+    "end": 68.12,
+    "id": "w191"
+  },
+  {
+    "text": "i",
+    "start": 68.12,
+    "end": 68.2,
+    "id": "w192"
+  },
+  {
+    "text": "així",
+    "start": 68.2,
+    "end": 68.52,
+    "id": "w193"
+  },
+  {
+    "text": "com",
+    "start": 68.52,
+    "end": 68.76,
+    "id": "w194"
+  },
+  {
+    "text": "es",
+    "start": 68.76,
+    "end": 68.92,
+    "id": "w195"
+  },
+  {
+    "text": "poden",
+    "start": 68.92,
+    "end": 69.32,
+    "id": "w196"
+  },
+  {
+    "text": "originar",
+    "start": 69.32,
+    "end": 69.9,
+    "id": "w197"
+  },
+  {
+    "text": "les",
+    "start": 70.02,
+    "end": 70.28,
+    "id": "w198"
+  },
+  {
+    "text": "neoplàcies.",
+    "start": 70.36,
+    "end": 70.9,
+    "id": "w199"
+  }
+]
