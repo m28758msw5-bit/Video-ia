@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+<defs>
+  <radialGradient id="bg" cx=".5" cy=".42" r=".7"><stop offset="0" stop-color="#CCFBF1"/><stop offset=".55" stop-color="#5EEAD4"/><stop offset="1" stop-color="#0F766E"/></radialGradient>
+  <linearGradient id="skin" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FAD7BB"/><stop offset="1" stop-color="#EDB48E"/></linearGradient>
+  <linearGradient id="coat" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#DCE6EE"/></linearGradient>
+  <linearGradient id="lens" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#334155"/><stop offset="1" stop-color="#020617"/></linearGradient>
+  <linearGradient id="hair" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5B3A29"/><stop offset="1" stop-color="#3B2418"/></linearGradient>
+  <filter id="sh" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#064E3B" flood-opacity=".35"/></filter>
+  <filter id="soft"><feGaussianBlur stdDeviation="2"/></filter>
+</defs>
+<rect width="1024" height="1024" fill="url(#bg)"/>
+<!-- icones de fons (sense text) -->
+<g opacity=".22" fill="#fff">
+  <path d="M170 250 c-30-40 10-80 40-60 c30-20 70 20 40 60 c-6 30 -10 70 -24 70 c-10 0 -10-36 -16-36 c-6 0 -6 36 -16 36 c-14 0 -18-40 -24-70z"/>
+  <path d="M790 210 c-30-40 10-80 40-60 c30-20 70 20 40 60 c-6 30 -10 70 -24 70 c-10 0 -10-36 -16-36 c-6 0 -6 36 -16 36 c-14 0 -18-40 -24-70z" transform="rotate(15 830 220)"/>
+  <circle cx="860" cy="560" r="14"/><circle cx="910" cy="610" r="10"/><circle cx="880" cy="650" r="8"/><path d="M860 560 L910 610 L880 650" stroke="#fff" stroke-width="5" fill="none"/>
+  <circle cx="140" cy="600" r="12"/><circle cx="110" cy="650" r="16"/><circle cx="170" cy="680" r="9"/><path d="M140 600 L110 650 L170 680" stroke="#fff" stroke-width="5" fill="none"/>
+  <path d="M500 90 l12 28 l28 12 l-28 12 l-12 28 l-12-28 l-28-12 l28-12z"/>
+</g>
+<g filter="url(#sh)">
+  <path d="M452 600 L572 600 L580 760 L444 760 Z" fill="#E8AA82"/>
+  <g transform="translate(0,-60)"><!-- bata -->
+  <path d="M150 1024 C160 880 240 800 380 770 L512 830 L644 770 C784 800 864 880 874 1100 L150 1100 Z" fill="url(#coat)"/>
+  <!-- camisa i corbatí -->
+  <path d="M400 770 L512 900 L624 770 L600 760 L512 830 L424 760 Z" fill="#0EA5E9"/>
+  <path d="M440 770 L512 830 L584 770 L560 740 L464 740 Z" fill="#38BDF8"/>
+  <!-- solapes -->
+  <path d="M380 770 L512 1000 L470 1100 L330 800 Z" fill="#EEF3F7" stroke="#C3D0DB" stroke-width="4"/>
+  <path d="M644 770 L512 1000 L554 1100 L694 800 Z" fill="#EEF3F7" stroke="#C3D0DB" stroke-width="4"/>
+  <g transform="translate(512,826)"><path d="M0 0 L-58 -30 L-58 30 Z M0 0 L58 -30 L58 30 Z" fill="#111827"/><circle r="16" fill="#1F2937"/></g>
+  <!-- butxaca amb mirall dental i bolígraf -->
+  <rect x="640" y="880" width="120" height="110" rx="12" fill="#F1F5F9" stroke="#C3D0DB" stroke-width="4"/>
+  <rect x="664" y="820" width="12" height="80" rx="6" fill="#94A3B8"/><circle cx="670" cy="812" r="20" fill="#E0F2FE" stroke="#64748B" stroke-width="6"/>
+  <rect x="704" y="836" width="14" height="70" rx="7" fill="#F43F5E"/>
+  <!-- pin de dent -->
+  <g transform="translate(330,900) scale(.9)"><circle r="38" fill="#14B8A6"/><path d="M-18 -10 c-10-16 4-30 18-22 c14-8 28 6 18 22 c-3 12-5 30-11 30 c-4 0-4-14-7-14 c-3 0-3 14-7 14 c-6 0-8-18-11-30z" fill="#fff"/></g>
+  </g>
+  <!-- orelles -->
+  <ellipse cx="322" cy="480" rx="34" ry="52" fill="url(#skin)"/><ellipse cx="702" cy="480" rx="34" ry="52" fill="url(#skin)"/>
+  <!-- cap -->
+  <ellipse cx="512" cy="460" rx="190" ry="220" fill="url(#skin)"/>
+</g>
+<!-- cabell esbojarrat de científic -->
+<path d="M318 430 C290 330 330 230 420 200 C440 150 520 140 560 180 C620 150 700 190 706 260 C740 300 730 380 706 440 C690 380 670 340 640 320 C600 330 560 300 540 280 C500 320 430 320 400 300 C370 330 340 380 330 440 Z" fill="url(#hair)"/>
+<path d="M430 210 C440 170 470 150 500 160 C480 170 470 190 470 215 Z M560 180 C590 140 640 150 650 180 C620 175 600 185 590 200 Z M500 175 C510 130 540 120 560 130 C540 140 530 160 528 180 Z" fill="#5B3A29"/>
+<!-- celles -->
+<path d="M380 360 C410 330 460 330 490 348" stroke="#3B2418" stroke-width="18" fill="none" stroke-linecap="round"/>
+<path d="M540 338 C575 312 625 316 650 340" stroke="#3B2418" stroke-width="18" fill="none" stroke-linecap="round"/>
+<!-- ulleres tipus wayfarer negres -->
+<g>
+  <path d="M322 420 L360 412" stroke="#0B0B0F" stroke-width="14" stroke-linecap="round"/>
+  <path d="M702 420 L664 412" stroke="#0B0B0F" stroke-width="14" stroke-linecap="round"/>
+  <path d="M356 392 C400 380 460 380 498 392 C500 420 494 460 478 482 C460 500 400 502 380 484 C364 466 356 430 356 392 Z" fill="url(#lens)" stroke="#0B0B0F" stroke-width="16" stroke-linejoin="round"/>
+  <path d="M668 392 C624 380 564 380 526 392 C524 420 530 460 546 482 C564 500 624 502 644 484 C660 466 668 430 668 392 Z" fill="url(#lens)" stroke="#0B0B0F" stroke-width="16" stroke-linejoin="round"/>
+  <path d="M498 400 C506 390 518 390 526 400" stroke="#0B0B0F" stroke-width="14" fill="none"/>
+  <!-- reflexos -->
+  <path d="M378 404 L420 400 L392 470 L374 466 Z" fill="#fff" opacity=".28"/>
+  <path d="M430 400 L446 400 L410 476 L400 474 Z" fill="#fff" opacity=".18"/>
+  <path d="M548 404 L590 400 L562 470 L544 466 Z" fill="#fff" opacity=".28"/>
+  <path d="M600 400 L616 400 L580 476 L570 474 Z" fill="#fff" opacity=".18"/>
+  <circle cx="368" cy="404" r="5" fill="#CBD5E1"/><circle cx="656" cy="404" r="5" fill="#CBD5E1"/>
+</g>
+<!-- nas -->
+<path d="M512 470 C504 500 496 520 500 534 C508 544 526 542 534 532" stroke="#C98763" stroke-width="9" fill="none" stroke-linecap="round"/>
+<!-- galtes -->
+<ellipse cx="400" cy="540" rx="40" ry="22" fill="#F49A9A" opacity=".45"/><ellipse cx="624" cy="540" rx="40" ry="22" fill="#F49A9A" opacity=".45"/>
+<!-- somriure amb dents brillants -->
+<path d="M420 572 C460 650 564 650 604 572 C560 590 464 590 420 572 Z" fill="#7F1D1D"/>
+<path d="M432 578 C470 594 554 594 592 578 L586 600 C550 612 474 612 438 600 Z" fill="#FFFFFF"/>
+<path d="M470 590 V606 M500 593 V610 M530 593 V610 M560 590 V606" stroke="#E2E8F0" stroke-width="3"/>
+<path d="M470 628 C490 640 530 640 552 628 C540 612 486 612 470 628 Z" fill="#F87171"/>
+<!-- espurna al somriure -->
+<path d="M626 560 l7 18 l18 7 l-18 7 l-7 18 l-7-18 l-18-7 l18-7z" fill="#FFF" />
+<path d="M650 532 l4 10 l10 4 l-10 4 l-4 10 l-4-10 l-10-4 l10-4z" fill="#FFF" opacity=".9"/>
+<!-- perilla curta -->
+<path d="M470 668 C490 684 534 684 554 668" stroke="#5B3A29" stroke-width="6" fill="none" stroke-linecap="round" opacity=".5"/>
+</svg>
