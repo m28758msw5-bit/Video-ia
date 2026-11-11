@@ -14,6 +14,11 @@
 <g transform="translate(150,180) rotate(-14) scale(1.5)"><path d="M-32 -20 C-46 -50 -10 -62 0 -44 C10 -62 46 -50 32 -20 C28 6 26 50 14 52 C6 52 6 22 0 22 C-6 22 -6 52 -14 52 C-26 50 -28 6 -32 -20 Z" fill="#fff" stroke="#1E293B" stroke-width="5"/><path d="M-15 -4 L-6 -4" stroke="#1F2937" stroke-width="3.5" stroke-linecap="round"/><circle cx="10" cy="-4" r="4" fill="#1F2937"/><path d="M-9 5 C-4 14 4 14 9 5 Z" fill="#BE123C"/><ellipse cx="-17" cy="4" rx="6" ry="3.5" fill="#F9A8D4"/><ellipse cx="17" cy="4" rx="6" ry="3.5" fill="#F9A8D4"/></g>
 <g transform="translate(880,240) rotate(12) scale(1.3)"><path d="M-32 -20 C-46 -50 -10 -62 0 -44 C10 -62 46 -50 32 -20 C28 6 26 50 14 52 C6 52 6 22 0 22 C-6 22 -6 52 -14 52 C-26 50 -28 6 -32 -20 Z" fill="#fff" stroke="#1E293B" stroke-width="5"/><circle cx="-10" cy="-5" r="5" fill="#1F2937"/><circle cx="10" cy="-5" r="5" fill="#1F2937"/><ellipse cx="0" cy="9" rx="5" ry="6" fill="#BE123C"/><ellipse cx="-17" cy="4" rx="6" ry="3.5" fill="#F9A8D4"/><ellipse cx="17" cy="4" rx="6" ry="3.5" fill="#F9A8D4"/></g>
 <g transform="translate(110,760) rotate(-8) scale(1.2)"><path d="M-32 -20 C-46 -50 -10 -62 0 -44 C10 -62 46 -50 32 -20 C28 6 26 50 14 52 C6 52 6 22 0 22 C-6 22 -6 52 -14 52 C-26 50 -28 6 -32 -20 Z" fill="#fff" stroke="#1E293B" stroke-width="5"/><circle cx="-10" cy="-4" r="4" fill="#1F2937"/><circle cx="10" cy="-4" r="4" fill="#1F2937"/><path d="M-9 6 C-4 13 4 13 9 6" stroke="#1F2937" stroke-width="3.5" fill="none" stroke-linecap="round"/><ellipse cx="-17" cy="4" rx="6" ry="3.5" fill="#F9A8D4"/><ellipse cx="17" cy="4" rx="6" ry="3.5" fill="#F9A8D4"/></g>
+<!-- cabell llarg arrissat (darrere) -->
+<g fill="#8B4513" stroke="#5B2C0E" stroke-width="5">
+  <circle cx="300" cy="560" r="70"/><circle cx="290" cy="660" r="66"/><circle cx="320" cy="750" r="58"/><circle cx="300" cy="450" r="70"/>
+  <circle cx="724" cy="560" r="70"/><circle cx="734" cy="660" r="66"/><circle cx="704" cy="750" r="58"/><circle cx="724" cy="450" r="70"/>
+</g>
 <g filter="url(#sh)">
   <path d="M452 600 L572 600 L580 760 L444 760 Z" fill="#E8AA82"/>
   <g transform="translate(0,-60)">
@@ -31,19 +36,22 @@
   <ellipse cx="322" cy="480" rx="34" ry="52" fill="url(#skin)"/><ellipse cx="702" cy="480" rx="34" ry="52" fill="url(#skin)"/>
   <ellipse cx="512" cy="460" rx="190" ry="220" fill="url(#skin)"/>
 </g>
-<!-- cabell esbojarrat de científic boig (blanc-gris) -->
-<g fill="#F1F5F9" stroke="#94A3B8" stroke-width="5">
-  <circle cx="330" cy="330" r="62"/><circle cx="300" cy="420" r="50"/><circle cx="392" cy="248" r="66"/><circle cx="480" cy="210" r="70"/>
-  <circle cx="570" cy="212" r="68"/><circle cx="650" cy="250" r="64"/><circle cx="702" cy="330" r="60"/><circle cx="728" cy="420" r="48"/>
-  <circle cx="440" cy="150" r="34"/><circle cx="604" cy="146" r="30"/><circle cx="270" cy="300" r="30"/><circle cx="760" cy="300" r="30"/>
+<!-- monyo amb llapis -->
+<g fill="#8B4513" stroke="#5B2C0E" stroke-width="5">
+  <circle cx="512" cy="150" r="78"/><circle cx="470" cy="120" r="30"/><circle cx="560" cy="118" r="28"/>
+  <circle cx="320" cy="350" r="62"/><circle cx="380" cy="268" r="66"/><circle cx="460" cy="230" r="68"/><circle cx="560" cy="228" r="68"/><circle cx="644" cy="266" r="66"/><circle cx="704" cy="350" r="62"/>
 </g>
-<path d="M360 330 C420 280 600 280 664 330 C640 300 600 290 512 288 C430 290 384 300 360 330 Z" fill="#F1F5F9"/>
+<g fill="#A0522D"><circle cx="440" cy="300" r="40"/><circle cx="512" cy="290" r="44"/><circle cx="586" cy="300" r="40"/><circle cx="380" cy="320" r="34"/><circle cx="646" cy="320" r="34"/></g>
+<g transform="translate(540,140) rotate(35)"><rect x="-8" y="-120" width="16" height="200" rx="4" fill="#FACC15" stroke="#A16207" stroke-width="4"/><path d="M-8 -120 L0 -150 L8 -120 Z" fill="#F5D0A9" stroke="#A16207" stroke-width="3"/><rect x="-8" y="70" width="16" height="20" fill="#F472B6"/></g>
+<rect x="430" y="178" width="164" height="22" rx="11" fill="#EC4899"/>
 <!-- celles (una aixecada) -->
-<path d="M378 352 C410 326 456 326 488 340" stroke="#64748B" stroke-width="20" fill="none" stroke-linecap="round"/>
-<path d="M540 318 C574 284 626 284 654 306" stroke="#64748B" stroke-width="20" fill="none" stroke-linecap="round"/>
+<path d="M378 352 C410 326 456 326 488 340" stroke="#5B2C0E" stroke-width="14" fill="none" stroke-linecap="round"/>
+<path d="M540 318 C574 284 626 284 654 306" stroke="#5B2C0E" stroke-width="14" fill="none" stroke-linecap="round"/>
 <!-- ulls grans darrere les ulleres -->
 <ellipse cx="428" cy="432" rx="40" ry="44" fill="#fff"/><circle cx="436" cy="440" r="22" fill="#1E293B"/><circle cx="444" cy="430" r="8" fill="#fff"/>
 <ellipse cx="596" cy="428" rx="46" ry="52" fill="#fff"/><circle cx="586" cy="438" r="25" fill="#1E293B"/><circle cx="596" cy="426" r="9" fill="#fff"/>
+<path d="M392 404 L380 392 M410 394 L404 380 M432 390 L432 376 M454 394 L460 380" stroke="#1E293B" stroke-width="5" stroke-linecap="round"/>
+<path d="M556 396 L544 384 M576 384 L570 370 M600 378 L600 364 M624 384 L630 370" stroke="#1E293B" stroke-width="5" stroke-linecap="round"/>
 <!-- ulleres negres de pasta (vidre transparent) -->
 <g fill="#BAE6FD" fill-opacity=".18" stroke="#0B0B0F" stroke-width="18" stroke-linejoin="round">
   <path d="M354 386 C400 374 460 374 500 386 C502 414 496 456 480 478 C462 496 400 498 380 480 C362 462 354 426 354 386 Z"/>
@@ -53,11 +61,10 @@
 <path d="M322 416 L354 402 M702 416 L670 402" stroke="#0B0B0F" stroke-width="14" stroke-linecap="round"/>
 <path d="M378 396 L404 394 L384 440 Z M546 396 L572 394 L552 440 Z" fill="#fff" opacity=".55"/>
 <!-- nas gran i divertit -->
-<ellipse cx="512" cy="520" rx="34" ry="28" fill="#F0A47E"/><ellipse cx="502" cy="510" rx="10" ry="7" fill="#fff" opacity=".5"/>
-<!-- bigoti -->
-<path d="M512 560 C480 540 430 545 410 575 C440 570 470 585 512 576 C554 585 584 570 614 575 C594 545 544 540 512 560 Z" fill="#E2E8F0" stroke="#94A3B8" stroke-width="4"/>
+<path d="M506 500 C500 524 498 536 504 544 C512 550 524 548 530 540" stroke="#C98763" stroke-width="8" fill="none" stroke-linecap="round"/>
+
 <!-- somriure amb llengua -->
-<path d="M440 590 C470 660 554 660 584 590 C552 604 472 604 440 590 Z" fill="#7F1D1D"/>
+<path d="M436 586 C470 668 554 668 588 586 C552 602 472 602 436 586 Z" fill="#7F1D1D" stroke="#E11D48" stroke-width="8" stroke-linejoin="round"/>
 <path d="M452 594 C480 604 544 604 572 594 L566 612 C540 620 484 620 458 612 Z" fill="#FFFFFF"/>
 <path d="M486 632 C496 668 528 668 538 632 C524 622 500 622 486 632 Z" fill="#FB7185" stroke="#BE123C" stroke-width="3"/>
 <ellipse cx="392" cy="540" rx="36" ry="20" fill="#F472B6" opacity=".45"/><ellipse cx="634" cy="540" rx="36" ry="20" fill="#F472B6" opacity=".45"/>
@@ -71,6 +78,7 @@
   <g><ellipse cx="0" cy="-20" rx="56" ry="46" fill="url(#skin)" stroke="#C98763" stroke-width="4"/>
   <path d="M-40 -40 H40 M-44 -18 H44 M-40 4 H40" stroke="#C98763" stroke-width="4" stroke-linecap="round"/></g>
 </g>
+<g transform="translate(318,560) scale(.55)"><path d="M-32 -20 C-46 -50 -10 -62 0 -44 C10 -62 46 -50 32 -20 C28 6 26 50 14 52 C6 52 6 22 0 22 C-6 22 -6 52 -14 52 C-26 50 -28 6 -32 -20 Z" fill="#fff" stroke="#1E293B" stroke-width="6"/></g><path d="M318 528 V500" stroke="#FACC15" stroke-width="5"/><g transform="translate(706,560) scale(.55)"><path d="M-32 -20 C-46 -50 -10 -62 0 -44 C10 -62 46 -50 32 -20 C28 6 26 50 14 52 C6 52 6 22 0 22 C-6 22 -6 52 -14 52 C-26 50 -28 6 -32 -20 Z" fill="#fff" stroke="#1E293B" stroke-width="6"/></g><path d="M706 528 V500" stroke="#FACC15" stroke-width="5"/>
 <!-- espurnes -->
 <path d="M612 640 l7 18 l18 7 l-18 7 l-7 18 l-7-18 l-18-7 l18-7z" fill="#FFF"/>
 <path d="M300 600 l5 12 l12 5 l-12 5 l-5 12 l-5-12 l-12-5 l12-5z" fill="#FFF"/>
