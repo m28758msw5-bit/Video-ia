@@ -41,3 +41,6 @@ video5/audio/segs/
 video5/assets/mix-filter.txt
 video6/audio/*16k.wav
 video6/audio/veu-original.wav
+video6/renders/
+video6/.hyperframes/
+video6/assets/mix-filter.txt
