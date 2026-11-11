@@ -1,77 +1,77 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
 <defs>
-  <radialGradient id="bg" cx=".5" cy=".42" r=".7"><stop offset="0" stop-color="#CCFBF1"/><stop offset=".55" stop-color="#5EEAD4"/><stop offset="1" stop-color="#0F766E"/></radialGradient>
+  <radialGradient id="bg" cx=".5" cy=".45" r=".75"><stop offset="0" stop-color="#FEF08A"/><stop offset=".6" stop-color="#FACC15"/><stop offset="1" stop-color="#F97316"/></radialGradient>
   <linearGradient id="skin" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FAD7BB"/><stop offset="1" stop-color="#EDB48E"/></linearGradient>
   <linearGradient id="coat" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#DCE6EE"/></linearGradient>
-  <linearGradient id="lens" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#334155"/><stop offset="1" stop-color="#020617"/></linearGradient>
-  <linearGradient id="hair" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5B3A29"/><stop offset="1" stop-color="#3B2418"/></linearGradient>
-  <filter id="sh" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#064E3B" flood-opacity=".35"/></filter>
-  <filter id="soft"><feGaussianBlur stdDeviation="2"/></filter>
+  <filter id="sh" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#7C2D12" flood-opacity=".35"/></filter>
 </defs>
 <rect width="1024" height="1024" fill="url(#bg)"/>
-<!-- icones de fons (sense text) -->
-<g opacity=".22" fill="#fff">
-  <path d="M170 250 c-30-40 10-80 40-60 c30-20 70 20 40 60 c-6 30 -10 70 -24 70 c-10 0 -10-36 -16-36 c-6 0 -6 36 -16 36 c-14 0 -18-40 -24-70z"/>
-  <path d="M790 210 c-30-40 10-80 40-60 c30-20 70 20 40 60 c-6 30 -10 70 -24 70 c-10 0 -10-36 -16-36 c-6 0 -6 36 -16 36 c-14 0 -18-40 -24-70z" transform="rotate(15 830 220)"/>
-  <circle cx="860" cy="560" r="14"/><circle cx="910" cy="610" r="10"/><circle cx="880" cy="650" r="8"/><path d="M860 560 L910 610 L880 650" stroke="#fff" stroke-width="5" fill="none"/>
-  <circle cx="140" cy="600" r="12"/><circle cx="110" cy="650" r="16"/><circle cx="170" cy="680" r="9"/><path d="M140 600 L110 650 L170 680" stroke="#fff" stroke-width="5" fill="none"/>
-  <path d="M500 90 l12 28 l28 12 l-28 12 l-12 28 l-12-28 l-28-12 l28-12z"/>
-</g>
+<path d="M512 512 L1712 512 L1702 669 Z" fill="#FB923C" opacity=".55"/><path d="M512 512 L1671 823 L1621 971 Z" fill="#FB923C" opacity=".55"/><path d="M512 512 L1551 1112 L1464 1243 Z" fill="#FB923C" opacity=".55"/><path d="M512 512 L1361 1361 L1243 1464 Z" fill="#FB923C" opacity=".55"/><path d="M512 512 L1112 1551 L971 1621 Z" fill="#FB923C" opacity=".55"/><path d="M512 512 L823 1671 L669 1702 Z" fill="#FB923C" opacity=".55"/><path d="M512 512 L512 1712 L355 1702 Z" fill="#FB923C" opacity=".55"/><path d="M512 512 L201 1671 L53 1621 Z" fill="#FB923C" opacity=".55"/><path d="M512 512 L-88 1551 L-219 1464 Z" fill="#FB923C" opacity=".55"/><path d="M512 512 L-337 1361 L-440 1243 Z" fill="#FB923C" opacity=".55"/><path d="M512 512 L-527 1112 L-597 971 Z" fill="#FB923C" opacity=".55"/><path d="M512 512 L-647 823 L-678 669 Z" fill="#FB923C" opacity=".55"/><path d="M512 512 L-688 512 L-678 355 Z" fill="#FB923C" opacity=".55"/><path d="M512 512 L-647 201 L-597 53 Z" fill="#FB923C" opacity=".55"/><path d="M512 512 L-527 -88 L-440 -219 Z" fill="#FB923C" opacity=".55"/><path d="M512 512 L-337 -337 L-219 -440 Z" fill="#FB923C" opacity=".55"/><path d="M512 512 L-88 -527 L53 -597 Z" fill="#FB923C" opacity=".55"/><path d="M512 512 L201 -647 L355 -678 Z" fill="#FB923C" opacity=".55"/><path d="M512 512 L512 -688 L669 -678 Z" fill="#FB923C" opacity=".55"/><path d="M512 512 L823 -647 L971 -597 Z" fill="#FB923C" opacity=".55"/><path d="M512 512 L1112 -527 L1243 -440 Z" fill="#FB923C" opacity=".55"/><path d="M512 512 L1361 -337 L1464 -219 Z" fill="#FB923C" opacity=".55"/><path d="M512 512 L1551 -88 L1621 53 Z" fill="#FB923C" opacity=".55"/><path d="M512 512 L1671 201 L1702 355 Z" fill="#FB923C" opacity=".55"/>
+<circle cx="512" cy="470" r="330" fill="#FEF9C3" opacity=".5"/>
+<rect x="661" y="91" width="22" height="10" rx="4" fill="#F43F5E" transform="rotate(17 661 91)"/><circle cx="231" cy="105" r="6" fill="#8B5CF6"/><rect x="142" y="240" width="22" height="10" rx="4" fill="#FFFFFF" transform="rotate(105 142 240)"/><circle cx="81" cy="596" r="6" fill="#EC4899"/><rect x="865" y="305" width="22" height="10" rx="4" fill="#22D3EE" transform="rotate(97 865 305)"/><circle cx="691" cy="121" r="8" fill="#F43F5E"/><rect x="559" y="82" width="22" height="10" rx="4" fill="#EC4899" transform="rotate(111 559 82)"/><rect x="929" y="376" width="22" height="10" rx="4" fill="#22D3EE" transform="rotate(143 929 376)"/><rect x="881" y="738" width="22" height="10" rx="4" fill="#A3E635" transform="rotate(110 881 738)"/><rect x="92" y="524" width="22" height="10" rx="4" fill="#22D3EE" transform="rotate(136 92 524)"/><circle cx="170" cy="501" r="6" fill="#EC4899"/><rect x="825" y="355" width="22" height="10" rx="4" fill="#A3E635" transform="rotate(107 825 355)"/><rect x="847" y="950" width="22" height="10" rx="4" fill="#8B5CF6" transform="rotate(125 847 950)"/><rect x="84" y="739" width="22" height="10" rx="4" fill="#A3E635" transform="rotate(116 84 739)"/><circle cx="997" cy="829" r="10" fill="#A3E635"/><rect x="155" y="444" width="22" height="10" rx="4" fill="#F43F5E" transform="rotate(50 155 444)"/><rect x="890" y="962" width="22" height="10" rx="4" fill="#22D3EE" transform="rotate(15 890 962)"/><rect x="169" y="668" width="22" height="10" rx="4" fill="#EC4899" transform="rotate(87 169 668)"/><rect x="24" y="432" width="22" height="10" rx="4" fill="#A3E635" transform="rotate(110 24 432)"/><rect x="334" y="143" width="22" height="10" rx="4" fill="#F43F5E" transform="rotate(171 334 143)"/><rect x="957" y="690" width="22" height="10" rx="4" fill="#F43F5E" transform="rotate(71 957 690)"/><circle cx="413" cy="122" r="7" fill="#FFFFFF"/><rect x="989" y="454" width="22" height="10" rx="4" fill="#EC4899" transform="rotate(61 989 454)"/><rect x="72" y="20" width="22" height="10" rx="4" fill="#22D3EE" transform="rotate(97 72 20)"/><circle cx="954" cy="624" r="9" fill="#EC4899"/><rect x="166" y="268" width="22" height="10" rx="4" fill="#A3E635" transform="rotate(108 166 268)"/><rect x="487" y="134" width="22" height="10" rx="4" fill="#8B5CF6" transform="rotate(179 487 134)"/><rect x="105" y="121" width="22" height="10" rx="4" fill="#A3E635" transform="rotate(133 105 121)"/><rect x="957" y="376" width="22" height="10" rx="4" fill="#FFFFFF" transform="rotate(98 957 376)"/><rect x="47" y="540" width="22" height="10" rx="4" fill="#FFFFFF" transform="rotate(155 47 540)"/><rect x="989" y="859" width="22" height="10" rx="4" fill="#22D3EE" transform="rotate(147 989 859)"/>
+<!-- bombolles de sabó / pasta de dents -->
+<g fill="#fff" opacity=".75" stroke="#7DD3FC" stroke-width="4"><circle cx="150" cy="430" r="34"/><circle cx="200" cy="370" r="18"/><circle cx="880" cy="420" r="28"/><circle cx="920" cy="360" r="14"/><circle cx="830" cy="130" r="22"/></g>
+<g transform="translate(150,180) rotate(-14) scale(1.5)"><path d="M-32 -20 C-46 -50 -10 -62 0 -44 C10 -62 46 -50 32 -20 C28 6 26 50 14 52 C6 52 6 22 0 22 C-6 22 -6 52 -14 52 C-26 50 -28 6 -32 -20 Z" fill="#fff" stroke="#1E293B" stroke-width="5"/><path d="M-15 -4 L-6 -4" stroke="#1F2937" stroke-width="3.5" stroke-linecap="round"/><circle cx="10" cy="-4" r="4" fill="#1F2937"/><path d="M-9 5 C-4 14 4 14 9 5 Z" fill="#BE123C"/><ellipse cx="-17" cy="4" rx="6" ry="3.5" fill="#F9A8D4"/><ellipse cx="17" cy="4" rx="6" ry="3.5" fill="#F9A8D4"/></g>
+<g transform="translate(880,240) rotate(12) scale(1.3)"><path d="M-32 -20 C-46 -50 -10 -62 0 -44 C10 -62 46 -50 32 -20 C28 6 26 50 14 52 C6 52 6 22 0 22 C-6 22 -6 52 -14 52 C-26 50 -28 6 -32 -20 Z" fill="#fff" stroke="#1E293B" stroke-width="5"/><circle cx="-10" cy="-5" r="5" fill="#1F2937"/><circle cx="10" cy="-5" r="5" fill="#1F2937"/><ellipse cx="0" cy="9" rx="5" ry="6" fill="#BE123C"/><ellipse cx="-17" cy="4" rx="6" ry="3.5" fill="#F9A8D4"/><ellipse cx="17" cy="4" rx="6" ry="3.5" fill="#F9A8D4"/></g>
+<g transform="translate(110,760) rotate(-8) scale(1.2)"><path d="M-32 -20 C-46 -50 -10 -62 0 -44 C10 -62 46 -50 32 -20 C28 6 26 50 14 52 C6 52 6 22 0 22 C-6 22 -6 52 -14 52 C-26 50 -28 6 -32 -20 Z" fill="#fff" stroke="#1E293B" stroke-width="5"/><circle cx="-10" cy="-4" r="4" fill="#1F2937"/><circle cx="10" cy="-4" r="4" fill="#1F2937"/><path d="M-9 6 C-4 13 4 13 9 6" stroke="#1F2937" stroke-width="3.5" fill="none" stroke-linecap="round"/><ellipse cx="-17" cy="4" rx="6" ry="3.5" fill="#F9A8D4"/><ellipse cx="17" cy="4" rx="6" ry="3.5" fill="#F9A8D4"/></g>
 <g filter="url(#sh)">
   <path d="M452 600 L572 600 L580 760 L444 760 Z" fill="#E8AA82"/>
-  <g transform="translate(0,-60)"><!-- bata -->
-  <path d="M150 1024 C160 880 240 800 380 770 L512 830 L644 770 C784 800 864 880 874 1100 L150 1100 Z" fill="url(#coat)"/>
-  <!-- camisa i corbatí -->
-  <path d="M400 770 L512 900 L624 770 L600 760 L512 830 L424 760 Z" fill="#0EA5E9"/>
-  <path d="M440 770 L512 830 L584 770 L560 740 L464 740 Z" fill="#38BDF8"/>
-  <!-- solapes -->
+  <g transform="translate(0,-60)">
+  <path d="M150 1100 C160 880 240 800 380 770 L512 830 L644 770 C784 800 864 880 874 1100 Z" fill="url(#coat)"/>
+  <path d="M400 770 L512 900 L624 770 L600 760 L512 830 L424 760 Z" fill="#8B5CF6"/>
+  <path d="M440 770 L512 830 L584 770 L560 740 L464 740 Z" fill="#A78BFA"/>
   <path d="M380 770 L512 1000 L470 1100 L330 800 Z" fill="#EEF3F7" stroke="#C3D0DB" stroke-width="4"/>
   <path d="M644 770 L512 1000 L554 1100 L694 800 Z" fill="#EEF3F7" stroke="#C3D0DB" stroke-width="4"/>
-  <g transform="translate(512,826)"><path d="M0 0 L-58 -30 L-58 30 Z M0 0 L58 -30 L58 30 Z" fill="#111827"/><circle r="16" fill="#1F2937"/></g>
-  <!-- butxaca amb mirall dental i bolígraf -->
+  <!-- corbatí de lunars -->
+  <g transform="translate(512,826)"><path d="M0 0 L-62 -34 L-62 34 Z M0 0 L62 -34 L62 34 Z" fill="#EC4899"/><circle cx="-40" cy="-8" r="6" fill="#fff"/><circle cx="-36" cy="16" r="6" fill="#fff"/><circle cx="40" cy="-8" r="6" fill="#fff"/><circle cx="36" cy="16" r="6" fill="#fff"/><circle r="16" fill="#BE185D"/></g>
   <rect x="640" y="880" width="120" height="110" rx="12" fill="#F1F5F9" stroke="#C3D0DB" stroke-width="4"/>
   <rect x="664" y="820" width="12" height="80" rx="6" fill="#94A3B8"/><circle cx="670" cy="812" r="20" fill="#E0F2FE" stroke="#64748B" stroke-width="6"/>
-  <rect x="704" y="836" width="14" height="70" rx="7" fill="#F43F5E"/>
-  <!-- pin de dent -->
-  <g transform="translate(330,900) scale(.9)"><circle r="38" fill="#14B8A6"/><path d="M-18 -10 c-10-16 4-30 18-22 c14-8 28 6 18 22 c-3 12-5 30-11 30 c-4 0-4-14-7-14 c-3 0-3 14-7 14 c-6 0-8-18-11-30z" fill="#fff"/></g>
+  <rect x="704" y="836" width="14" height="70" rx="7" fill="#22D3EE"/>
   </g>
-  <!-- orelles -->
   <ellipse cx="322" cy="480" rx="34" ry="52" fill="url(#skin)"/><ellipse cx="702" cy="480" rx="34" ry="52" fill="url(#skin)"/>
-  <!-- cap -->
   <ellipse cx="512" cy="460" rx="190" ry="220" fill="url(#skin)"/>
 </g>
-<!-- cabell esbojarrat de científic -->
-<path d="M318 430 C290 330 330 230 420 200 C440 150 520 140 560 180 C620 150 700 190 706 260 C740 300 730 380 706 440 C690 380 670 340 640 320 C600 330 560 300 540 280 C500 320 430 320 400 300 C370 330 340 380 330 440 Z" fill="url(#hair)"/>
-<path d="M430 210 C440 170 470 150 500 160 C480 170 470 190 470 215 Z M560 180 C590 140 640 150 650 180 C620 175 600 185 590 200 Z M500 175 C510 130 540 120 560 130 C540 140 530 160 528 180 Z" fill="#5B3A29"/>
-<!-- celles -->
-<path d="M380 360 C410 330 460 330 490 348" stroke="#3B2418" stroke-width="18" fill="none" stroke-linecap="round"/>
-<path d="M540 338 C575 312 625 316 650 340" stroke="#3B2418" stroke-width="18" fill="none" stroke-linecap="round"/>
-<!-- ulleres tipus wayfarer negres -->
-<g>
-  <path d="M322 420 L360 412" stroke="#0B0B0F" stroke-width="14" stroke-linecap="round"/>
-  <path d="M702 420 L664 412" stroke="#0B0B0F" stroke-width="14" stroke-linecap="round"/>
-  <path d="M356 392 C400 380 460 380 498 392 C500 420 494 460 478 482 C460 500 400 502 380 484 C364 466 356 430 356 392 Z" fill="url(#lens)" stroke="#0B0B0F" stroke-width="16" stroke-linejoin="round"/>
-  <path d="M668 392 C624 380 564 380 526 392 C524 420 530 460 546 482 C564 500 624 502 644 484 C660 466 668 430 668 392 Z" fill="url(#lens)" stroke="#0B0B0F" stroke-width="16" stroke-linejoin="round"/>
-  <path d="M498 400 C506 390 518 390 526 400" stroke="#0B0B0F" stroke-width="14" fill="none"/>
-  <!-- reflexos -->
-  <path d="M378 404 L420 400 L392 470 L374 466 Z" fill="#fff" opacity=".28"/>
-  <path d="M430 400 L446 400 L410 476 L400 474 Z" fill="#fff" opacity=".18"/>
-  <path d="M548 404 L590 400 L562 470 L544 466 Z" fill="#fff" opacity=".28"/>
-  <path d="M600 400 L616 400 L580 476 L570 474 Z" fill="#fff" opacity=".18"/>
-  <circle cx="368" cy="404" r="5" fill="#CBD5E1"/><circle cx="656" cy="404" r="5" fill="#CBD5E1"/>
+<!-- cabell esbojarrat de científic boig (blanc-gris) -->
+<g fill="#F1F5F9" stroke="#94A3B8" stroke-width="5">
+  <circle cx="330" cy="330" r="62"/><circle cx="300" cy="420" r="50"/><circle cx="392" cy="248" r="66"/><circle cx="480" cy="210" r="70"/>
+  <circle cx="570" cy="212" r="68"/><circle cx="650" cy="250" r="64"/><circle cx="702" cy="330" r="60"/><circle cx="728" cy="420" r="48"/>
+  <circle cx="440" cy="150" r="34"/><circle cx="604" cy="146" r="30"/><circle cx="270" cy="300" r="30"/><circle cx="760" cy="300" r="30"/>
 </g>
-<!-- nas -->
-<path d="M512 470 C504 500 496 520 500 534 C508 544 526 542 534 532" stroke="#C98763" stroke-width="9" fill="none" stroke-linecap="round"/>
-<!-- galtes -->
-<ellipse cx="400" cy="540" rx="40" ry="22" fill="#F49A9A" opacity=".45"/><ellipse cx="624" cy="540" rx="40" ry="22" fill="#F49A9A" opacity=".45"/>
-<!-- somriure amb dents brillants -->
-<path d="M420 572 C460 650 564 650 604 572 C560 590 464 590 420 572 Z" fill="#7F1D1D"/>
-<path d="M432 578 C470 594 554 594 592 578 L586 600 C550 612 474 612 438 600 Z" fill="#FFFFFF"/>
-<path d="M470 590 V606 M500 593 V610 M530 593 V610 M560 590 V606" stroke="#E2E8F0" stroke-width="3"/>
-<path d="M470 628 C490 640 530 640 552 628 C540 612 486 612 470 628 Z" fill="#F87171"/>
-<!-- espurna al somriure -->
-<path d="M626 560 l7 18 l18 7 l-18 7 l-7 18 l-7-18 l-18-7 l18-7z" fill="#FFF" />
-<path d="M650 532 l4 10 l10 4 l-10 4 l-4 10 l-4-10 l-10-4 l10-4z" fill="#FFF" opacity=".9"/>
-<!-- perilla curta -->
-<path d="M470 668 C490 684 534 684 554 668" stroke="#5B3A29" stroke-width="6" fill="none" stroke-linecap="round" opacity=".5"/>
+<path d="M360 330 C420 280 600 280 664 330 C640 300 600 290 512 288 C430 290 384 300 360 330 Z" fill="#F1F5F9"/>
+<!-- celles (una aixecada) -->
+<path d="M378 352 C410 326 456 326 488 340" stroke="#64748B" stroke-width="20" fill="none" stroke-linecap="round"/>
+<path d="M540 318 C574 284 626 284 654 306" stroke="#64748B" stroke-width="20" fill="none" stroke-linecap="round"/>
+<!-- ulls grans darrere les ulleres -->
+<ellipse cx="428" cy="432" rx="40" ry="44" fill="#fff"/><circle cx="436" cy="440" r="22" fill="#1E293B"/><circle cx="444" cy="430" r="8" fill="#fff"/>
+<ellipse cx="596" cy="428" rx="46" ry="52" fill="#fff"/><circle cx="586" cy="438" r="25" fill="#1E293B"/><circle cx="596" cy="426" r="9" fill="#fff"/>
+<!-- ulleres negres de pasta (vidre transparent) -->
+<g fill="#BAE6FD" fill-opacity=".18" stroke="#0B0B0F" stroke-width="18" stroke-linejoin="round">
+  <path d="M354 386 C400 374 460 374 500 386 C502 414 496 456 480 478 C462 496 400 498 380 480 C362 462 354 426 354 386 Z"/>
+  <path d="M670 386 C624 374 564 374 524 386 C522 414 528 456 544 478 C562 496 624 498 644 480 C662 462 670 426 670 386 Z"/>
+</g>
+<path d="M500 396 C506 386 518 386 524 396" stroke="#0B0B0F" stroke-width="14" fill="none"/>
+<path d="M322 416 L354 402 M702 416 L670 402" stroke="#0B0B0F" stroke-width="14" stroke-linecap="round"/>
+<path d="M378 396 L404 394 L384 440 Z M546 396 L572 394 L552 440 Z" fill="#fff" opacity=".55"/>
+<!-- nas gran i divertit -->
+<ellipse cx="512" cy="520" rx="34" ry="28" fill="#F0A47E"/><ellipse cx="502" cy="510" rx="10" ry="7" fill="#fff" opacity=".5"/>
+<!-- bigoti -->
+<path d="M512 560 C480 540 430 545 410 575 C440 570 470 585 512 576 C554 585 584 570 614 575 C594 545 544 540 512 560 Z" fill="#E2E8F0" stroke="#94A3B8" stroke-width="4"/>
+<!-- somriure amb llengua -->
+<path d="M440 590 C470 660 554 660 584 590 C552 604 472 604 440 590 Z" fill="#7F1D1D"/>
+<path d="M452 594 C480 604 544 604 572 594 L566 612 C540 620 484 620 458 612 Z" fill="#FFFFFF"/>
+<path d="M486 632 C496 668 528 668 538 632 C524 622 500 622 486 632 Z" fill="#FB7185" stroke="#BE123C" stroke-width="3"/>
+<ellipse cx="392" cy="540" rx="36" ry="20" fill="#F472B6" opacity=".45"/><ellipse cx="634" cy="540" rx="36" ry="20" fill="#F472B6" opacity=".45"/>
+<!-- raspall de dents gegant a la mà -->
+<g transform="translate(790,860) rotate(-4) scale(.85)">
+  <rect x="-18" y="-330" width="36" height="360" rx="18" fill="#22D3EE" stroke="#0E7490" stroke-width="5"/>
+  <rect x="-30" y="-420" width="60" height="100" rx="12" fill="#22D3EE" stroke="#0E7490" stroke-width="5"/>
+  <g fill="#fff" stroke="#94A3B8" stroke-width="3">
+    <rect x="30" y="-414" width="44" height="14" rx="6"/><rect x="30" y="-396" width="44" height="14" rx="6"/><rect x="30" y="-378" width="44" height="14" rx="6"/><rect x="30" y="-360" width="44" height="14" rx="6"/><rect x="30" y="-342" width="44" height="14" rx="6"/></g>
+  <path d="M74 -420 C100 -440 120 -410 100 -396 C126 -392 120 -360 96 -364 C110 -340 84 -326 74 -342 Z" fill="#fff" stroke="#38BDF8" stroke-width="4"/>
+  <g><ellipse cx="0" cy="-20" rx="56" ry="46" fill="url(#skin)" stroke="#C98763" stroke-width="4"/>
+  <path d="M-40 -40 H40 M-44 -18 H44 M-40 4 H40" stroke="#C98763" stroke-width="4" stroke-linecap="round"/></g>
+</g>
+<!-- espurnes -->
+<path d="M612 640 l7 18 l18 7 l-18 7 l-7 18 l-7-18 l-18-7 l18-7z" fill="#FFF"/>
+<path d="M300 600 l5 12 l12 5 l-12 5 l-5 12 l-5-12 l-12-5 l12-5z" fill="#FFF"/>
 </svg>
