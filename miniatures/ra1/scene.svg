@@ -1,0 +1,182 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+<defs>
+  <radialGradient id="mouthBg" cx=".5" cy=".55" r=".75"><stop offset="0" stop-color="#5A1414"/><stop offset=".6" stop-color="#2A0808"/><stop offset="1" stop-color="#120303"/></radialGradient>
+  <linearGradient id="tooth" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#D9CFBE"/><stop offset=".35" stop-color="#FFFDF7"/><stop offset=".7" stop-color="#F4EEE2"/><stop offset="1" stop-color="#C9BCA6"/></linearGradient>
+  <linearGradient id="toothV" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E8DCC6" stop-opacity=".9"/><stop offset=".25" stop-color="#fff" stop-opacity="0"/></linearGradient>
+  <radialGradient id="gum" cx=".5" cy=".7" r=".8"><stop offset="0" stop-color="#FF5A5A"/><stop offset=".55" stop-color="#E02828"/><stop offset="1" stop-color="#8E0E14"/></radialGradient>
+  <radialGradient id="gumHot" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFB199" stop-opacity=".9"/><stop offset="1" stop-color="#FF3B30" stop-opacity="0"/></radialGradient>
+  <linearGradient id="lip" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#B84A55"/><stop offset="1" stop-color="#E8838C"/></linearGradient>
+  <radialGradient id="plaque" cx=".45" cy=".4" r=".7"><stop offset="0" stop-color="#A3B83A"/><stop offset="1" stop-color="#4D5A12"/></radialGradient>
+  <linearGradient id="skin" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F8D3B5"/><stop offset="1" stop-color="#E7AC85"/></linearGradient>
+  <linearGradient id="scrub" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7C3AED"/><stop offset="1" stop-color="#4C1D95"/></linearGradient>
+  <linearGradient id="metal" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#6B7280"/><stop offset=".5" stop-color="#F3F4F6"/><stop offset="1" stop-color="#4B5563"/></linearGradient>
+  <linearGradient id="paper" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBF7EE"/><stop offset="1" stop-color="#EDE3CF"/></linearGradient>
+  <linearGradient id="brush" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0891B2"/><stop offset=".5" stop-color="#67E8F9"/><stop offset="1" stop-color="#0E7490"/></linearGradient>
+  <pattern id="floss" width="70" height="90" patternUnits="userSpaceOnUse" patternTransform="rotate(30)"><rect width="70" height="90" fill="#5EEAD4"/><rect width="30" height="90" fill="#F0FDFA"/></pattern>
+  <pattern id="cap" width="40" height="40" patternUnits="userSpaceOnUse"><rect width="40" height="40" fill="#F472B6"/><circle cx="10" cy="10" r="5" fill="#FBCFE8"/><circle cx="30" cy="30" r="5" fill="#FBCFE8"/></pattern>
+  <filter id="sh" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="14" stdDeviation="12" flood-color="#000" flood-opacity=".55"/></filter>
+  <filter id="soft"><feGaussianBlur stdDeviation="3"/></filter>
+  <filter id="glowR" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="14" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <filter id="tex" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="3" seed="3"/><feColorMatrix values="0 0 0 0 .5  0 0 0 0 0  0 0 0 0 0  0 0 0 .35 0"/><feComposite in2="SourceGraphic" operator="in"/></filter>
+</defs>
+
+<!-- fons: boca per dins -->
+<rect width="1920" height="1080" fill="url(#mouthBg)"/>
+<!-- llengua al fons -->
+<path d="M560 1080 C600 860 760 800 960 800 C1160 800 1320 860 1360 1080 Z" fill="#B23A48"/>
+<path d="M960 820 V1080" stroke="#8E2A36" stroke-width="10" opacity=".6"/>
+
+<!-- placa bacteriana amenaçadora (dalt esquerra) -->
+<g opacity=".95">
+  <ellipse cx="260" cy="200" rx="330" ry="210" fill="#1F2A0A" opacity=".85" filter="url(#soft)"/>
+  <g transform="translate(250,190)">
+    <path d="M-170 20 C-200 -60 -120 -120 -60 -100 C-30 -160 70 -160 90 -100 C160 -120 210 -40 170 20 C210 80 140 140 80 110 C40 160 -60 150 -80 110 C-150 140 -210 80 -170 20 Z" fill="url(#plaque)" stroke="#2F3A08" stroke-width="8"/>
+    <path d="M-100 -30 L-40 -10" stroke="#111" stroke-width="12" stroke-linecap="round"/><path d="M100 -30 L40 -10" stroke="#111" stroke-width="12" stroke-linecap="round"/>
+    <ellipse cx="-62" cy="12" rx="20" ry="14" fill="#FDE047"/><ellipse cx="62" cy="12" rx="20" ry="14" fill="#FDE047"/><circle cx="-56" cy="14" r="7" fill="#111"/><circle cx="56" cy="14" r="7" fill="#111"/>
+    <path d="M-60 60 Q0 100 60 60 L50 80 L36 66 L22 84 L8 68 L-8 84 L-22 68 L-36 84 L-50 70 Z" fill="#111"/>
+    <circle cx="-130" cy="70" r="14" fill="#7C8C1E"/><circle cx="130" cy="-60" r="12" fill="#7C8C1E"/><circle cx="20" cy="-110" r="10" fill="#7C8C1E"/>
+  </g>
+  <g fill="#A3E635" filter="url(#glowR)" opacity=".85">
+    <path d="M520 60 L470 140 L505 140 L455 230 L540 120 L505 120 Z"/>
+    <path d="M40 300 L10 360 L36 360 L6 420 L70 345 L44 345 Z"/>
+  </g>
+  <!-- bacteris petits -->
+  <g fill="#9DB03A" stroke="#2F3A08" stroke-width="5">
+    <ellipse cx="560" cy="300" rx="38" ry="22" transform="rotate(-20 560 300)"/><ellipse cx="80" cy="460" rx="34" ry="20" transform="rotate(30 80 460)"/>
+  </g>
+</g>
+
+<!-- llavi superior -->
+<path d="M420 0 H1500 C1460 70 1360 110 1240 110 C1120 120 1040 96 960 110 C880 96 800 120 680 110 C560 110 460 70 420 0 Z" fill="url(#lip)"/>
+<path d="M520 40 C700 80 1220 80 1400 40" stroke="#fff" stroke-width="10" opacity=".25" fill="none" stroke-linecap="round"/>
+
+<!-- dents superiors -->
+<g filter="url(#sh)">
+  <path d="M470 330 C470 300 490 280 520 280 L640 280 C660 330 660 600 620 640 C590 660 520 660 500 630 C470 560 470 420 470 330 Z" fill="url(#tooth)"/>
+  <path d="M1450 330 C1450 300 1430 280 1400 280 L1280 280 C1260 330 1260 600 1300 640 C1330 660 1400 660 1420 630 C1450 560 1450 420 1450 330 Z" fill="url(#tooth)"/>
+  <path d="M660 300 C660 270 690 250 720 250 L930 250 C950 300 960 700 930 790 C900 830 720 830 690 790 C660 700 660 420 660 300 Z" fill="url(#tooth)"/>
+  <path d="M1260 300 C1260 270 1230 250 1200 250 L990 250 C970 300 960 700 990 790 C1020 830 1200 830 1230 790 C1260 700 1260 420 1260 300 Z" fill="url(#tooth)"/>
+  <path d="M700 260 H920 V420 H700 Z M1000 260 H1220 V420 H1000 Z" fill="url(#toothV)"/>
+  <path d="M740 320 C730 450 740 600 760 720" stroke="#fff" stroke-width="16" opacity=".6" fill="none" stroke-linecap="round"/>
+  <path d="M1040 320 C1030 450 1040 600 1060 720" stroke="#fff" stroke-width="16" opacity=".6" fill="none" stroke-linecap="round"/>
+  <!-- placa groga a la vora de la geniva -->
+  <path d="M680 340 C760 380 860 380 930 340 L930 380 C860 410 760 410 680 380 Z" fill="#D8C24A" opacity=".75"/>
+  <path d="M990 340 C1060 380 1160 380 1240 340 L1240 380 C1160 410 1060 410 990 380 Z" fill="#D8C24A" opacity=".75"/>
+</g>
+
+<!-- geniva inflamada (el dolent) -->
+<g filter="url(#sh)">
+  <path d="M470 76 H1450 C1530 110 1520 250 1460 310 C1430 345 1415 352 1380 330 C1350 300 1300 300 1270 340 C1240 380 1200 330 1140 320 C1060 310 1010 330 990 400 C975 470 945 470 930 400 C910 330 860 310 780 320 C720 330 680 380 650 340 C620 300 570 300 540 330 C505 350 490 345 460 310 C400 250 390 110 470 76 Z" fill="url(#gum)"/>
+  <ellipse cx="960" cy="260" rx="420" ry="130" fill="url(#gumHot)" opacity=".7"/>
+  <path d="M470 76 H1450 C1530 110 1520 250 1460 310 C1430 345 1415 352 1380 330 C1350 300 1300 300 1270 340 C1240 380 1200 330 1140 320 C1060 310 1010 330 990 400 C975 470 945 470 930 400 C910 330 860 310 780 320 C720 330 680 380 650 340 C620 300 570 300 540 330 C505 350 490 345 460 310 C400 250 390 110 470 76 Z" fill="#000" filter="url(#tex)" opacity=".6"/>
+</g>
+<!-- brillantor d'inflamació -->
+<path d="M600 160 C760 130 1160 130 1320 160" stroke="#FFD0C4" stroke-width="14" opacity=".45" fill="none" stroke-linecap="round"/>
+<!-- cara de la geniva -->
+<g transform="translate(960,215)">
+  <path d="M-150 -70 L-40 -30" stroke="#2A0505" stroke-width="22" stroke-linecap="round"/><path d="M150 -70 L40 -30" stroke="#2A0505" stroke-width="22" stroke-linecap="round"/>
+  <ellipse cx="-88" cy="0" rx="46" ry="38" fill="#fff" stroke="#2A0505" stroke-width="7"/><ellipse cx="88" cy="0" rx="46" ry="38" fill="#fff" stroke="#2A0505" stroke-width="7"/>
+  <circle cx="-74" cy="8" r="17" fill="#2A0505"/><circle cx="74" cy="8" r="17" fill="#2A0505"/><circle cx="-68" cy="2" r="6" fill="#fff"/><circle cx="80" cy="2" r="6" fill="#fff"/>
+  <path d="M-70 70 C-40 40 40 40 70 70 C40 110 -40 110 -70 70 Z" fill="#3B0505" stroke="#2A0505" stroke-width="6"/>
+  <path d="M-30 92 C-10 78 14 78 32 92 C14 104 -12 104 -30 92 Z" fill="#F87171"/>
+</g>
+<!-- línies de calor/dolor -->
+<g stroke="#FDE047" stroke-width="16" stroke-linecap="round" filter="url(#glowR)">
+  <path d="M700 70 L660 10"/><path d="M1220 70 L1260 10"/><path d="M590 150 L520 120"/><path d="M1330 150 L1400 120"/>
+</g>
+<!-- gotes de sang (sagnat) -->
+<g fill="#B91C1C" stroke="#7F1D1D" stroke-width="4">
+  <path d="M960 455 C948 485 944 505 960 515 C976 505 972 485 960 455 Z"/>
+  <path d="M960 540 C950 566 946 584 960 592 C974 584 970 566 960 540 Z" opacity=".85"/>
+  <path d="M655 355 C645 380 642 395 655 403 C668 395 665 380 655 355 Z"/>
+  <path d="M1268 355 C1258 380 1255 395 1268 403 C1281 395 1278 380 1268 355 Z"/>
+</g>
+<!-- bacteris a la geniva -->
+<g stroke="#2F3A08" stroke-width="4">
+  <g transform="translate(820,370)"><ellipse rx="30" ry="20" fill="#B5C94A"/><circle cx="-8" cy="-3" r="5" fill="#111"/><circle cx="8" cy="-3" r="5" fill="#111"/><path d="M-8 9 L8 9" stroke="#111"/></g>
+  <g transform="translate(1105,372)"><ellipse rx="28" ry="19" fill="#B5C94A"/><circle cx="-8" cy="-3" r="5" fill="#111"/><circle cx="8" cy="-3" r="5" fill="#111"/><path d="M-8 10 Q0 4 8 10" fill="none" stroke="#111"/></g>
+</g>
+
+<!-- higienista (esquerra) -->
+<g filter="url(#sh)">
+  <path d="M-40 1080 C-30 900 60 820 220 800 L360 800 C500 820 560 930 570 1080 Z" fill="url(#scrub)"/>
+  <path d="M220 800 L290 880 L360 800" fill="#3B0F80"/>
+  <circle cx="290" cy="620" r="185" fill="url(#skin)"/>
+  <ellipse cx="110" cy="640" rx="30" ry="46" fill="url(#skin)"/><ellipse cx="470" cy="640" rx="30" ry="46" fill="url(#skin)"/>
+  <!-- gorro -->
+  <path d="M100 580 C90 420 200 380 290 380 C380 380 490 420 480 580 C440 540 140 540 100 580 Z" fill="url(#cap)" stroke="#9D174D" stroke-width="5"/>
+  <path d="M100 580 C160 552 420 552 480 580" stroke="#BE185D" stroke-width="12" fill="none"/>
+  <!-- celles decidides -->
+  <path d="M170 575 L250 600" stroke="#3B2418" stroke-width="16" stroke-linecap="round"/><path d="M410 570 L330 597" stroke="#3B2418" stroke-width="16" stroke-linecap="round"/>
+  <!-- ulls -->
+  <ellipse cx="225" cy="650" rx="30" ry="22" fill="#fff"/><ellipse cx="355" cy="650" rx="30" ry="22" fill="#fff"/>
+  <circle cx="238" cy="652" r="13" fill="#1F2937"/><circle cx="368" cy="652" r="13" fill="#1F2937"/>
+  <!-- lupes binoculars -->
+  <path d="M120 630 C180 600 400 600 460 630" stroke="#111827" stroke-width="12" fill="none"/>
+  <g><circle cx="228" cy="650" r="44" fill="#1F2937"/><circle cx="228" cy="650" r="32" fill="#93C5FD"/><circle cx="234" cy="654" r="14" fill="#1E3A8A"/><circle cx="216" cy="638" r="9" fill="#fff" opacity=".8"/></g>
+  <g><circle cx="352" cy="650" r="44" fill="#1F2937"/><circle cx="352" cy="650" r="32" fill="#93C5FD"/><circle cx="358" cy="654" r="14" fill="#1E3A8A"/><circle cx="340" cy="638" r="9" fill="#fff" opacity=".8"/></g>
+  <rect x="270" y="640" width="40" height="14" rx="6" fill="#1F2937"/>
+  <!-- mascareta -->
+  <path d="M150 700 C190 690 390 690 430 700 C440 760 400 800 290 806 C180 800 140 760 150 700 Z" fill="#A5F3FC" stroke="#67E8F9" stroke-width="5"/>
+  <path d="M170 730 H410 M175 760 H405" stroke="#67E8F9" stroke-width="5"/>
+  <!-- braç i sonda periodontal -->
+  <path d="M470 1000 C520 900 560 840 600 800" stroke="#6D28D9" stroke-width="90" stroke-linecap="round" fill="none"/>
+  <circle cx="615" cy="780" r="52" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="5"/>
+  <g transform="translate(615,770) rotate(-38)">
+    <rect x="-9" y="-330" width="18" height="320" rx="8" fill="url(#metal)"/>
+    <path d="M0 -330 L0 -400 L30 -420" stroke="#9CA3AF" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <path d="M-9 -300 H9 M-9 -270 H9 M-9 -240 H9" stroke="#111" stroke-width="4"/>
+  </g>
+  <path d="M572 760 C560 740 580 724 600 732 M580 790 C560 784 562 760 586 760" stroke="#CBD5E1" stroke-width="10" fill="none" stroke-linecap="round"/>
+</g>
+
+<!-- carpeta: periodontograma -->
+<g transform="translate(1480,70) rotate(6)" filter="url(#sh)">
+  <rect x="0" y="0" width="380" height="660" rx="18" fill="#7C4A2D"/>
+  <rect x="18" y="40" width="344" height="600" rx="10" fill="url(#paper)"/>
+  <rect x="120" y="-20" width="140" height="56" rx="12" fill="url(#metal)" stroke="#4B5563" stroke-width="4"/>
+  <path d="M60 110 L95 50 L130 110 Z" fill="#DC2626"/><rect x="91" y="68" width="8" height="24" fill="#fff"/><circle cx="95" cy="100" r="4.5" fill="#fff"/>
+  <!-- dents amb punts de sagnat -->
+  <g transform="translate(70,150)">
+    <path d="M-6 0 H246 C246 30 230 40 230 40 H-6 Z" fill="#F08A9A"/>
+    <g fill="#FFFDF6" stroke="#B5A88F" stroke-width="3">
+      <rect x="0" y="34" width="44" height="74" rx="14"/><rect x="50" y="34" width="44" height="80" rx="14"/><rect x="100" y="34" width="44" height="80" rx="14"/><rect x="150" y="34" width="44" height="74" rx="14"/><rect x="200" y="34" width="40" height="70" rx="14"/></g>
+    <g fill="#DC2626"><circle cx="47" cy="44" r="8"/><circle cx="97" cy="44" r="8"/><circle cx="147" cy="44" r="8"/><circle cx="197" cy="44" r="8"/></g>
+    <circle cx="122" cy="50" r="60" fill="none" stroke="#DC2626" stroke-width="6"/>
+  </g>
+  <!-- llista amb icones -->
+  <g transform="translate(64,330)">
+    <ellipse cx="18" cy="0" rx="22" ry="14" fill="#9DB03A" stroke="#2F3A08" stroke-width="4"/>
+    <rect x="58" y="-10" width="200" height="12" rx="6" fill="#BFB6A2"/><rect x="58" y="10" width="150" height="10" rx="5" fill="#D6CEBC"/>
+    <g transform="translate(18,100) rotate(-30)"><rect x="-6" y="-34" width="12" height="62" rx="6" fill="#06B6D4"/><rect x="-10" y="-50" width="20" height="20" rx="4" fill="#fff" stroke="#94A3B8" stroke-width="3"/></g>
+    <rect x="58" y="90" width="190" height="12" rx="6" fill="#BFB6A2"/><rect x="58" y="110" width="130" height="10" rx="5" fill="#D6CEBC"/>
+    <g transform="translate(18,200)"><path d="M-18 -16 C0 -26 10 10 30 -4 M-18 0 C0 -10 10 26 30 12" stroke="#14B8A6" stroke-width="5" fill="none"/></g>
+    <rect x="58" y="190" width="200" height="12" rx="6" fill="#BFB6A2"/><rect x="58" y="210" width="160" height="10" rx="5" fill="#D6CEBC"/>
+  </g>
+</g>
+
+<!-- fil dental en diagonal (com una cinta) -->
+<g filter="url(#sh)">
+  <path d="M-40 1010 C400 960 900 960 1300 900 C1600 860 1800 820 1960 800 L1960 890 C1800 910 1600 950 1300 990 C900 1050 400 1050 -40 1100 Z" fill="url(#floss)"/>
+  <path d="M-40 1010 C400 960 900 960 1300 900 C1600 860 1800 820 1960 800" stroke="#0F766E" stroke-width="6" fill="none"/>
+  <path d="M-40 1100 C400 1050 900 1050 1300 990 C1600 950 1800 910 1960 890" stroke="#0F766E" stroke-width="6" fill="none"/>
+</g>
+
+<!-- heroi: raspall de dents amb capa (baix dreta) -->
+<g transform="translate(1745,840)" filter="url(#sh)">
+  <path d="M-56 -110 C-150 -40 -200 120 -190 260 L190 260 C200 120 150 -40 56 -110 Z" fill="#DC2626" stroke="#7F1D1D" stroke-width="6"/><path d="M-120 60 L-150 250 M120 60 L150 250" stroke="#991B1B" stroke-width="6"/>
+  <rect x="-62" y="-140" width="124" height="400" rx="60" fill="url(#brush)" stroke="#0E7490" stroke-width="6"/>
+  <rect x="-70" y="-250" width="140" height="120" rx="22" fill="#E0F2FE" stroke="#0E7490" stroke-width="6"/>
+  <g fill="#fff" stroke="#94A3B8" stroke-width="3">
+    <rect x="-62" y="-330" width="22" height="86" rx="8"/><rect x="-34" y="-338" width="22" height="94" rx="8"/><rect x="-6" y="-342" width="22" height="98" rx="8"/><rect x="22" y="-338" width="22" height="94" rx="8"/><rect x="48" y="-330" width="20" height="86" rx="8"/></g>
+  <path d="M-60 -330 C-40 -380 60 -380 70 -330" stroke="#5EEAD4" stroke-width="18" fill="none" stroke-linecap="round"/>
+  <!-- cara -->
+  <ellipse cx="-24" cy="-60" rx="18" ry="20" fill="#fff"/><ellipse cx="24" cy="-60" rx="18" ry="20" fill="#fff"/>
+  <circle cx="-20" cy="-56" r="9" fill="#111"/><circle cx="28" cy="-56" r="9" fill="#111"/>
+  <path d="M-40 -88 L-6 -80 M40 -88 L6 -80" stroke="#111" stroke-width="7" stroke-linecap="round"/>
+  <path d="M-30 -14 Q0 14 30 -14" stroke="#111" stroke-width="7" fill="none" stroke-linecap="round"/>
+  <!-- braços musculosos -->
+  <path d="M-62 30 C-130 20 -150 -40 -120 -90" stroke="#06B6D4" stroke-width="34" fill="none" stroke-linecap="round"/><circle cx="-120" cy="-100" r="30" fill="#06B6D4" stroke="#0E7490" stroke-width="5"/>
+  <path d="M62 30 C130 20 150 -40 120 -90" stroke="#06B6D4" stroke-width="34" fill="none" stroke-linecap="round"/><circle cx="120" cy="-100" r="30" fill="#06B6D4" stroke="#0E7490" stroke-width="5"/>
+</g>
+</svg>
