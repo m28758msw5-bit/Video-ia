@@ -164,7 +164,7 @@ const KW = [
   kwH("kGen", "GENIVA INFLAMADA", 960, 150, 96, "#BE123C"),
   kwH("kReg", "REGIÓ ORAL", 1460, 170, 110, "#CA8A04"),
   kwH("kCav", "CAVITAT ORAL", 1460, 170, 110, "#0284C7"),
-  kwH("kVes", "VESTÍBUL ORAL", 1460, 170, 110, "#DB2777"),
+  kwH("kVes", "VESTÍBUL ORAL", 1400, 170, 100, "#DB2777"),
   kwH("kPro", "CAVITAT ORAL<br>PRÒPIAMENT DITA", 1400, 200, 82, "#EA580C"),
   kwH("k2", "2 ESPAIS", 1460, 880, 120, A.C.ink),
 ].join("");
